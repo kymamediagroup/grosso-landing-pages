@@ -1,1 +1,10 @@
-FROM python:3.11-slim\nWORKDIR /app\nCOPY . /app\nENV PORT=8080\nEXPOSE 8080\nCMD ["python", "server.py"]\n
+FROM python:3.11-slim
+
+WORKDIR /app
+
+COPY . /app
+
+ENV PORT=8080
+EXPOSE 8080
+
+CMD ["python", "server.py"]
