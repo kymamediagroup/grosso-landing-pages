@@ -10,6 +10,8 @@ PUBLIC_DIR = os.path.join(BASE_DIR, 'public')
 class LandingPageRouter(SimpleHTTPRequestHandler):
     def do_GET(self):
         url_path = self.path.split('?')[0].strip('/')
+        
+        # 1. Health check
         if url_path in ('health', '_health', 'api/health'):
             self.send_response(200)
             self.send_header('Content-Type', 'text/plain; charset=utf-8')
@@ -17,6 +19,7 @@ class LandingPageRouter(SimpleHTTPRequestHandler):
             self.wfile.write(b'OK')
             return
 
+        # 2. Root dashboard
         if url_path == '':
             index_path = os.path.join(PUBLIC_DIR, 'index.html')
             if os.path.exists(index_path):
@@ -33,6 +36,7 @@ class LandingPageRouter(SimpleHTTPRequestHandler):
         slug = parts[0]
         slug_dir = os.path.join(PAGES_DIR, slug)
 
+        # 3. Dynamic slug routing: /<slug> or /<slug>/...
         if os.path.isdir(slug_dir):
             if len(parts) == 1:
                 target_file = os.path.join(slug_dir, 'index.html')
@@ -43,6 +47,20 @@ class LandingPageRouter(SimpleHTTPRequestHandler):
                 self.serve_file(target_file)
                 return
 
+        # 4. Fallback: If browser requests /assets/... without /<slug> prefix, search across pages/top-500/assets or pages/*
+        if parts[0] == 'assets':
+            # Check pages/top-500/assets/...
+            top500_asset = os.path.join(PAGES_DIR, 'top-500', *parts)
+            if os.path.isfile(top500_asset):
+                self.serve_file(top500_asset)
+                return
+            # Or public/assets
+            pub_asset = os.path.join(PUBLIC_DIR, *parts)
+            if os.path.isfile(pub_asset):
+                self.serve_file(pub_asset)
+                return
+
+        # 5. Check public directory directly
         public_file = os.path.join(PUBLIC_DIR, *parts)
         if os.path.isfile(public_file):
             self.serve_file(public_file)
