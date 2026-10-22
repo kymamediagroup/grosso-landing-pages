@@ -1,0 +1,1 @@
+FROM python:3.11-slim\nWORKDIR /app\nCOPY . /app\nENV PORT=8080\nEXPOSE 8080\nCMD ["python", "server.py"]\n
