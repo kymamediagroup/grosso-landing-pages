@@ -8,6 +8,9 @@ PAGES_DIR = os.path.join(BASE_DIR, 'pages')
 PUBLIC_DIR = os.path.join(BASE_DIR, 'public')
 
 class LandingPageRouter(SimpleHTTPRequestHandler):
+    def do_HEAD(self):
+        self.do_GET()
+
     def do_GET(self):
         url_path = self.path.split('?')[0].strip('/')
         
