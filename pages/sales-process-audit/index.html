@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Free Contractor Sales Process & Close-Rate Audit | Grosso University</title>
+  <!-- Simpli.fi Pixel Tag -->
+  <script async src='https://tag.simpli.fi/sifitag/4a187475-8ae5-41b0-a1e0-5bc3606437ee'></script>
+  <meta name="description" content="Discover where your sales reps are losing deals. Take the free 2-minute diagnostic audit for home improvement contractors." />
+  <link rel="icon" type="image/png" href="/assets/brand/logo-mark.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cinzel:wght@600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/brand/grosso-brand.css" />
+  <style>
+    :root {
+      --bg-canvas: #060911;
+      --bg-surface: #0E1628;
+      --border-line: rgba(148, 163, 184, 0.14);
+      --gold: #A3814E;
+      --gold-light: #C5A26D;
+      --blue: #4D6FA2;
+      --blue-light: #688EC7;
+      --text-main: #F8FAFC;
+      --text-sub: #CBD5E1;
+      --text-muted: #94A3B8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg-canvas);
+      color: var(--text-main);
+      font-family: var(--grosso-font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      background-image:
+        radial-gradient(circle at 50% 0%, rgba(77, 111, 162, 0.2), transparent 50%);
+    }
+
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header */
+    .top-bar {
+      border-bottom: 1px solid var(--border-line);
+      padding: 1.25rem 0;
+      background: rgba(6, 9, 17, 0.85);
+      backdrop-filter: blur(16px);
+      text-align: center;
+    }
+    .logo { height: 42px; width: auto; }
+
+    .audit-container {
+      padding: 3.5rem 0 5rem;
+    }
+
+    .audit-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .audit-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(163, 129, 78, 0.15);
+      border: 1px solid rgba(163, 129, 78, 0.4);
+      color: var(--gold-light);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.25rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 3.8vw, 2.85rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    h1 span {
+      background: linear-gradient(135deg, #F5E6CC 0%, #C5A26D 50%, #A3814E 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .audit-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-line);
+      border-radius: 1.25rem;
+      padding: 2.5rem;
+      box-shadow: 0 24px 60px -15px rgba(0, 0, 0, 0.7);
+      position: relative;
+    }
+    .audit-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold) 0%, var(--blue) 50%, var(--gold) 100%);
+      border-radius: 1.25rem 1.25rem 0 0;
+    }
+
+    /* Progress Bar */
+    .progress-box {
+      margin-bottom: 2rem;
+    }
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    .progress-track {
+      height: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      width: 25%;
+      background: linear-gradient(90deg, var(--blue) 0%, var(--gold-light) 100%);
+      transition: width 0.3s ease;
+    }
+
+    /* Step content */
+    .step-section {
+      display: none;
+    }
+    .step-section.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .question-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 1.5rem;
+    }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .option-btn {
+      background: rgba(9, 14, 26, 0.8);
+      border: 1px solid var(--border-line);
+      border-radius: 0.85rem;
+      padding: 1.25rem 1.1rem;
+      text-align: left;
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      transition: all 0.2s;
+    }
+    .option-btn:hover {
+      border-color: var(--gold);
+      background: rgba(163, 129, 78, 0.12);
+      transform: translateY(-2px);
+    }
+    .option-dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 2px solid var(--text-muted);
+      flex: none;
+    }
+
+    /* Final Lead Form */
+    .lead-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .form-field.full {
+      grid-column: span 2;
+    }
+    .form-field label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-sub);
+    }
+    .form-field input {
+      height: 46px;
+      background: rgba(9, 14, 26, 0.9);
+      border: 1px solid var(--border-line);
+      border-radius: 8px;
+      padding: 0 14px;
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.92rem;
+      outline: none;
+    }
+    .form-field input:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(163, 129, 78, 0.25);
+    }
+
+    .btn-submit {
+      width: 100%;
+      height: 52px;
+      background: linear-gradient(135deg, #C5A26D 0%, #A3814E 60%, #846539 100%);
+      color: #060911;
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      box-shadow: 0 8px 24px -4px rgba(163, 129, 78, 0.5);
+      transition: all 0.2s;
+    }
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+    }
+
+    @media (max-width: 680px) {
+      .options-grid { grid-template-columns: 1fr; }
+      .lead-form-grid { grid-template-columns: 1fr; }
+      .form-field.full { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="top-bar">
+    <div class="wrap">
+      <img src="/assets/brand/logo-white.png" alt="Grosso University" class="logo" />
+    </div>
+  </header>
+
+  <main class="wrap audit-container">
+    <div class="audit-header">
+      <div class="audit-badge">Official 2-Minute Diagnostic</div>
+      <h1>Where Are Your Closers <span>Leaving Money on the Table?</span></h1>
+      <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 680px; margin: 0 auto;">Take this 4-question sales process audit to reveal your team's closing bottlenecks and get your customized performance benchmark.</p>
+    </div>
+
+    <div class="audit-card">
+      <div class="progress-box">
+        <div class="progress-meta">
+          <span id="stepCounter">Step 1 of 4</span>
+          <span id="stepPct">25% Complete</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+
+      <!-- Question 1 -->
+      <div class="step-section active" id="step1">
+        <div class="question-title">1. What is your primary trade or specialty?</div>
+        <div class="options-grid">
+          <button type="button" class="option-btn" onclick="nextStep(1, 'Roofing & Gutters')">
+            <span class="option-dot"></span> Roofing & Gutters
+          </button>
+          <button type="button" class="option-btn" onclick="nextStep(1, 'Windows & Siding')">
+            <span class="option-dot"></span> Windows & Siding
+          </button>
+          <button type="button" class="option-btn" onclick="nextStep(1, 'Bath & Kitchen Remodel')">
+            <span class="option-dot"></span> Bath & Kitchen Remodel
+          </button>
+          <button type="button" class="option-btn" onclick="nextStep(1, 'HVAC, Solar or Full Exterior')">
+            <span class="option-dot"></span> HVAC, Solar or Full Exterior
+          </button>
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="step-section" id="step2">
+        <div class="question-title">2. What is your company's approximate annual sales volume?</div>
+        <div class="options-grid">
+          <button type="button" class="option-btn" onclick="nextStep(2, '$1M - $3M')">
+            <span class="option-dot"></span> $1M – $3M
+          </button>
+          <button type="button" class="option-btn" onclick="nextStep(2, '$3M - $7M')">
+            <span class="option-dot"></span> $3M – $7M
+          </button>
+          <button type="button" class="option-btn" onclick="nextStep(2, '$7M - $15M')">
+            <span class="option-dot"></span> $7M – $15M
+          </button>
+          <button type="button" class="option-btn" onclick="nextStep(2, '$15M+')">
+            <span class="option-dot"></span> $15M+
+          </button>
+        </div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="step-section" id="step3">
+        <div class="question-title">3. What is your current average one-call close rate?</div>
+        <div class="options-grid">
+          <button type="button" class="option-btn" onclick="nextStep(3, 'Under 25%')">
+            <span class="option-dot"></span> Under 25% (High lead burn)
+          </button>
+          <button type="button" class="option-btn" onclick="nextStep(3, '25% - 35%')">
+            <span class="option-dot"></span> 25% – 35% (Industry average)
+          </button>
+          <button type="button" class="option-btn" onclick="nextStep(3, '35% - 45%')">
+            <span class="option-dot"></span> 35% – 45% (Strong team)
+          </button>
+          <button type="button" class="option-btn" onclick="nextStep(3, 'Over 45%')">
+            <span class="option-dot"></span> Over 45% (Top tier elite)
+          </button>
+        </div>
+      </div>
+
+      <!-- Question 4: Lead Capture -->
+      <div class="step-section" id="step4">
+        <div class="question-title">4. Where should we send your Sales Benchmark & Scorecard?</div>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Enter your contact details below to unlock your custom breakdown and revenue expansion forecast.</p>
+
+        <form id="auditForm">
+          <div class="lead-form-grid">
+            <div class="form-field">
+              <label for="fullName">Full Name *</label>
+              <input type="text" id="fullName" name="fullName" placeholder="Dominic Caminata" required />
+            </div>
+            <div class="form-field">
+              <label for="email">Work Email *</label>
+              <input type="email" id="email" name="email" placeholder="dominic@company.com" required />
+            </div>
+            <div class="form-field">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" placeholder="(555) 234-5678" required />
+            </div>
+            <div class="form-field">
+              <label for="company">Company Name *</label>
+              <input type="text" id="company" name="company" placeholder="Acme Remodeling LLC" required />
+            </div>
+          </div>
+
+          <button type="submit" class="btn-submit" id="auditSubmitBtn">
+            <span>Unlock My Sales Scorecard &rarr;</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Step 5: Success / Results -->
+      <div class="step-section" id="stepSuccess" style="text-align: center; padding: 1.5rem 0;">
+        <div style="width: 58px; height: 58px; border-radius: 50%; background: #10B981; color: #fff; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem; font-size: 28px;">✓</div>
+        <h2 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 0.5rem;">Diagnostic Complete!</h2>
+        <p style="color: var(--text-sub); font-size: 1rem; margin-bottom: 1.5rem;">Your customized sales scorecard has been calculated and sent to your email.</p>
+
+        <div style="background: rgba(9, 14, 26, 0.9); border: 1px solid var(--border-line); border-radius: 12px; padding: 1.5rem; text-align: left; margin-bottom: 1.75rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 1px solid var(--border-line); padding-bottom: 0.75rem;">
+            <span style="font-weight: 700; color: var(--gold-light);">Close Rate Expansion Potential:</span>
+            <span style="font-size: 1.4rem; font-weight: 800; color: #34D399;">+12% to +18%</span>
+          </div>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">Based on your company trade and current close rate, implementing the 11-step selling system will recover an estimated <strong>$180,000+ per rep annually</strong> in lost deal margins.</p>
+        </div>
+
+        <a href="/strategy-call" class="btn-submit" style="text-decoration: none; display: inline-flex;">
+          Review Results 1-on-1 on a Free Strategy Call &rarr;
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <script src="/config.js"></script>
+  <script>
+    const auditData = { trade: '', revenue: '', closeRate: '' };
+
+    function nextStep(current, val) {
+      if (current === 1) auditData.trade = val;
+      if (current === 2) auditData.revenue = val;
+      if (current === 3) auditData.closeRate = val;
+
+      const next = current + 1;
+      document.querySelectorAll('.step-section').forEach(s => s.classList.remove('active'));
+      const target = document.getElementById('step' + next);
+      if (target) target.classList.add('active');
+
+      const pct = Math.min(100, next * 25);
+      document.getElementById('progressFill').style.width = pct + '%';
+      document.getElementById('stepCounter').textContent = `Step ${next} of 4`;
+      document.getElementById('stepPct').textContent = `${pct}% Complete`;
+    }
+
+    document.getElementById('auditForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('auditSubmitBtn');
+      btn.disabled = true;
+      btn.innerHTML = '<span>Calculating Scorecard...</span>';
+
+      const name = document.getElementById('fullName').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const company = document.getElementById('company').value.trim();
+
+      const nameParts = name.split(' ');
+      const firstName = nameParts[0] || '';
+      const lastName = nameParts.slice(1).join(' ') || '';
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const utmSource = urlParams.get('utm_source') || 'google';
+      const utmCampaign = urlParams.get('utm_campaign') || 'sales_diagnostic_audit';
+
+      const payload = {
+        source: 'lp.grosso-university.com/sales-process-audit',
+        landing_page: 'sales-process-audit',
+        landing_page_url: 'https://lp.grosso-university.com/sales-process-audit',
+        landing_page_slug: 'sales-process-audit',
+        campaign_name: 'Contractor Sales Process Audit',
+        event_name: 'Contractor Sales Process Audit Completed',
+        first_name: firstName,
+        last_name: lastName,
+        full_name: name,
+        email: email,
+        phone: phone,
+        company: company,
+        notes: `Landing Page: /sales-process-audit | Sales Audit: Trade: ${auditData.trade} | Revenue: ${auditData.revenue} | Close Rate: ${auditData.closeRate} | Ad Source: ${utmSource} | Campaign: ${utmCampaign}`,
+        page_url: window.location.href,
+        slug: 'sales-process-audit',
+        utm_source: utmSource,
+        utm_campaign: utmCampaign
+      };
+
+      try {
+        await Promise.allSettled([
+          fetch('https://kaos-gu.com/api/webhooks/lead-ingest', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'x-webhook-secret': window.GU_API_KEY || 'whsec_g_a42ja9qcyk'
+            },
+            body: JSON.stringify(payload)
+          }),
+          fetch('/api/leads', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          })
+        ]);
+      } catch (_) {}
+
+      if (typeof window.fbq === 'function') {
+        window.fbq('track', 'Lead', { content_name: 'Sales Audit Scorecard' });
+      }
+
+      document.querySelectorAll('.step-section').forEach(s => s.classList.remove('active'));
+      document.getElementById('stepSuccess').classList.add('active');
+      document.getElementById('progressFill').style.width = '100%';
+      document.getElementById('stepCounter').textContent = 'Audit Complete';
+      document.getElementById('stepPct').textContent = '100%';
+    });
+  </script>
+</body>
+</html>

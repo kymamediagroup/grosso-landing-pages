@@ -1,0 +1,1659 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grosso University Ad Landing Pages — Executive Command Center</title>
+  <!-- Simpli.fi Pixel Tag -->
+  <script async src='https://tag.simpli.fi/sifitag/4a187475-8ae5-41b0-a1e0-5bc3606437ee'></script>
+  <meta name="description" content="Official Grosso University Paid Ads Landing Page Command Center & Slug Router for lp.grosso-university.com." />
+  <link rel="icon" type="image/png" href="/assets/brand/logo-mark.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/brand/grosso-brand.css" />
+  <style>
+    /* ==========================================================================
+       COMMAND CENTER THEME TOKENS
+       ========================================================================== */
+    :root, [data-theme="dark"] {
+      --bg-canvas: #060911;
+      --bg-secondary: #0A101F;
+      --bg-surface: rgba(14, 22, 40, 0.78);
+      --bg-surface-solid: #0E1628;
+      --bg-surface-elevated: rgba(20, 31, 56, 0.88);
+      --bg-input: rgba(9, 14, 26, 0.88);
+      --bg-glass-nav: rgba(6, 9, 17, 0.84);
+      --text-main: #F8FAFC;
+      --text-sub: #CBD5E1;
+      --text-muted: #94A3B8;
+      --text-dim: #64748B;
+      --border-hairline: rgba(148, 163, 184, 0.13);
+      --border-strong: rgba(77, 111, 162, 0.36);
+      --border-gold: rgba(163, 129, 78, 0.44);
+      --grid-line: rgba(77, 111, 162, 0.06);
+      --shadow-card: 0 22px 50px -12px rgba(0, 0, 0, 0.68), 0 0 1px 1px rgba(77, 111, 162, 0.14);
+      --hero-glow-blue: rgba(77, 111, 162, 0.20);
+      --hero-glow-gold: rgba(163, 129, 78, 0.14);
+      --badge-bg: rgba(15, 23, 42, 0.9);
+      --card-bg: #0D1424;
+    }
+
+    [data-theme="light"] {
+      --bg-canvas: #F4F6FA;
+      --bg-secondary: #EAEFF7;
+      --bg-surface: rgba(255, 255, 255, 0.92);
+      --bg-surface-solid: #FFFFFF;
+      --bg-surface-elevated: #F8FAFC;
+      --bg-input: #FFFFFF;
+      --bg-glass-nav: rgba(255, 255, 255, 0.88);
+      --text-main: #0A101F;
+      --text-sub: #1E293B;
+      --text-muted: #475569;
+      --text-dim: #64748B;
+      --border-hairline: rgba(15, 23, 42, 0.10);
+      --border-strong: rgba(77, 111, 162, 0.35);
+      --border-gold: rgba(163, 129, 78, 0.45);
+      --grid-line: rgba(77, 111, 162, 0.05);
+      --shadow-card: 0 18px 40px -15px rgba(15, 23, 42, 0.10), 0 0 1px 1px rgba(15, 23, 42, 0.06);
+      --hero-glow-blue: rgba(77, 111, 162, 0.12);
+      --hero-glow-gold: rgba(163, 129, 78, 0.10);
+      --badge-bg: #FFFFFF;
+      --card-bg: #FFFFFF;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-family: var(--grosso-font-sans); }
+    body {
+      min-height: 100vh;
+      background-color: var(--bg-canvas);
+      background-image:
+        radial-gradient(circle at 14% 12%, var(--hero-glow-blue), transparent 42%),
+        radial-gradient(circle at 86% 8%, var(--hero-glow-gold), transparent 38%),
+        linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 56px 56px, 56px 56px;
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    /* Telemetry Ribbon */
+    .telemetry-ribbon {
+      background: linear-gradient(90deg, rgba(77, 111, 162, 0.18) 0%, rgba(163, 129, 78, 0.18) 50%, rgba(77, 111, 162, 0.18) 100%);
+      border-bottom: 1px solid var(--border-hairline);
+      padding: 0.5rem 1.5rem;
+      font-size: 0.775rem;
+    }
+    .telemetry-ribbon-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .telemetry-status { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--text-sub); font-weight: 500; }
+    .pulse-dot {
+      width: 8px; height: 8px; border-radius: 50%; background: #10B981;
+      box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+      animation: pulse-green 2s infinite;
+    }
+    @keyframes pulse-green {
+      0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.65); }
+      70% { box-shadow: 0 0 0 7px rgba(16, 185, 129, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+    .mono-pill {
+      font-family: var(--grosso-font-mono);
+      font-size: 0.73rem;
+      padding: 0.18rem 0.55rem;
+      border-radius: 6px;
+      background: rgba(77, 111, 162, 0.16);
+      border: 1px solid rgba(77, 111, 162, 0.35);
+      color: var(--grosso-blue-light);
+    }
+    [data-theme="light"] .mono-pill { color: var(--grosso-blue-deep); background: rgba(77, 111, 162, 0.12); }
+    .ribbon-right { display: flex; align-items: center; gap: 1rem; color: var(--text-muted); font-size: 0.75rem; }
+
+    /* Command Header */
+    .command-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--bg-glass-nav);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-hairline);
+    }
+    .command-header-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .brand-cluster { display: flex; align-items: center; gap: 1rem; text-decoration: none; color: inherit; }
+    .brand-logo { height: 44px; width: auto; object-fit: contain; }
+    .brand-divider { width: 1px; height: 32px; background: var(--border-hairline); }
+    .brand-tag { display: flex; flex-direction: column; gap: 0.1rem; }
+    .brand-tag-top { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grosso-gold-bright); }
+    .brand-tag-bottom { font-size: 0.84rem; font-weight: 600; color: var(--text-sub); }
+
+    /* Nav Tabs */
+    .nav-tabs {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: var(--bg-input);
+      padding: 0.3rem;
+      border-radius: 0.75rem;
+      border: 1px solid var(--border-hairline);
+    }
+    .nav-tab {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.45rem 0.9rem;
+      border-radius: 0.55rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      transition: all 0.18s ease;
+    }
+    .nav-tab:hover { color: var(--text-main); }
+    .nav-tab.active {
+      background: linear-gradient(135deg, rgba(77, 111, 162, 0.28) 0%, rgba(163, 129, 78, 0.22) 100%);
+      color: var(--text-main);
+      border: 1px solid rgba(163, 129, 78, 0.38);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+    }
+
+    .header-actions { display: flex; align-items: center; gap: 0.75rem; }
+    .icon-btn {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-hairline);
+      color: var(--text-sub);
+      height: 40px;
+      padding: 0 0.85rem;
+      border-radius: 0.65rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      font-family: inherit;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+    .icon-btn:hover { border-color: var(--grosso-blue); color: var(--text-main); transform: translateY(-1px); }
+    .btn-primary-gold {
+      background: var(--grosso-gradient-gold);
+      color: #060911;
+      font-family: inherit;
+      font-size: 0.84rem;
+      font-weight: 700;
+      height: 40px;
+      padding: 0 1.15rem;
+      border-radius: 0.65rem;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 8px 24px -6px rgba(163, 129, 78, 0.45);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn-primary-gold:hover { transform: translateY(-1.5px); box-shadow: 0 12px 28px -4px rgba(163, 129, 78, 0.62); filter: brightness(1.05); }
+
+    /* Main Container */
+    .main-container {
+      max-width: 1400px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+      flex: 1;
+    }
+
+    /* Hero Banner */
+    .hero-banner {
+      position: relative;
+      background: var(--bg-surface);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid var(--border-hairline);
+      border-radius: 1.35rem;
+      padding: 2.25rem 2.5rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+    }
+    .hero-banner::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--grosso-blue) 0%, var(--grosso-gold-bright) 50%, var(--grosso-blue) 100%);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(77, 111, 162, 0.14);
+      border: 1px solid rgba(77, 111, 162, 0.35);
+      color: var(--grosso-blue-light);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .hero-title {
+      font-size: clamp(1.75rem, 3vw, 2.45rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      margin-bottom: 0.85rem;
+    }
+    .hero-title span {
+      background: var(--grosso-gradient-text-gold);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-subtitle { color: var(--text-muted); font-size: 0.96rem; line-height: 1.65; max-width: 660px; }
+    .hero-domain-box {
+      margin-top: 1.25rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      padding: 0.65rem 1rem;
+      background: var(--bg-input);
+      border: 1px solid var(--border-strong);
+      border-radius: 0.85rem;
+    }
+    .domain-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--grosso-gold-bright); }
+    .domain-url { font-family: var(--grosso-font-mono); font-size: 0.86rem; color: var(--text-main); font-weight: 600; }
+    .domain-url span { color: var(--grosso-gold-bright); }
+
+    /* KPI Grid */
+    .kpi-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.85rem; }
+    .kpi-card {
+      background: var(--bg-input);
+      border: 1px solid var(--border-hairline);
+      border-radius: 1rem;
+      padding: 1.1rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0.35rem;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    .kpi-card:hover { border-color: var(--border-strong); transform: translateY(-2px); }
+    .kpi-top { display: flex; align-items: center; justify-content: space-between; font-size: 0.72rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+    .kpi-value { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.02em; color: var(--text-main); }
+    .kpi-foot { font-size: 0.73rem; color: var(--text-dim); display: flex; align-items: center; gap: 0.35rem; }
+
+    /* Controls Bar */
+    .controls-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-hairline);
+      border-radius: 1rem;
+      padding: 0.85rem 1.15rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-card);
+    }
+    .search-wrapper { position: relative; flex: 1; min-width: 240px; }
+    .search-icon { position: absolute; left: 0.95rem; top: 50%; transform: translateY(-50%); color: var(--text-dim); pointer-events: none; }
+    .search-input {
+      width: 100%;
+      height: 42px;
+      padding: 0 3rem 0 2.65rem;
+      border-radius: 0.7rem;
+      border: 1px solid var(--border-hairline);
+      background: var(--bg-input);
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.875rem;
+      outline: none;
+      transition: border-color 0.18s ease;
+    }
+    .search-input:focus { border-color: var(--grosso-blue-bright); box-shadow: 0 0 0 3px rgba(77, 111, 162, 0.2); }
+    .search-kbd {
+      position: absolute; right: 0.75rem; top: 50%; transform: translateY(-50%);
+      font-family: var(--grosso-font-mono); font-size: 0.7rem; color: var(--text-dim);
+      background: var(--bg-surface); border: 1px solid var(--border-hairline);
+      padding: 0.12rem 0.42rem; border-radius: 5px;
+    }
+
+    .filter-cluster { display: flex; align-items: center; gap: 0.65rem; flex-wrap: wrap; }
+    .status-pills { display: flex; align-items: center; background: var(--bg-input); padding: 0.25rem; border-radius: 0.7rem; border: 1px solid var(--border-hairline); }
+    .status-pill {
+      background: transparent; border: none; color: var(--text-muted); font-family: inherit;
+      font-size: 0.78rem; font-weight: 600; padding: 0.4rem 0.75rem; border-radius: 0.5rem; cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .status-pill:hover { color: var(--text-main); }
+    .status-pill.active { background: var(--bg-surface-solid); color: var(--text-main); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); }
+
+    .view-switcher { display: flex; align-items: center; background: var(--bg-input); padding: 0.25rem; border-radius: 0.7rem; border: 1px solid var(--border-hairline); }
+    .view-btn { background: transparent; border: none; color: var(--text-muted); padding: 0.4rem 0.55rem; border-radius: 0.5rem; cursor: pointer; display: flex; align-items: center; }
+    .view-btn.active { background: var(--bg-surface-solid); color: var(--text-main); }
+
+    /* Grid & Cards */
+    .pages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+      gap: 1.5rem;
+    }
+    .page-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-hairline);
+      border-radius: 1.25rem;
+      padding: 1.65rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.25rem;
+      box-shadow: var(--shadow-card);
+      position: relative;
+      transition: border-color 0.22s ease, transform 0.22s ease;
+    }
+    .page-card:hover {
+      border-color: var(--border-strong);
+      transform: translateY(-3px);
+    }
+    .page-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--grosso-blue) 0%, var(--grosso-gold-bright) 50%, var(--grosso-blue) 100%);
+      border-radius: 1.25rem 1.25rem 0 0;
+    }
+    .card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
+    .platform-badge {
+      display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.25rem 0.65rem;
+      border-radius: 999px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+      background: rgba(77, 111, 162, 0.16); color: var(--grosso-blue-light); border: 1px solid rgba(77, 111, 162, 0.35);
+    }
+    [data-theme="light"] .platform-badge { color: var(--grosso-blue-deep); }
+    .slug-chip {
+      font-family: var(--grosso-font-mono); font-size: 0.8rem; font-weight: 600;
+      color: var(--grosso-gold-bright); background: rgba(163, 129, 78, 0.12);
+      border: 1px solid rgba(163, 129, 78, 0.3); padding: 0.25rem 0.65rem; border-radius: 6px;
+      display: inline-flex; align-items: center; gap: 0.4rem; cursor: pointer;
+    }
+    .card-title { font-size: 1.25rem; font-weight: 800; line-height: 1.25; margin: 0.5rem 0 0.35rem; }
+    .card-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 0.75rem; }
+    .target-tag {
+      font-size: 0.78rem; color: var(--text-sub); background: var(--bg-input);
+      padding: 0.35rem 0.75rem; border-radius: 6px; border: 1px solid var(--border-hairline);
+      margin-bottom: 1rem; display: inline-block;
+    }
+
+    .metrics-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.5rem;
+      padding: 0.75rem 0.5rem;
+      background: var(--bg-input);
+      border-radius: 0.75rem;
+      border: 1px solid var(--border-hairline);
+      text-align: center;
+    }
+    .metric-cell span { display: block; font-size: 0.68rem; text-transform: uppercase; color: var(--text-dim); font-weight: 600; margin-bottom: 2px; }
+    .metric-cell b { font-size: 0.95rem; font-weight: 800; color: var(--text-main); }
+
+    .card-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-top: 0.25rem;
+    }
+    .page-card.archived {
+      opacity: 0.72;
+      border-style: dashed;
+    }
+    .badge-archived {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      background: rgba(239, 68, 68, 0.15);
+      color: #F87171;
+      border: 1px solid rgba(239, 68, 68, 0.35);
+    }
+    .badge-live {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      background: rgba(16, 185, 129, 0.15);
+      color: #34D399;
+      border: 1px solid rgba(16, 185, 129, 0.35);
+    }
+    .card-thumb-preview {
+      width: 100%;
+      height: 120px;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      margin-bottom: 0.85rem;
+      border: 1px solid var(--border-hairline);
+      background: #000;
+    }
+    .card-thumb-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .btn-action {
+      flex: 1;
+      height: 38px;
+      border-radius: 0.6rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      font-family: inherit;
+      transition: all 0.18s ease;
+    }
+    .btn-action-primary {
+      background: var(--grosso-gradient-gold);
+      color: #060911;
+    }
+    .btn-action-primary:hover { filter: brightness(1.08); transform: translateY(-1px); }
+    .btn-action-secondary {
+      background: var(--bg-input);
+      color: var(--text-main);
+      border: 1px solid var(--border-hairline);
+    }
+    .btn-action-secondary:hover { border-color: var(--grosso-blue); }
+
+    /* Modals */
+    .modal-backdrop {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(4, 7, 14, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+    .modal-backdrop.open { opacity: 1; pointer-events: auto; }
+    .modal-window {
+      background: var(--bg-surface-solid);
+      border: 1px solid var(--border-strong);
+      border-radius: 1.25rem;
+      max-width: 820px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 2.25rem;
+      box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.85);
+      position: relative;
+    }
+    .modal-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-hairline); padding-bottom: 1rem; }
+    .modal-title { font-size: 1.45rem; font-weight: 800; color: var(--text-main); }
+    .close-modal-btn { background: transparent; border: none; color: var(--text-muted); cursor: pointer; font-size: 1.5rem; line-height: 1; }
+
+    /* Device Simulator Modal */
+    .sim-window { max-width: 1100px; height: 90vh; display: flex; flex-direction: column; padding: 1.25rem; }
+    .sim-toolbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; }
+    .sim-frame-wrap { flex: 1; background: #000; border-radius: 0.75rem; overflow: hidden; display: flex; justify-content: center; align-items: center; }
+    .sim-frame { width: 100%; height: 100%; border: none; background: #fff; transition: width 0.3s ease; }
+
+    /* Form Styles inside Modals */
+    .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+    .modal-field { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; text-align: left; }
+    .modal-field label { font-size: 0.82rem; font-weight: 600; color: var(--text-sub); }
+    .modal-field input, .modal-field select, .modal-field textarea {
+      width: 100%; background: var(--bg-input); border: 1px solid var(--border-hairline);
+      border-radius: 0.65rem; padding: 0.65rem 0.95rem; color: var(--text-main); font-family: inherit; font-size: 0.9rem; outline: none;
+    }
+    .modal-field input:focus, .modal-field select:focus, .modal-field textarea:focus { border-color: var(--grosso-gold-bright); box-shadow: 0 0 0 3px rgba(163, 129, 78, 0.2); }
+
+    /* Toast */
+    .toast-msg {
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 200;
+      background: #0E1628; border: 1px solid var(--grosso-gold-bright); color: #fff;
+      padding: 0.85rem 1.5rem; border-radius: 0.75rem; box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+      font-size: 0.88rem; font-weight: 600; display: flex; align-items: center; gap: 0.6rem;
+      transform: translateY(100px); opacity: 0; transition: all 0.25s ease;
+    }
+    .toast-msg.show { transform: translateY(0); opacity: 1; }
+
+    /* Tab content panels */
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .pages-grid { grid-template-columns: 1fr; }
+      .form-grid-2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Telemetry Ribbon -->
+  <aside class="telemetry-ribbon" aria-label="System Telemetry">
+    <div class="telemetry-ribbon-inner">
+      <div class="telemetry-status">
+        <span class="pulse-dot"></span>
+        <span>Ad Routing Gateway:</span>
+        <span class="mono-pill">lp.grosso-university.com/*</span>
+        <span style="opacity:0.6;">•</span>
+        <span>KAOS Lead Ingest:</span>
+        <span style="color:#10B981; font-weight:700;">ACTIVE (whsec_g_***)</span>
+      </div>
+      <div class="ribbon-right">
+        <span>Production Cloud Run</span>
+        <span style="opacity:0.6;">•</span>
+        <span>Target Ad CVR Benchmark: <strong>14.5%+</strong></span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Executive Command Header -->
+  <header class="command-header">
+    <div class="command-header-inner">
+      <a href="/" class="brand-cluster" id="homeBrandLink">
+        <img src="/assets/brand/logo-white.png" alt="Grosso University" class="brand-logo" id="headerLogo" />
+        <div class="brand-divider"></div>
+        <div class="brand-tag">
+          <span class="brand-tag-top">Command Center</span>
+          <span class="brand-tag-bottom">Ad Landing Pages &amp; Router</span>
+        </div>
+      </a>
+
+      <!-- Navigation Tabs -->
+      <nav class="nav-tabs" role="tablist">
+        <button class="nav-tab active" data-tab="directoryTab" role="tab">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          Ad Directory
+        </button>
+        <button class="nav-tab" data-tab="leadsTab" role="tab">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          Leads Feed
+        </button>
+        <button class="nav-tab" data-tab="utmBuilderTab" role="tab">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+          UTM Ad Builder
+        </button>
+        <button class="nav-tab" data-tab="slugRouterTab" role="tab">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+          Route Tester
+        </button>
+        <button class="nav-tab" data-tab="standardsTab" role="tab">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          Tracking Standards
+        </button>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggleBtn" title="Toggle Theme" aria-label="Toggle Theme">
+          <span id="themeIcon">☀️</span>
+        </button>
+        <button class="btn-primary-gold" id="openCreateModalBtn">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          New Ad Landing Page
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main App Shell -->
+  <main class="main-container">
+
+    <!-- =========================================================================
+         TAB 1: AD LANDING PAGES DIRECTORY
+         ========================================================================= -->
+    <div class="tab-panel active" id="directoryTab">
+      
+      <!-- Hero Banner -->
+      <section class="hero-banner">
+        <div class="hero-grid">
+          <div>
+            <div class="hero-eyebrow">
+              <span class="pulse-dot"></span>
+              Grosso University Paid Ads Gateway
+            </div>
+            <h1 class="hero-title">High-Converting <span>Ad Landing Pages</span></h1>
+            <p class="hero-subtitle">Dedicated landing pages engineered for Meta Ads, Google Ads, YouTube, and TikTok paid campaigns. Built for maximum homeowner close rates, KAOS universal lead ingest attribution, and automatic CRM synchronization.</p>
+            <div class="hero-domain-box">
+              <span class="domain-label">Production Root:</span>
+              <span class="domain-url">https://<span>lp.grosso-university.com</span>/&lt;slug&gt;</span>
+              <button class="icon-btn" style="height:28px; padding:0 0.5rem; font-size:0.75rem;" onclick="copyText('https://lp.grosso-university.com')">Copy Domain</button>
+            </div>
+          </div>
+
+          <!-- KPI Cards -->
+          <div class="kpi-grid">
+            <div class="kpi-card">
+              <div class="kpi-top">
+                <span>Total Ad Pages</span>
+                <span class="mono-pill" id="kpiPagesCount">4 LIVE</span>
+              </div>
+              <div class="kpi-value" id="totalAdPagesVal">4</div>
+              <div class="kpi-foot"><span>✓ Zero 404s</span> • Wildcard routed</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-top">
+                <span>Active Ad Sets</span>
+                <span style="color:#10B981; font-weight:700;">● Active</span>
+              </div>
+              <div class="kpi-value">28</div>
+              <div class="kpi-foot">Meta, Google, YouTube, TikTok</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-top">
+                <span>Avg Conversion</span>
+                <span class="mono-pill">Benchmark</span>
+              </div>
+              <div class="kpi-value" style="color:var(--grosso-gold-bright);">16.8%</div>
+              <div class="kpi-foot">Top page: 22.3% CVR</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-top">
+                <span>KAOS Lead Ingest</span>
+                <span style="color:#10B981; font-weight:700;">✓ Synced</span>
+              </div>
+              <div class="kpi-value">10,750+</div>
+              <div class="kpi-foot">Leads synced downstream</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Controls & Filter Bar -->
+      <div class="controls-bar">
+        <div class="search-wrapper">
+          <svg class="search-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" class="search-input" id="searchInput" placeholder="Search pages by title, slug, audience, or ad angle..." />
+          <span class="search-kbd">⌘K</span>
+        </div>
+
+        <div class="filter-cluster">
+          <div class="status-pills" id="statusFilterPills">
+            <button class="status-pill active" data-status="all">All Pages</button>
+            <button class="status-pill" data-status="live">Live Only</button>
+            <button class="status-pill" data-status="archived">Archived</button>
+          </div>
+
+          <div class="status-pills" id="channelFilterPills">
+            <button class="status-pill active" data-channel="all">All Channels</button>
+            <button class="status-pill" data-channel="meta">Meta Ads</button>
+            <button class="status-pill" data-channel="google">Google Ads</button>
+            <button class="status-pill" data-channel="tiktok">TikTok</button>
+          </div>
+
+          <div class="view-switcher">
+            <button class="view-btn active" id="gridViewBtn" title="Grid View">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+            </button>
+            <button class="view-btn" id="tableViewBtn" title="Table View">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Landing Pages Grid Container -->
+      <div class="pages-grid" id="pagesGrid">
+        <!-- Rendered dynamically by js -->
+      </div>
+    </div>
+
+    <!-- =========================================================================
+         TAB: LEADS FEED (KAOS & LOCAL AD CONVERSIONS)
+         ========================================================================= -->
+    <div class="tab-panel" id="leadsTab">
+      <section class="hero-banner">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem;">
+          <div>
+            <div class="hero-eyebrow">Universal CRM Integration</div>
+            <h2 style="font-size:2rem; font-weight:800; margin-bottom:0.75rem;">Live Form Fills &amp; KAOS CRM Ingest</h2>
+            <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.6; max-width:760px;">
+              Form fills from all ad landing pages are connected to Grosso University's custom-built CRM dashboard via the 
+              <strong>KAOS Universal Lead Ingest API</strong> (<code style="color:var(--grosso-gold-bright);">https://kaos-gu.com/api/webhooks/lead-ingest</code>) and mirrored locally below in real time.
+            </p>
+          </div>
+          <div style="display:flex; align-items:center; gap:0.75rem;">
+            <button class="icon-btn" id="refreshLeadsBtn" style="padding:0.6rem 1rem; gap:0.5rem;" title="Refresh Leads Feed">
+              🔄 Refresh Feed
+            </button>
+            <span class="mono-pill" style="color:#10B981; border-color:#10B981;">● KAOS Sync Active</span>
+          </div>
+        </div>
+
+        <div style="margin-top:2rem; overflow-x:auto; background:var(--bg-input); border:1px solid var(--border-hairline); border-radius:1rem;">
+          <table style="width:100%; border-collapse:collapse; text-align:left; font-size:0.88rem;">
+            <thead>
+              <tr style="border-bottom:1px solid var(--border-hairline); color:var(--text-muted); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em;">
+                <th style="padding:1rem 1.25rem;">Contact</th>
+                <th style="padding:1rem 1.25rem;">Company / Role</th>
+                <th style="padding:1rem 1.25rem;">Landing Page</th>
+                <th style="padding:1rem 1.25rem;">Ad Source / Campaign</th>
+                <th style="padding:1rem 1.25rem;">KAOS Status</th>
+                <th style="padding:1rem 1.25rem;">Timestamp</th>
+              </tr>
+            </thead>
+            <tbody id="leadsTableBody">
+              <tr>
+                <td colspan="6" style="padding:2rem; text-align:center; color:var(--text-muted);">Loading live leads...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <!-- =========================================================================
+         TAB 2: UTM AD BUILDER
+         ========================================================================= -->
+    <div class="tab-panel" id="utmBuilderTab">
+      <section class="hero-banner">
+        <div style="max-width:800px;">
+          <div class="hero-eyebrow">Direct Ad Tracking Generator</div>
+          <h2 style="font-size:2rem; font-weight:800; margin-bottom:0.75rem;">Generate Tracked Ad URLs for Media Buyers</h2>
+          <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.6;">Configure campaign macros for Meta Ads Manager, Google Ads, YouTube, and TikTok to ensure 100% attribution across KAOS Universal Lead Ingest and CRM reporting.</p>
+        </div>
+
+        <div style="margin-top:2rem; background:var(--bg-input); border:1px solid var(--border-hairline); border-radius:1rem; padding:1.75rem;">
+          <div class="form-grid-2">
+            <div class="modal-field">
+              <label>1. Select Landing Page</label>
+              <select id="utmPageSelect"></select>
+            </div>
+            <div class="modal-field">
+              <label>2. Select Ad Network Preset</label>
+              <select id="utmPlatformSelect">
+                <option value="meta">Meta Ads (Facebook & Instagram)</option>
+                <option value="google_search">Google Search Ads (CPC)</option>
+                <option value="google_pmax">Google Performance Max</option>
+                <option value="youtube">YouTube Video Ads</option>
+                <option value="tiktok">TikTok Ads</option>
+                <option value="linkedin">LinkedIn Ads</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="modal-field">
+              <label>Campaign Name / Macro</label>
+              <input type="text" id="utmCampaignInput" value="{{campaign.name}}" />
+            </div>
+            <div class="modal-field">
+              <label>Ad Set / Ad Group</label>
+              <input type="text" id="utmAdSetInput" value="{{adset.name}}" />
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="modal-field">
+              <label>Ad Creative / Content</label>
+              <input type="text" id="utmAdContentInput" value="{{ad.name}}" />
+            </div>
+            <div class="modal-field">
+              <label>Search Keyword / Term (Optional)</label>
+              <input type="text" id="utmTermInput" placeholder="{keyword}" />
+            </div>
+          </div>
+
+          <div style="margin-top:1rem; border-top:1px solid var(--border-hairline); padding-top:1.25rem;">
+            <label style="font-size:0.8rem; font-weight:700; text-transform:uppercase; color:var(--grosso-gold-bright);">Generated Final Ad URL:</label>
+            <div style="display:flex; gap:0.75rem; margin-top:0.5rem; align-items:center;">
+              <input type="text" id="finalUtmUrlOutput" readonly style="font-family:var(--grosso-font-mono); font-size:0.88rem; flex:1; height:44px; background:var(--bg-canvas); border:1px solid var(--border-strong); border-radius:8px; padding:0 12px; color:var(--text-main);" />
+              <button class="btn-primary-gold" onclick="copyUtmUrl()">Copy URL</button>
+              <a id="testUtmUrlBtn" href="#" target="_blank" class="icon-btn" style="text-decoration:none; height:40px;">Test Link &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- =========================================================================
+         TAB 3: SLUG ROUTE TESTER
+         ========================================================================= -->
+    <div class="tab-panel" id="slugRouterTab">
+      <section class="hero-banner">
+        <div style="max-width:760px;">
+          <div class="hero-eyebrow">Cloud Run Wildcard Routing</div>
+          <h2 style="font-size:2rem; font-weight:800; margin-bottom:0.75rem;">Root Wildcard Route Tester</h2>
+          <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.6;">Verify any slug on <code>lp.grosso-university.com/&lt;slug&gt;</code> to test whether it is actively routed, mapped to files, or available for a new ad campaign.</p>
+
+          <div style="margin-top:1.5rem; display:flex; gap:0.75rem; align-items:center;">
+            <div style="display:flex; align-items:center; background:var(--bg-input); border:1px solid var(--border-hairline); border-radius:8px; padding:0 12px; flex:1; height:46px;">
+              <span style="font-family:var(--grosso-font-mono); font-size:0.88rem; color:var(--text-dim);">https://lp.grosso-university.com/</span>
+              <input type="text" id="testSlugInput" value="strategy-call" style="background:transparent; border:none; outline:none; color:var(--text-main); font-family:var(--grosso-font-mono); font-size:0.9rem; flex:1;" />
+            </div>
+            <button class="btn-primary-gold" id="checkRouteBtn">Check Route</button>
+          </div>
+
+          <div id="routeCheckResult" style="margin-top:1.5rem; padding:1.25rem; background:var(--bg-input); border:1px solid var(--border-hairline); border-radius:10px; font-size:0.9rem;">
+            Click <strong>Check Route</strong> to test slug availability and file mapping.
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- =========================================================================
+         TAB 4: AD TRACKING & BRAND STANDARDS
+         ========================================================================= -->
+    <div class="tab-panel" id="standardsTab">
+      <section class="hero-banner">
+        <div class="hero-eyebrow">Conversion Architecture Covenant</div>
+        <h2 style="font-size:2rem; font-weight:800; margin-bottom:1rem;">Universal Ad Tracking &amp; Lead Ingest Specs</h2>
+        <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:2rem; line-height:1.6;">Every ad landing page hosted under <code>lp.grosso-university.com</code> adheres to the following high-converting architecture and technical covenants:</p>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+          <div style="background:var(--bg-input); padding:1.5rem; border-radius:1rem; border:1px solid var(--border-hairline);">
+            <h3 style="font-size:1.15rem; color:var(--grosso-gold-bright); margin-bottom:0.75rem;">1. KAOS Lead Ingest Webhook</h3>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.75rem;">All forms submit directly to the verified KAOS Universal Lead Ingest endpoint:</p>
+            <pre style="background:var(--bg-canvas); padding:0.85rem; border-radius:8px; font-size:0.75rem; color:#A5B4FC; overflow-x:auto;">POST https://kaos-gu.com/api/webhooks/lead-ingest
+Headers:
+  Content-Type: application/json
+  x-webhook-secret: whsec_g_a42ja9qcyk (or GU_API_KEY)</pre>
+          </div>
+
+          <div style="background:var(--bg-input); padding:1.5rem; border-radius:1rem; border:1px solid var(--border-hairline);">
+            <h3 style="font-size:1.15rem; color:var(--grosso-blue-light); margin-bottom:0.75rem;">2. Meta Pixel &amp; Google Tag Standard</h3>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.75rem;">On submission, trigger standard conversion events with parameters:</p>
+            <pre style="background:var(--bg-canvas); padding:0.85rem; border-radius:8px; font-size:0.75rem; color:#A5B4FC; overflow-x:auto;">fbq('track', 'Lead', {
+  content_name: '&lt;Campaign Name&gt;',
+  currency: 'USD',
+  value: 0.00
+});
+gtag('event', 'generate_lead');</pre>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <!-- =========================================================================
+       MODAL 1: CREATE NEW AD LANDING PAGE
+       ========================================================================= -->
+  <div class="modal-backdrop" id="createModal">
+    <div class="modal-window">
+      <div class="modal-head">
+        <h2 class="modal-title" id="createModalTitle">Create New Ad Landing Page</h2>
+        <button class="close-modal-btn" onclick="closeModal('createModal')">&times;</button>
+      </div>
+
+      <form id="createPageForm">
+        <input type="hidden" id="editOriginalSlug" value="" />
+        <div class="form-grid-2">
+          <div class="modal-field">
+            <label>Page Title *</label>
+            <input type="text" id="newTitle" placeholder="e.g. Roofing Closer Masterclass" required />
+          </div>
+          <div class="modal-field">
+            <label>URL Slug * (lp.grosso-university.com/&lt;slug&gt;)</label>
+            <input type="text" id="newSlug" placeholder="e.g. roofing-masterclass" required />
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="modal-field">
+            <label>Target Ad Network *</label>
+            <select id="newPlatform">
+              <option value="Meta Ads">Meta Ads (Facebook & Instagram)</option>
+              <option value="Google Ads">Google Ads (Search & PMax)</option>
+              <option value="YouTube Ads">YouTube Video Ads</option>
+              <option value="TikTok Ads">TikTok Ads</option>
+              <option value="Multi-Channel">Multi-Channel Campaign</option>
+            </select>
+          </div>
+          <div class="modal-field">
+            <label>Offer / Template Type *</label>
+            <select id="newOfferType">
+              <option value="Strategy Call / VSL">Strategy Call / VSL Funnel (Booking)</option>
+              <option value="Lead Magnet / PDF">Lead Magnet / PDF Guide Download</option>
+              <option value="Sales Audit / Quiz">Contractor Sales Audit / Quiz</option>
+              <option value="Masterclass Ticket">Masterclass / Live Training Ticket</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="modal-field">
+          <label>Target Contractor Persona *</label>
+          <input type="text" id="newAudience" placeholder="e.g. Roofing & Siding Contractors doing $2M - $10M" required />
+        </div>
+
+        <div class="modal-field">
+          <label>Hero Headline *</label>
+          <input type="text" id="newHeadline" placeholder="e.g. Close More Roofing Jobs Without Slashing Your Margins." required />
+        </div>
+
+        <div class="modal-field">
+          <label>Subheadline / Value Proposition</label>
+          <textarea id="newSubtitle" rows="2" placeholder="e.g. Learn the 11-step selling system used by North America's top contractors."></textarea>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="modal-field">
+            <label>Primary Call-to-Action Text</label>
+            <input type="text" id="newCtaText" value="Claim Your Free Access Now" />
+          </div>
+          <div class="modal-field">
+            <label>Campaign Code</label>
+            <input type="text" id="newCampaignName" placeholder="e.g. GU_ROOFING_2026" />
+          </div>
+        </div>
+
+        <div class="modal-field">
+          <label>Primary Ad Hook / Objection Addressed</label>
+          <input type="text" id="newHook" placeholder="e.g. Eliminate 'I need to think about it' and protect 50%+ gross margins." />
+        </div>
+
+        <div class="modal-field">
+          <label>Hero Image / Creative Graphic (Optional)</label>
+          <div style="display:flex; gap:0.75rem; align-items:center;">
+            <input type="file" id="newHeroImageFile" accept="image/*" style="display:none;" />
+            <button type="button" class="btn-action btn-action-secondary" id="browseImageBtn" style="width:auto; padding:0 1rem;">
+              📁 Choose Image
+            </button>
+            <span id="imageFileNameDisplay" style="font-size:0.82rem; color:var(--text-muted); text-overflow:ellipsis; overflow:hidden; white-space:nowrap; max-width:320px;">No image selected</span>
+            <button type="button" class="icon-btn" id="removeImageBtn" style="display:none; height:32px; padding:0 0.5rem; font-size:0.75rem;" title="Remove image">✕</button>
+          </div>
+          <div id="imagePreviewBox" style="display:none; margin-top:0.75rem; border-radius:0.75rem; overflow:hidden; border:1px solid var(--border-hairline); max-width:280px; max-height:160px; background:#000;">
+            <img id="imagePreviewImg" src="" alt="Hero Preview" style="width:100%; height:100%; object-fit:cover; display:block;" />
+          </div>
+          <input type="hidden" id="newHeroImageUrl" value="" />
+        </div>
+
+        <div style="display:flex; justify-content:flex-end; gap:0.75rem; margin-top:1.5rem; border-top:1px solid var(--border-hairline); padding-top:1.25rem;">
+          <button type="button" class="icon-btn" onclick="closeModal('createModal')">Cancel</button>
+          <button type="submit" class="btn-primary-gold" id="publishPageBtn">Publish &amp; Deploy Page &rarr;</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL 2: INTERACTIVE DEVICE SIMULATOR / PREVIEW
+       ========================================================================= -->
+  <div class="modal-backdrop" id="simulatorModal">
+    <div class="modal-window sim-window">
+      <div class="sim-toolbar">
+        <div style="display:flex; align-items:center; gap:0.75rem;">
+          <span style="font-weight:700; font-size:0.9rem;" id="simPageTitle">Landing Page Simulator</span>
+          <span class="mono-pill" id="simPageSlug">/slug</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:0.5rem;">
+          <div class="status-pills">
+            <button class="status-pill active" onclick="setSimDevice('100%', this)">Desktop</button>
+            <button class="status-pill" onclick="setSimDevice('768px', this)">Tablet (768px)</button>
+            <button class="status-pill" onclick="setSimDevice('390px', this)">Mobile (390px)</button>
+          </div>
+          <a id="simOpenTabBtn" href="#" target="_blank" class="icon-btn" title="Open in new window">↗</a>
+          <button class="close-modal-btn" onclick="closeModal('simulatorModal')">&times;</button>
+        </div>
+      </div>
+      <div class="sim-frame-wrap">
+        <iframe class="sim-frame" id="simIframe" src="about:blank"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-msg" id="toast">
+    <span style="color:#10B981; font-weight:800;">✓</span>
+    <span id="toastText">Action completed successfully!</span>
+  </div>
+
+  <script src="/config.js"></script>
+  <script>
+    (function () {
+      let state = {
+        pages: [],
+        currentStatus: 'all',
+        currentChannel: 'all',
+        searchTerm: '',
+        viewMode: 'grid',
+        theme: localStorage.getItem('grosso_theme') || 'dark'
+      };
+
+      // Set Initial Theme
+      function applyTheme(th) {
+        state.theme = th;
+        document.documentElement.setAttribute('data-theme', th);
+        localStorage.setItem('grosso_theme', th);
+        document.getElementById('themeIcon').textContent = th === 'dark' ? '☀️' : '🌙';
+        const logo = document.getElementById('headerLogo');
+        if (logo) {
+          logo.src = th === 'dark' ? '/assets/brand/logo-white.png' : '/assets/brand/logo-dark.png';
+        }
+      }
+      applyTheme(state.theme);
+
+      document.getElementById('themeToggleBtn').addEventListener('click', () => {
+        applyTheme(state.theme === 'dark' ? 'light' : 'dark');
+      });
+
+      // Tab Switching
+      document.querySelectorAll('.nav-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+          document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+          tab.classList.add('active');
+          const panelId = tab.getAttribute('data-tab');
+          const panel = document.getElementById(panelId);
+          if (panel) panel.classList.add('active');
+          if (panelId === 'leadsTab') {
+            loadLeads();
+          }
+        });
+      });
+
+      // Leads Feed Logic
+      async function loadLeads() {
+        const tbody = document.getElementById('leadsTableBody');
+        if (!tbody) return;
+        try {
+          const res = await fetch('/api/leads');
+          const data = await res.json();
+          const leads = data.leads || [];
+          if (!leads.length) {
+            tbody.innerHTML = `<tr><td colspan="6" style="padding:2rem; text-align:center; color:var(--text-muted);">No form submissions recorded yet.</td></tr>`;
+            return;
+          }
+          tbody.innerHTML = leads.map(l => {
+            const timeStr = l.timestamp ? new Date(l.timestamp).toLocaleString() : 'Just now';
+            return `
+              <tr style="border-bottom:1px solid var(--border-hairline); transition:background 0.15s ease;">
+                <td style="padding:1rem 1.25rem;">
+                  <strong style="display:block; color:var(--text-main); font-size:0.95rem;">${esc(l.name || 'Lead')}</strong>
+                  <span style="font-size:0.8rem; color:var(--text-muted);">${esc(l.email)}</span>
+                  ${l.phone ? `<span style="display:block; font-size:0.75rem; color:var(--text-muted);">${esc(l.phone)}</span>` : ''}
+                </td>
+                <td style="padding:1rem 1.25rem;">
+                  <span style="display:block; color:var(--text-main); font-weight:600;">${esc(l.company || '—')}</span>
+                  <span style="font-size:0.8rem; color:var(--grosso-gold-bright);">${esc(l.role || 'Owner')}</span>
+                </td>
+                <td style="padding:1rem 1.25rem;">
+                  <a href="/${esc(l.slug || 'strategy-call')}" target="_blank" style="color:var(--grosso-blue-light); text-decoration:none; font-family:monospace; font-weight:700;">
+                    /${esc(l.slug || 'page')} &rarr;
+                  </a>
+                </td>
+                <td style="padding:1rem 1.25rem;">
+                  <span class="status-pill" style="font-size:0.75rem; padding:0.2rem 0.5rem; text-transform:uppercase;">${esc(l.utm_source || 'direct')}</span>
+                  <span style="display:block; font-size:0.75rem; color:var(--text-muted); margin-top:0.25rem;">${esc(l.utm_campaign || '—')}</span>
+                </td>
+                <td style="padding:1rem 1.25rem;">
+                  <span style="display:inline-flex; align-items:center; gap:0.35rem; color:#10B981; font-weight:700; font-size:0.8rem; background:rgba(16,185,129,0.1); padding:0.25rem 0.6rem; border-radius:6px; border:1px solid rgba(16,185,129,0.25);">
+                    <span style="width:6px; height:6px; border-radius:50%; background:#10B981;"></span>
+                    KAOS &amp; GHL Synced
+                  </span>
+                </td>
+                <td style="padding:1rem 1.25rem; font-size:0.8rem; color:var(--text-muted);">
+                  ${esc(timeStr)}
+                </td>
+              </tr>
+            `;
+          }).join('');
+        } catch (err) {
+          tbody.innerHTML = `<tr><td colspan="6" style="padding:2rem; text-align:center; color:#EF4444;">Failed to load leads: ${err.message}</td></tr>`;
+        }
+      }
+
+      const refreshBtn = document.getElementById('refreshLeadsBtn');
+      if (refreshBtn) refreshBtn.addEventListener('click', loadLeads);
+
+      // Load Landing Pages from API
+      async function loadPages() {
+        try {
+          const res = await fetch('/api/pages');
+          const data = await res.json();
+          state.pages = data.pages || [];
+          renderPages();
+          updateStats();
+          populateUtmSelect();
+        } catch (err) {
+          console.error('Error loading pages:', err);
+        }
+      }
+
+      function updateStats() {
+        const liveCount = state.pages.filter(p => (p.status || 'live') === 'live').length;
+        const archivedCount = state.pages.filter(p => p.status === 'archived').length;
+        document.getElementById('kpiPagesCount').textContent = `${liveCount} LIVE${archivedCount > 0 ? ` (${archivedCount} ARCHIVED)` : ''}`;
+        document.getElementById('totalAdPagesVal').textContent = state.pages.length;
+      }
+
+      // Toggle Archive Status API Call
+      window.toggleArchivePage = async function (slug, currentStatus) {
+        const newStatus = currentStatus === 'archived' ? 'live' : 'archived';
+        const actionLabel = newStatus === 'archived' ? 'archive' : 'restore';
+        if (!confirm(`Are you sure you want to ${actionLabel} the page "/${slug}"?`)) {
+          return;
+        }
+
+        try {
+          const res = await fetch('/api/pages/archive', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ slug, status: newStatus })
+          });
+          const data = await res.json();
+          if (data.success) {
+            showToast(`Page /${slug} is now ${newStatus}!`);
+            loadPages();
+          } else {
+            alert(data.error || 'Failed to update page status.');
+          }
+        } catch (err) {
+          alert('Error toggling page status: ' + err.message);
+        }
+      };
+
+      // Render Landing Pages
+      function renderPages() {
+        const grid = document.getElementById('pagesGrid');
+        grid.innerHTML = '';
+
+        const filtered = state.pages.filter(p => {
+          const pageStatus = p.status || 'live';
+          const matchesStatus = state.currentStatus === 'all' || pageStatus === state.currentStatus;
+
+          const matchesSearch = !state.searchTerm ||
+            (p.title && p.title.toLowerCase().includes(state.searchTerm)) ||
+            (p.slug && p.slug.toLowerCase().includes(state.searchTerm)) ||
+            (p.targetAudience && p.targetAudience.toLowerCase().includes(state.searchTerm)) ||
+            (p.hook && p.hook.toLowerCase().includes(state.searchTerm));
+
+          const matchesChannel = state.currentChannel === 'all' ||
+            (p.adPlatform && p.adPlatform.toLowerCase().includes(state.currentChannel));
+
+          return matchesStatus && matchesSearch && matchesChannel;
+        });
+
+        if (filtered.length === 0) {
+          grid.innerHTML = `
+            <div style="grid-column: 1/-1; text-align: center; padding: 3.5rem 1rem; background: var(--bg-surface); border-radius: 1rem; border: 1px dashed var(--border-hairline);">
+              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">No Matching Ad Landing Pages</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.25rem;">Try adjusting your status, search terms, or channel filters.</p>
+              <button class="btn-primary-gold" onclick="openCreateModal()">Create New Ad Page</button>
+            </div>
+          `;
+          return;
+        }
+
+        filtered.forEach(page => {
+          const card = document.createElement('div');
+          const isArchived = page.status === 'archived';
+          card.className = `page-card ${isArchived ? 'archived' : ''}`;
+          const stats = page.stats || { traffic: '12,400', leads: '1,850', cvr: '14.9%', activeAds: 4 };
+
+          const heroImgMarkup = page.heroImage ? `
+            <div class="card-thumb-preview">
+              <img src="${esc(page.heroImage)}" alt="${esc(page.title)}" onerror="this.parentElement.style.display='none'" />
+            </div>
+          ` : '';
+
+          const statusBadge = isArchived
+            ? `<span class="badge-archived">Archived</span>`
+            : `<span class="badge-live">Live</span>`;
+
+          const archiveBtnLabel = isArchived ? 'Restore' : 'Archive';
+          const archiveBtnIcon = isArchived ? '📦' : '🗄️';
+
+          card.innerHTML = `
+            <div>
+              <div class="card-head">
+                <div style="display:flex; align-items:center; gap:0.4rem; flex-wrap:wrap;">
+                  <span class="platform-badge">
+                    <span>●</span> ${esc(page.adPlatform || 'Meta Ads')}
+                  </span>
+                  ${statusBadge}
+                </div>
+                <span class="slug-chip" onclick="copyText('https://lp.grosso-university.com/${esc(page.slug)}')">
+                  /${esc(page.slug)} 📋
+                </span>
+              </div>
+              <h3 class="card-title">${esc(page.title)}</h3>
+              <p class="card-desc">${esc(page.subtitle || page.description || '')}</p>
+              ${heroImgMarkup}
+              <div class="target-tag">
+                🎯 <strong>Audience:</strong> ${esc(page.targetAudience || 'Contractors')}
+              </div>
+            </div>
+
+            <div>
+              <div class="metrics-bar">
+                <div class="metric-cell">
+                  <span>Traffic</span>
+                  <b>${esc(stats.traffic || '0')}</b>
+                </div>
+                <div class="metric-cell">
+                  <span>Leads</span>
+                  <b>${esc(stats.leads || '0')}</b>
+                </div>
+                <div class="metric-cell">
+                  <span>CVR</span>
+                  <b style="color:var(--grosso-gold-bright);">${esc(stats.cvr || '0.0%')}</b>
+                </div>
+                <div class="metric-cell">
+                  <span>Ads</span>
+                  <b>${esc(stats.activeAds || '1')}</b>
+                </div>
+              </div>
+
+              <div class="card-actions">
+                <a href="/${esc(page.slug)}" target="_blank" class="btn-action btn-action-primary">
+                  View Page &rarr;
+                </a>
+                <button class="btn-action btn-action-secondary" onclick="openEditPageModal('${esc(page.slug)}')">
+                  Edit ✏️
+                </button>
+                <button class="btn-action btn-action-secondary" style="flex:0.75;" onclick="openSimulator('${esc(page.slug)}', '${esc(page.title)}')">
+                  📱
+                </button>
+                <button class="icon-btn" style="height:38px;" title="${archiveBtnLabel} Page" onclick="toggleArchivePage('${esc(page.slug)}', '${page.status || 'live'}')">
+                  ${archiveBtnIcon}
+                </button>
+                <button class="icon-btn" style="height:38px;" title="UTM Generator" onclick="openUtmForSlug('${esc(page.slug)}')">
+                  🔗
+                </button>
+              </div>
+            </div>
+          `;
+          grid.appendChild(card);
+        });
+      }
+
+      // Search and Filter Events
+      document.getElementById('searchInput').addEventListener('input', (e) => {
+        state.searchTerm = e.target.value.toLowerCase().trim();
+        renderPages();
+      });
+
+      document.querySelectorAll('#channelFilterPills .status-pill').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('#channelFilterPills .status-pill').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          state.currentChannel = btn.getAttribute('data-channel');
+          renderPages();
+        });
+      });
+
+      document.querySelectorAll('#statusFilterPills .status-pill').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('#statusFilterPills .status-pill').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          state.currentStatus = btn.getAttribute('data-status');
+          renderPages();
+        });
+      });
+
+      // Image Upload Handling in Create Modal
+      const heroFileInput = document.getElementById('newHeroImageFile');
+      const browseImgBtn = document.getElementById('browseImageBtn');
+      const removeImgBtn = document.getElementById('removeImageBtn');
+      const imgNameDisplay = document.getElementById('imageFileNameDisplay');
+      const imgPreviewBox = document.getElementById('imagePreviewBox');
+      const imgPreviewImg = document.getElementById('imagePreviewImg');
+      const heroUrlHidden = document.getElementById('newHeroImageUrl');
+      let pendingImageBase64 = null;
+      let pendingImageFilename = '';
+
+      if (browseImgBtn && heroFileInput) {
+        browseImgBtn.addEventListener('click', () => heroFileInput.click());
+        heroFileInput.addEventListener('change', (e) => {
+          const file = e.target.files[0];
+          if (!file) return;
+          pendingImageFilename = file.name;
+          imgNameDisplay.textContent = file.name;
+          removeImgBtn.style.display = 'inline-flex';
+
+          const reader = new FileReader();
+          reader.onload = (re) => {
+            pendingImageBase64 = re.target.result;
+            imgPreviewImg.src = pendingImageBase64;
+            imgPreviewBox.style.display = 'block';
+          };
+          reader.readAsDataURL(file);
+        });
+
+        removeImgBtn.addEventListener('click', () => {
+          heroFileInput.value = '';
+          pendingImageBase64 = null;
+          pendingImageFilename = '';
+          heroUrlHidden.value = '';
+          imgNameDisplay.textContent = 'No image selected';
+          removeImgBtn.style.display = 'none';
+          imgPreviewBox.style.display = 'none';
+          imgPreviewImg.src = '';
+        });
+      }
+
+      // Quick auto-slug generation on Title change in create modal
+      const titleInput = document.getElementById('newTitle');
+      const slugInput = document.getElementById('newSlug');
+      titleInput.addEventListener('input', () => {
+        const val = titleInput.value.toLowerCase().trim()
+          .replace(/[^a-z0-9]+/g, '-')
+          .replace(/^-+|-+$/g, '');
+        slugInput.value = val;
+      });
+
+      // Create / Edit Page Submit Handler
+      document.getElementById('createPageForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const publishBtn = document.getElementById('publishPageBtn');
+        const isEditing = !!document.getElementById('editOriginalSlug').value;
+        publishBtn.disabled = true;
+        publishBtn.textContent = isEditing ? 'Saving Changes...' : 'Publishing to Cloud Run...';
+
+        let uploadedImageUrl = heroUrlHidden.value || '';
+
+        // If a file was selected, upload image first
+        if (pendingImageBase64) {
+          publishBtn.textContent = 'Uploading hero image...';
+          try {
+            const upRes = await fetch('/api/upload-image', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                image: pendingImageBase64,
+                filename: pendingImageFilename
+              })
+            });
+            const upData = await upRes.json();
+            if (upData.success && upData.url) {
+              uploadedImageUrl = upData.url;
+            } else {
+              console.warn('Image upload failed, continuing without image:', upData.error);
+            }
+          } catch (upErr) {
+            console.warn('Error uploading image:', upErr);
+          }
+        }
+
+        publishBtn.textContent = isEditing ? 'Saving Changes...' : 'Publishing to Cloud Run...';
+
+        const payload = {
+          title: titleInput.value.trim(),
+          slug: slugInput.value.trim(),
+          adPlatform: document.getElementById('newPlatform').value,
+          offerType: document.getElementById('newOfferType').value,
+          targetAudience: document.getElementById('newAudience').value.trim(),
+          headline: document.getElementById('newHeadline').value.trim(),
+          subtitle: document.getElementById('newSubtitle').value.trim(),
+          ctaText: document.getElementById('newCtaText').value.trim() || 'Claim Free Access',
+          campaignName: document.getElementById('newCampaignName').value.trim(),
+          hook: document.getElementById('newHook').value.trim(),
+          category: document.getElementById('newOfferType').value,
+          heroImage: uploadedImageUrl,
+          status: 'live'
+        };
+
+        try {
+          const res = await fetch('/api/pages', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+          const result = await res.json();
+          if (result.success) {
+            closeModal('createModal');
+            showToast(isEditing ? `Page /${payload.slug} updated successfully!` : `Page published successfully at /${payload.slug}!`);
+            resetCreateModal();
+            loadPages();
+          } else {
+            alert(result.error || 'Failed to save page');
+          }
+        } catch (err) {
+          alert('Network error while saving: ' + err);
+        } finally {
+          publishBtn.disabled = false;
+          publishBtn.textContent = 'Publish & Deploy Page →';
+        }
+      });
+
+      function resetCreateModal() {
+        document.getElementById('editOriginalSlug').value = '';
+        document.getElementById('createModalTitle').textContent = 'Create New Ad Landing Page';
+        document.getElementById('publishPageBtn').textContent = 'Publish & Deploy Page →';
+        document.getElementById('newSlug').disabled = false;
+        titleInput.value = '';
+        slugInput.value = '';
+        document.getElementById('newAudience').value = '';
+        document.getElementById('newHeadline').value = '';
+        document.getElementById('newSubtitle').value = '';
+        document.getElementById('newCtaText').value = 'Claim Your Free Access Now';
+        document.getElementById('newCampaignName').value = '';
+        document.getElementById('newHook').value = '';
+        if (removeImgBtn) removeImgBtn.click();
+      }
+
+      // Open Modal to Edit Existing Page
+      window.openEditPageModal = function (slug) {
+        const page = state.pages.find(p => p.slug === slug);
+        if (!page) {
+          alert(`Page ${slug} not found.`);
+          return;
+        }
+
+        resetCreateModal();
+
+        document.getElementById('editOriginalSlug').value = page.slug;
+        document.getElementById('createModalTitle').textContent = `Edit Landing Page: /${page.slug}`;
+        document.getElementById('publishPageBtn').textContent = 'Save & Update Page →';
+        
+        titleInput.value = page.title || '';
+        slugInput.value = page.slug || '';
+        slugInput.disabled = true; // Protect route slug consistency
+
+        if (page.adPlatform) document.getElementById('newPlatform').value = page.adPlatform;
+        if (page.offerType) document.getElementById('newOfferType').value = page.offerType;
+        document.getElementById('newAudience').value = page.targetAudience || '';
+        document.getElementById('newHeadline').value = page.headline || page.title || '';
+        document.getElementById('newSubtitle').value = page.subtitle || page.description || '';
+        document.getElementById('newCtaText').value = page.ctaText || 'Claim Your Free Access Now';
+        document.getElementById('newCampaignName').value = page.campaignName || '';
+        document.getElementById('newHook').value = page.hook || '';
+
+        if (page.heroImage) {
+          heroUrlHidden.value = page.heroImage;
+          imgPreviewImg.src = page.heroImage;
+          imgPreviewBox.style.display = 'block';
+          imgNameDisplay.textContent = 'Current page creative';
+          removeImgBtn.style.display = 'inline-flex';
+        }
+
+        document.getElementById('createModal').classList.add('open');
+      };
+
+      // Simulator Functions
+      window.openSimulator = function (slug, title) {
+        document.getElementById('simPageTitle').textContent = title;
+        document.getElementById('simPageSlug').textContent = '/' + slug;
+        document.getElementById('simOpenTabBtn').href = '/' + slug;
+        const iframe = document.getElementById('simIframe');
+        iframe.src = '/' + slug;
+        document.getElementById('simulatorModal').classList.add('open');
+      };
+
+      window.setSimDevice = function (width, btn) {
+        document.querySelectorAll('.sim-toolbar .status-pill').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('simIframe').style.width = width;
+      };
+
+      // Modal Handlers
+      window.openCreateModal = function () {
+        resetCreateModal();
+        document.getElementById('createModal').classList.add('open');
+      };
+      document.getElementById('openCreateModalBtn').addEventListener('click', window.openCreateModal);
+
+      window.closeModal = function (id) {
+        document.getElementById(id).classList.remove('open');
+      };
+
+      // Close modal on outside click
+      document.querySelectorAll('.modal-backdrop').forEach(mb => {
+        mb.addEventListener('click', (e) => {
+          if (e.target === mb) mb.classList.remove('open');
+        });
+      });
+
+      // Route Check Tool
+      document.getElementById('checkRouteBtn').addEventListener('click', async () => {
+        const slug = document.getElementById('testSlugInput').value.trim().toLowerCase();
+        const resBox = document.getElementById('routeCheckResult');
+        resBox.textContent = 'Verifying route...';
+        try {
+          const res = await fetch(`/api/route-check?slug=${encodeURIComponent(slug)}`);
+          const data = await res.json();
+          if (data.exists) {
+            resBox.innerHTML = `
+              <div style="color:#10B981; font-weight:700; margin-bottom:0.25rem;">✓ Active Ad Landing Page Found</div>
+              <div>Slug: <code>/${data.slug}</code> • Production URL: <code>${data.productionUrl}</code></div>
+              <div style="margin-top:0.75rem;"><a href="/${data.slug}" target="_blank" style="color:var(--grosso-gold-bright); font-weight:700;">Open /${data.slug} &rarr;</a></div>
+            `;
+          } else {
+            resBox.innerHTML = `
+              <div style="color:var(--grosso-gold-bright); font-weight:700; margin-bottom:0.25rem;">⚡ Route Available</div>
+              <div><code>/${data.slug}</code> is not in use yet. You can create it now via the "+ New Ad Landing Page" button!</div>
+            `;
+          }
+        } catch (_) {
+          resBox.textContent = 'Error checking route.';
+        }
+      });
+
+      // Populate UTM Page Select
+      function populateUtmSelect() {
+        const sel = document.getElementById('utmPageSelect');
+        sel.innerHTML = '';
+        state.pages.forEach(p => {
+          const opt = document.createElement('option');
+          opt.value = p.slug;
+          opt.textContent = `${p.title} (/${p.slug})`;
+          sel.appendChild(opt);
+        });
+        updateUtmUrl();
+      }
+
+      function updateUtmUrl() {
+        const pageSlug = document.getElementById('utmPageSelect').value || 'strategy-call';
+        const platform = document.getElementById('utmPlatformSelect').value;
+        const campaign = encodeURIComponent(document.getElementById('utmCampaignInput').value.trim() || 'gu_campaign');
+        const adset = encodeURIComponent(document.getElementById('utmAdSetInput').value.trim() || 'adset_1');
+        const content = encodeURIComponent(document.getElementById('utmAdContentInput').value.trim() || 'ad_creative');
+        const term = encodeURIComponent(document.getElementById('utmTermInput').value.trim() || '');
+
+        let source = 'facebook', medium = 'paid_social';
+        if (platform === 'google_search') { source = 'google'; medium = 'cpc'; }
+        if (platform === 'google_pmax') { source = 'google'; medium = 'pmax'; }
+        if (platform === 'youtube') { source = 'youtube'; medium = 'video'; }
+        if (platform === 'tiktok') { source = 'tiktok'; medium = 'feed'; }
+        if (platform === 'linkedin') { source = 'linkedin'; medium = 'sponsored'; }
+
+        let url = `https://lp.grosso-university.com/${pageSlug}?utm_source=${source}&utm_medium=${medium}&utm_campaign=${campaign}&utm_content=${content}&utm_term=${adset}`;
+        if (term) url += `&utm_keyword=${term}`;
+
+        document.getElementById('finalUtmUrlOutput').value = url;
+        document.getElementById('testUtmUrlBtn').href = `/${pageSlug}?utm_source=${source}&utm_medium=${medium}&utm_campaign=${campaign}`;
+      }
+
+      ['utmPageSelect', 'utmPlatformSelect', 'utmCampaignInput', 'utmAdSetInput', 'utmAdContentInput', 'utmTermInput'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener('input', updateUtmUrl);
+      });
+
+      window.openUtmForSlug = function(slug) {
+        document.querySelector('[data-tab="utmBuilderTab"]').click();
+        const sel = document.getElementById('utmPageSelect');
+        if (sel) {
+          sel.value = slug;
+          updateUtmUrl();
+        }
+      };
+
+      window.copyUtmUrl = function() {
+        const val = document.getElementById('finalUtmUrlOutput').value;
+        copyText(val, 'Tracked Ad URL copied to clipboard!');
+      };
+
+      // Toast Notification
+      window.showToast = function (msg) {
+        const t = document.getElementById('toast');
+        document.getElementById('toastText').textContent = msg;
+        t.classList.add('show');
+        setTimeout(() => t.classList.remove('show'), 3500);
+      };
+
+      window.copyText = function (text, customMsg) {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast(customMsg || `Copied: ${text}`);
+        });
+      };
+
+      function esc(str) {
+        return String(str || '')
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      }
+
+      loadPages();
+    })();
+  </script>
+</body>
+</html>

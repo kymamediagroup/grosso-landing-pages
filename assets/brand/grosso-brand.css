@@ -1,0 +1,125 @@
+/* ==========================================================================
+   GROSSO UNIVERSITY — OFFICIAL BRAND DESIGN SYSTEM (grosso-brand.css)
+   Automatically shared across events.grossouniversity.com Dashboard & Slugs
+   ========================================================================== */
+
+:root {
+  /* Official Logo Extracted Brand Colors */
+  --grosso-blue: #4D6FA2;
+  --grosso-blue-rgb: 77, 111, 162;
+  --grosso-blue-bright: #688EC7;
+  --grosso-blue-light: #8EB0E2;
+  --grosso-blue-deep: #2B4268;
+  --grosso-blue-glow: rgba(77, 111, 162, 0.32);
+
+  --grosso-gold: #A3814E;
+  --grosso-gold-rgb: 163, 129, 78;
+  --grosso-gold-bright: #C5A26D;
+  --grosso-gold-light: #DFC293;
+  --grosso-gold-deep: #7A5E34;
+  --grosso-gold-glow: rgba(163, 129, 78, 0.32);
+
+  /* Executive Obsidian Dark Theme Surfaces */
+  --grosso-bg-obsidian: #060911;
+  --grosso-bg-primary: #090E1A;
+  --grosso-bg-elevated: #0E1628;
+  --grosso-bg-card: rgba(15, 23, 42, 0.78);
+  --grosso-bg-card-hover: rgba(20, 31, 56, 0.92);
+  --grosso-bg-glass: rgba(10, 15, 28, 0.76);
+
+  /* Text Hierarchy */
+  --grosso-text-primary: #F8FAFC;
+  --grosso-text-secondary: #CBD5E1;
+  --grosso-text-muted: #94A3B8;
+  --grosso-text-subtle: #64748B;
+
+  /* Borders & Hairlines */
+  --grosso-border-subtle: rgba(148, 163, 184, 0.12);
+  --grosso-border-blue: rgba(77, 111, 162, 0.35);
+  --grosso-border-gold: rgba(163, 129, 78, 0.42);
+
+  /* Semantic Status Colors */
+  --grosso-status-live: #10B981;
+  --grosso-status-upcoming: #4D6FA2;
+  --grosso-status-gold: #A3814E;
+  --grosso-status-archived: #64748B;
+
+  /* Gradients */
+  --grosso-gradient-gold: linear-gradient(135deg, #C5A26D 0%, #A3814E 55%, #846539 100%);
+  --grosso-gradient-blue: linear-gradient(135deg, #688EC7 0%, #4D6FA2 55%, #344F7A 100%);
+  --grosso-gradient-royal: linear-gradient(135deg, rgba(77, 111, 162, 0.22) 0%, rgba(163, 129, 78, 0.16) 100%);
+  --grosso-gradient-text-gold: linear-gradient(135deg, #F5E6CC 0%, #C5A26D 50%, #A3814E 100%);
+  --grosso-gradient-text-spartan: linear-gradient(135deg, #FFFFFF 0%, #CBD5E1 45%, #8EB0E2 100%);
+
+  /* Typography */
+  --grosso-font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --grosso-font-display: 'Cinzel', 'Plus Jakarta Sans', Georgia, serif;
+  --grosso-font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Shadows */
+  --grosso-shadow-lg: 0 24px 60px -15px rgba(0, 0, 0, 0.7), 0 0 1px 1px rgba(77, 111, 162, 0.15);
+  --grosso-shadow-gold: 0 12px 32px -6px rgba(163, 129, 78, 0.38);
+  --grosso-shadow-blue: 0 12px 32px -6px rgba(77, 111, 162, 0.38);
+}
+
+/* Shared Brand Utility Classes for Event Landing Pages */
+.grosso-text-gold {
+  background: var(--grosso-gradient-text-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.grosso-btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  background: var(--grosso-gradient-gold);
+  color: #060911;
+  font-weight: 700;
+  padding: 0.875rem 1.625rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: var(--grosso-shadow-gold);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.grosso-btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 38px -6px rgba(163, 129, 78, 0.55);
+  filter: brightness(1.06);
+}
+
+.grosso-btn-spartan {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  background: rgba(77, 111, 162, 0.16);
+  color: var(--grosso-text-primary);
+  font-weight: 600;
+  padding: 0.875rem 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--grosso-border-blue);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.grosso-btn-spartan:hover {
+  background: rgba(77, 111, 162, 0.28);
+  border-color: var(--grosso-blue-bright);
+  transform: translateY(-1px);
+}
+
+.grosso-card {
+  background: var(--grosso-bg-card);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--grosso-border-subtle);
+  border-radius: 1.125rem;
+  box-shadow: var(--grosso-shadow-lg);
+}

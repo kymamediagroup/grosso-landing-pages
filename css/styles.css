@@ -1,0 +1,861 @@
+/* ============================================================================
+   GROSSO UNIVERSITY - GRAND OPENING & RIBBON CUTTING LANDING PAGE
+   Simplified, Executive, Clean & Modern
+   ============================================================================ */
+
+:root {
+  /* Brand accents from logo */
+  --gold: #A3814E;
+  --gold-hover: #B5935B;
+  --gold-light: #C9A56C;
+  --gold-tint: #FDF9F2;
+  --gold-border: rgba(163, 129, 78, 0.3);
+  
+  --blue: #4D6FA2;
+  --blue-dark: #375480;
+  --blue-light: #6789BD;
+  --blue-tint: #F0F4FA;
+  --blue-border: rgba(77, 111, 162, 0.25);
+  
+  /* Restrained dark-blue sections */
+  --navy: #0A111F;
+  --navy-surface: #0F1A2E;
+  --navy-border: #1E2E4A;
+  --navy-footer: #060B14;
+
+  /* Predominantly white background & dark text */
+  --bg-white: #FFFFFF;
+  --bg-subtle: #F8FAFC;
+  --line: #E2E8F0;
+  --line-light: #EEF2F6;
+  
+  --ink-900: #0F172A;
+  --ink-800: #1E293B;
+  --ink-700: #334155;
+  --ink-600: #475569;
+  --ink-500: #64748B;
+  
+  --font-heading: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 40px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-white);
+  color: var(--ink-700);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  color: var(--ink-900);
+  margin: 0;
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--blue-dark);
+  text-decoration: underline;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ============================================================================
+   HERO SECTION
+   ============================================================================ */
+
+.hero {
+  background: var(--bg-white);
+  padding: 56px 0 48px;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+  background-image: radial-gradient(circle at 50% -10%, rgba(77, 111, 162, 0.04) 0%, transparent 60%);
+}
+
+.hero-inner {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+/* 1. Logo at the top */
+.hero-logo-wrap {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-logo {
+  height: 52px;
+  width: auto;
+  max-width: 85%;
+  display: block;
+}
+
+/* 2. "You're Invited!" */
+.hero-eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: clamp(16px, 2.2vw, 20px);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
+/* 3. "Grand Opening & Ribbon-Cutting Ceremony" */
+.hero-title {
+  font-size: clamp(32px, 4.5vw, 52px);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: var(--ink-900);
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+
+.hero-title span {
+  color: var(--gold);
+}
+
+.hero-subhead {
+  font-size: clamp(16px, 1.8vw, 18.5px);
+  color: var(--ink-600);
+  line-height: 1.6;
+  max-width: 660px;
+  margin: 0 auto 30px;
+}
+
+/* 4. Unified Event Details Strip (Clean, single container - replaces awkward pills) */
+.event-meta-strip {
+  display: inline-flex;
+  align-items: center;
+  background: var(--bg-subtle);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 28px;
+  gap: 28px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 2px;
+}
+
+.meta-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.meta-val {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink-900);
+  white-space: nowrap;
+}
+
+.meta-sub {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-600);
+}
+
+.meta-divider {
+  width: 1px;
+  height: 32px;
+  background: var(--line);
+}
+
+/* Event Highlights / Perks Banner (Built Natively in Code) */
+.hero-perks-strip {
+  background: linear-gradient(180deg, #07152B 0%, #030A18 100%);
+  border: 1px solid rgba(77, 111, 162, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 16px 18px 14px;
+  max-width: 820px;
+  margin: 0 auto 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.perk-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.perk-icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #F4BD35;
+  color: #07152B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
+  transition: transform 0.18s ease;
+}
+
+.perk-item:hover .perk-icon-circle {
+  transform: translateY(-2px) scale(1.05);
+}
+
+.perk-label {
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  line-height: 1.25;
+  min-height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.perk-divider {
+  width: 1px;
+  height: 44px;
+  background: rgba(244, 189, 53, 0.55);
+  flex-shrink: 0;
+}
+
+/* Hero CTA Button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 14.5px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  border-radius: 6px;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(180deg, var(--gold-hover) 0%, var(--gold) 100%);
+  color: #FFFFFF;
+  box-shadow: 0 6px 18px rgba(163, 129, 78, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(163, 129, 78, 0.55);
+  color: #FFFFFF;
+  text-decoration: none;
+  filter: brightness(1.05);
+}
+
+/* ============================================================================
+   MAIN CONTENT: EVENT DETAILS + RSVP FORM
+   ============================================================================ */
+
+.main-section {
+  padding: 54px 0 68px;
+  background-color: var(--bg-subtle);
+}
+
+.section-intro {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 40px;
+}
+
+.section-intro h2 {
+  font-size: clamp(24px, 3.2vw, 34px);
+  margin-bottom: 10px;
+}
+
+.section-intro p {
+  font-size: 16px;
+  color: var(--ink-600);
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 32px;
+  align-items: start;
+}
+
+/* Left Column: Info Card */
+.info-card, .form-card {
+  background: var(--bg-white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.06);
+}
+
+.card-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--ink-900);
+  margin-bottom: 6px;
+}
+
+.form-desc {
+  font-size: 14px;
+  color: var(--ink-600);
+  margin-bottom: 22px;
+}
+
+.event-line {
+  display: flex;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line-light);
+}
+
+.event-line:last-of-type {
+  border-bottom: 0;
+}
+
+.event-icon {
+  flex: 0 0 42px;
+  height: 42px;
+  border-radius: 8px;
+  background: var(--blue-tint);
+  color: var(--blue-dark);
+  font-size: 20px;
+  display: grid;
+  place-items: center;
+}
+
+.event-text strong {
+  display: block;
+  font-size: 15.5px;
+  color: var(--ink-900);
+  margin-bottom: 2px;
+}
+
+.event-text small {
+  display: block;
+  font-size: 13.5px;
+  color: var(--ink-600);
+  line-height: 1.5;
+}
+
+.info-highlight {
+  margin-top: 20px;
+  padding: 16px 18px;
+  border-left: 4px solid var(--gold);
+  background: var(--gold-tint);
+  border-radius: 0 8px 8px 0;
+  font-size: 13.5px;
+  color: var(--ink-800);
+  line-height: 1.55;
+}
+
+.info-highlight strong {
+  color: var(--gold);
+}
+
+/* Right Column: RSVP Form Card */
+.form-card {
+  position: relative;
+}
+
+.form-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue) 0%, var(--gold) 100%);
+  border-radius: 12px 12px 0 0;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field.full {
+  grid-column: 1 / -1;
+}
+
+.field label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink-800);
+}
+
+.field label .req {
+  color: #DC2626;
+}
+
+.field label .opt {
+  color: var(--ink-500);
+  font-weight: 500;
+  font-size: 11.5px;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  height: 48px;
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0 14px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--ink-900);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.field select {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23475569' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 16px;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+.field input::placeholder {
+  color: #94A3B8;
+  font-size: 14px;
+}
+
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(77, 111, 162, 0.2);
+}
+
+.field.error input,
+.field.error select {
+  border-color: #DC2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
+}
+
+.error-msg {
+  display: none;
+  font-size: 11.5px;
+  color: #DC2626;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.field.error .error-msg {
+  display: block;
+}
+
+.btn-submit {
+  width: 100%;
+  height: 50px;
+  margin-top: 18px;
+  background: var(--navy);
+  color: #FFFFFF;
+  border: 0;
+  border-radius: 6px;
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.btn-submit:hover {
+  background: #142848;
+  transform: translateY(-1px);
+}
+
+.fineprint {
+  font-size: 12px;
+  color: var(--ink-500);
+  margin-top: 12px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Success Card */
+.success-box {
+  display: none;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.success-box.active {
+  display: block;
+}
+
+.success-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #DCFCE7;
+  color: #15803D;
+  font-size: 28px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 16px;
+}
+
+.success-box h4 {
+  font-size: 22px;
+  color: var(--ink-900);
+  margin-bottom: 8px;
+}
+
+.success-box p {
+  font-size: 14.5px;
+  color: var(--ink-600);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.cal-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-cal {
+  display: inline-block;
+  background: var(--blue);
+  color: #FFFFFF;
+  padding: 12px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.btn-cal:hover {
+  background: var(--blue-dark);
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.btn-cal-sec {
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  color: var(--ink-800);
+  padding: 11px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.btn-cal-sec:hover {
+  background: var(--bg-subtle);
+}
+
+/* ============================================================================
+   HABITAT FOR HUMANITY / GIVING BACK (Restrained Dark-Blue Section)
+   ============================================================================ */
+
+.cause-card {
+  margin-top: 36px;
+  background: var(--navy);
+  color: #FFFFFF;
+  border-radius: 12px;
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  box-shadow: 0 10px 25px rgba(10, 17, 31, 0.12);
+}
+
+.cause-icon {
+  font-size: 34px;
+  color: var(--gold-light);
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(163, 129, 78, 0.15);
+  border: 1px solid var(--gold);
+  display: grid;
+  place-items: center;
+}
+
+.cause-body h3 {
+  color: #FFFFFF;
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.cause-body p {
+  color: #CBD5E1;
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.cause-body p strong {
+  color: #FFFFFF;
+}
+
+.cause-bilingual {
+  display: block;
+  font-size: 13px;
+  color: var(--gold-light);
+  font-weight: 600;
+}
+
+/* ============================================================================
+   FOOTER (Restrained Dark-Blue Section)
+   ============================================================================ */
+
+.footer {
+  background: var(--navy-footer);
+  color: #94A3B8;
+  padding: 38px 0;
+  text-align: center;
+  font-size: 13.5px;
+}
+
+.footer-logo {
+  height: 36px;
+  width: auto;
+  margin-bottom: 14px;
+}
+
+.footer p {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.footer strong {
+  color: #FFFFFF;
+}
+
+.footer-sub {
+  font-size: 12.5px;
+  color: #64748B;
+}
+
+.footer-sub a {
+  color: var(--gold-light);
+}
+
+/* ============================================================================
+   MOBILE STICKY BAR
+   ============================================================================ */
+
+.mobile-sticky-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(10, 17, 31, 0.96);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-top: 1px solid var(--navy-border);
+  padding: 12px 20px;
+  z-index: 999;
+  transform: translateY(120%);
+  transition: transform 0.25s ease;
+}
+
+.mobile-sticky-bar.visible {
+  transform: translateY(0);
+}
+
+.mobile-sticky-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.mobile-sticky-title {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.mobile-sticky-sub {
+  font-size: 11.5px;
+  color: var(--gold-light);
+}
+
+.btn-mobile-rsvp {
+  background: var(--gold);
+  color: #FFFFFF;
+  padding: 10px 18px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* ============================================================================
+   RESPONSIVENESS
+   ============================================================================ */
+
+@media (max-width: 860px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  
+  .event-meta-strip {
+    gap: 18px;
+    padding: 12px 20px;
+  }
+  
+  .cause-card {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 680px) {
+  .hero-perks-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px 8px;
+    padding: 18px 12px 14px;
+    margin-bottom: 24px;
+    border-radius: 10px;
+  }
+
+  .perk-divider {
+    display: none;
+  }
+
+  .perk-icon-circle {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 6px;
+  }
+
+  .perk-label {
+    font-size: 10px;
+    min-height: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 40px 0 36px;
+  }
+  
+  .hero-logo {
+    height: 44px;
+  }
+  
+  .hero-title {
+    font-size: 28px;
+  }
+  
+  /* Stack meta items cleanly on small mobile screens */
+  .event-meta-strip {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 14px 18px;
+    width: 100%;
+    margin-bottom: 24px;
+  }
+  
+  .meta-divider {
+    width: 100%;
+    height: 1px;
+  }
+  
+  .meta-val {
+    font-size: 14px;
+    white-space: normal;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  
+  .field.full {
+    grid-column: auto;
+  }
+  
+  .field input,
+  .field select {
+    font-size: 16px; /* iOS zoom prevention */
+    height: 48px;
+  }
+  
+  .info-card, .form-card {
+    padding: 22px 18px;
+  }
+  
+  .cause-card {
+    padding: 20px 18px;
+    flex-direction: column;
+    gap: 14px;
+  }
+  
+  .mobile-sticky-bar {
+    display: block;
+  }
+}

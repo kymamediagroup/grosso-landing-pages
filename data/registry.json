@@ -1,0 +1,207 @@
+{
+  "platform": {
+    "organization": "Grosso University",
+    "name": "Grosso University Ad Landing Page Command Center",
+    "domain": "lp.grosso-university.com",
+    "productionUrl": "https://lp.grosso-university.com",
+    "purpose": "Paid Advertising Landing Pages (Meta, Google, YouTube, TikTok)",
+    "routingMode": "root-wildcard-slug",
+    "webhookEndpoint": "https://kaos-gu.com/api/webhooks/lead-ingest",
+    "webhookSecretEnv": "GU_API_KEY"
+  },
+  "pages": [
+    {
+      "slug": "gated-closers-guide",
+      "title": "Gated Closers Guide: A Guide to Closing & Overcoming Objections",
+      "subtitle": "Unlock the exact framework top sales pros use to close at 70%+ — Written by Dominic Caminata",
+      "headline": "Download your free guide: A Guide to Closing & Overcoming Objections",
+      "description": "High-converting gated eBook lead magnet landing page featuring Dominic Caminata's 'Velvet Hammer' Closing System, 5-Step Objection Handling Framework, and 40-for-40 closer playbook.",
+      "category": "Lead Magnet",
+      "adPlatform": "Meta Ads & Google Ads",
+      "campaignName": "GU_GATED_CLOSERS_GUIDE_2026",
+      "targetAudience": "Sales Reps, Sales Leadership & Home Improvement Contractors",
+      "hook": "Unlock the exact framework top sales pros use to close at 70%+ with the 'Velvet Hammer' Closing System and 5-Step Objection Handling Framework.",
+      "offerType": "Lead Magnet / PDF",
+      "ctaText": "Claim Your Free Copy Now!",
+      "heroImage": "/assets/closers-guide/form-header.png",
+      "status": "live",
+      "conversionGoal": "Gated eBook Lead Capture & Consultation",
+      "createdAt": "2026-11-09",
+      "updatedAt": "2026-11-09",
+      "accentColor": "#a38253",
+      "url": "https://lp.grosso-university.com/gated-closers-guide",
+      "stats": {
+        "traffic": "19,480",
+        "leads": "4,310",
+        "cvr": "22.1%",
+        "activeAds": 8
+      },
+      "utmDefaults": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "utm_campaign": "gated_closers_guide"
+      },
+      "tags": ["Meta Ads", "Google Ads", "Gated Closers Guide", "Dominic Caminata"]
+    },
+    {
+      "slug": "top-500",
+      "title": "Top 500 Contractor Scaling Blueprint & Sales Playbook",
+      "subtitle": "How the Top 500 Home Improvement Contractors Scale Revenue & Protect 50%+ Gross Margins",
+      "headline": "How the Top 500 Contractors Scale Revenue & Protect 50%+ Margins",
+      "description": "Executive briefing and high-margin sales methodology engineered for Meta, Google, and LinkedIn ads targeting Top 500 remodelers and high-growth contractors doing $3M to $50M+.",
+      "category": "Executive Briefing",
+      "adPlatform": "Meta Ads & LinkedIn",
+      "campaignName": "GU_TOP_500_EXEC_2026",
+      "targetAudience": "Owners & Sales VPs of Top 500 Remodeling Companies ($3M - $50M+)",
+      "hook": "Learn the 11-step sales methodology, accountability structures, and margin protection frameworks used by the country's top home improvement operators.",
+      "offerType": "Executive Briefing / Playbook",
+      "ctaText": "Claim Free Top 500 Playbook",
+      "status": "live",
+      "conversionGoal": "Executive Lead Ingest & Strategy Consultation",
+      "createdAt": "2026-10-27",
+      "updatedAt": "2026-10-27",
+      "accentColor": "#A3814E",
+      "url": "https://lp.grosso-university.com/top-500",
+      "stats": {
+        "traffic": "14,250",
+        "leads": "2,410",
+        "cvr": "16.9%",
+        "activeAds": 6
+      },
+      "utmDefaults": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "utm_campaign": "top_500_exec_briefing"
+      },
+      "tags": ["Meta Ads", "LinkedIn Ads", "Top 500 Remodelers", "Executive Briefing"]
+    },
+    {
+      "slug": "strategy-call",
+      "title": "Free 1-on-1 Sales Scaling Strategy Call",
+      "subtitle": "Stronger Sales Teams. More Closed Jobs. Real Business Growth.",
+      "headline": "Stronger Sales Teams. More Closed Jobs. Real Business Growth.",
+      "description": "Executive high-ticket consultation booking funnel designed for Meta, Google, and YouTube ads targeting owners of home improvement companies doing $2M to $20M+.",
+      "category": "Consultation",
+      "adPlatform": "Meta Ads & Google Ads",
+      "campaignName": "GU_STRAT_DIRECT_2026",
+      "targetAudience": "Roofing, Remodeling & Window Contractors ($2M - $25M)",
+      "hook": "Pinpoint your team's biggest sales bottlenecks and implement the 11-step selling system to exceed 40%+ close rates.",
+      "offerType": "Strategy Call / VSL",
+      "ctaText": "Book Your Free Strategy Call",
+      "status": "live",
+      "conversionGoal": "Direct Call Booking",
+      "createdAt": "2026-10-27",
+      "updatedAt": "2026-10-27",
+      "accentColor": "#A3814E",
+      "url": "https://lp.grosso-university.com/strategy-call",
+      "stats": {
+        "traffic": "18,420",
+        "leads": "2,840",
+        "cvr": "15.4%",
+        "activeAds": 8
+      },
+      "utmDefaults": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "utm_campaign": "contractor_scale_vsl"
+      },
+      "tags": ["Meta Ads", "Google Ads", "Call Booking", "High-Ticket VSL"]
+    },
+    {
+      "slug": "roofing-sales-blueprint",
+      "title": "The 11-Step Roofing & Remodeling Sales Playbook",
+      "subtitle": "The Exact Script & Closing Blueprint Used to Generate $300M+ in Home Improvement Revenue",
+      "headline": "Stop Leaving Margin on the Table. Download the 11-Step Closer's Playbook.",
+      "description": "High-volume lead magnet landing page engineered for Meta Ads and TikTok. Offers a free instant download of the 11-step selling framework with automated follow-up to book a strategy call.",
+      "category": "Lead Magnet",
+      "adPlatform": "Meta Ads & TikTok",
+      "campaignName": "GU_BLUEPRINT_DOWNLOAD_2026",
+      "targetAudience": "Roofing & Exterior Contractors Looking to Stop Slashing Prices",
+      "hook": "The exact script top closers use to defeat 'I need to think about it' and protect 50%+ gross margins on one-call closes.",
+      "offerType": "Digital Asset / PDF Download",
+      "ctaText": "Download Free Playbook Now",
+      "status": "live",
+      "conversionGoal": "Lead Capture & Asset Download",
+      "createdAt": "2026-10-27",
+      "updatedAt": "2026-10-27",
+      "accentColor": "#4D6FA2",
+      "url": "https://lp.grosso-university.com/roofing-sales-blueprint",
+      "stats": {
+        "traffic": "26,150",
+        "leads": "5,820",
+        "cvr": "22.3%",
+        "activeAds": 12
+      },
+      "utmDefaults": {
+        "utm_source": "meta",
+        "utm_medium": "feed_ad",
+        "utm_campaign": "playbook_leadmagnet"
+      },
+      "tags": ["Meta Ads", "TikTok", "PDF Lead Magnet", "Immediate Capture"]
+    },
+    {
+      "slug": "sales-process-audit",
+      "title": "Free 2-Minute Contractor Sales Process Audit",
+      "subtitle": "Interactive Benchmark & Close-Rate Diagnostic for Home Improvement Business Owners",
+      "headline": "Find Out Exactly Where Your Sales Reps Are Leaving Money On The Table.",
+      "description": "Interactive assessment and quiz funnel for Google Search and LinkedIn Ads targeting commercial and residential contractors seeking a diagnostic score of their sales process.",
+      "category": "Assessment",
+      "adPlatform": "Google Search & LinkedIn",
+      "campaignName": "GU_AUDIT_ASSESSMENT_2026",
+      "targetAudience": "Owners, VPs of Sales & General Managers",
+      "hook": "Score your team across 4 critical pillars: Prospect Qualification, Value Presentation, Price Anchoring, and Objection Overcoming.",
+      "offerType": "Interactive Quiz / Audit",
+      "ctaText": "Start Free 2-Minute Audit",
+      "status": "live",
+      "conversionGoal": "Diagnostic Scorecard & Consultation",
+      "createdAt": "2026-10-27",
+      "updatedAt": "2026-10-27",
+      "accentColor": "#A3814E",
+      "url": "https://lp.grosso-university.com/sales-process-audit",
+      "stats": {
+        "traffic": "9,340",
+        "leads": "1,680",
+        "cvr": "18.0%",
+        "activeAds": 5
+      },
+      "utmDefaults": {
+        "utm_source": "google",
+        "utm_medium": "cpc",
+        "utm_campaign": "sales_diagnostic_audit"
+      },
+      "tags": ["Google Search", "LinkedIn", "Diagnostic Audit", "Interactive Quiz"]
+    },
+    {
+      "slug": "ribbon-cutting",
+      "title": "Training Center Grand Opening & Ribbon-Cutting Ceremony",
+      "subtitle": "Celebrate the New Grosso University Training Center in Windsor, WI",
+      "headline": "Grand Opening & Ribbon-Cutting Ceremony",
+      "description": "Event registration landing page for local and regional contractors, featuring catered reception, live remarks, facility tours, and podcast open mic.",
+      "category": "Event",
+      "adPlatform": "Meta & Email Retargeting",
+      "campaignName": "GU_RIBBON_CUTTING_EVENT",
+      "targetAudience": "Wisconsin & Midwest Home Improvement Contractors & Partners",
+      "hook": "Tour the premier Midwest sales training facility, connect with industry leaders, and support Habitat for Humanity.",
+      "offerType": "Event RSVP",
+      "ctaText": "RSVP Now — Free Admission",
+      "status": "live",
+      "conversionGoal": "Free Event RSVP",
+      "createdAt": "2026-10-14",
+      "updatedAt": "2026-10-27",
+      "accentColor": "#C5A26D",
+      "url": "https://lp.grosso-university.com/ribbon-cutting",
+      "stats": {
+        "traffic": "6,410",
+        "leads": "412",
+        "cvr": "6.4%",
+        "activeAds": 3
+      },
+      "utmDefaults": {
+        "utm_source": "meta",
+        "utm_medium": "local_event",
+        "utm_campaign": "grand_opening_rsvp"
+      },
+      "tags": ["Meta Ads", "Event RSVP", "Local Wisconsin", "Ribbon Cutting"]
+    }
+  ]
+}

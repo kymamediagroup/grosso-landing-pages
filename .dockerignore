@@ -1,4 +1,6 @@
 .git
+.gitignore
+*.zip
+*.backup.html
 __pycache__
-*.pyc
 .DS_Store

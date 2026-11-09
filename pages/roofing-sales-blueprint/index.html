@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>The 11-Step Roofing & Remodeling Sales Playbook | Grosso University</title>
+  <!-- Simpli.fi Pixel Tag -->
+  <script async src='https://tag.simpli.fi/sifitag/4a187475-8ae5-41b0-a1e0-5bc3606437ee'></script>
+  <meta name="description" content="Free Playbook Download: Stop leaving margin on the table. Learn the 11-step sales system used by North America's top-performing home improvement contractors." />
+  <link rel="icon" type="image/png" href="/assets/brand/logo-mark.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cinzel:wght@600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/brand/grosso-brand.css" />
+  <style>
+    :root {
+      --bg-canvas: #060911;
+      --bg-surface: #0E1628;
+      --border-line: rgba(148, 163, 184, 0.14);
+      --gold: #A3814E;
+      --gold-light: #C5A26D;
+      --blue: #4D6FA2;
+      --blue-light: #688EC7;
+      --text-main: #F8FAFC;
+      --text-sub: #CBD5E1;
+      --text-muted: #94A3B8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg-canvas);
+      color: var(--text-main);
+      font-family: var(--grosso-font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      background-image:
+        radial-gradient(circle at 15% 15%, rgba(77, 111, 162, 0.18), transparent 45%),
+        radial-gradient(circle at 85% 15%, rgba(163, 129, 78, 0.15), transparent 40%);
+    }
+
+    .wrap {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Top Bar */
+    .top-bar {
+      border-bottom: 1px solid var(--border-line);
+      padding: 1rem 0;
+      background: rgba(6, 9, 17, 0.85);
+      backdrop-filter: blur(16px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .top-bar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo { height: 38px; width: auto; }
+
+    /* Hero */
+    .hero {
+      padding: 4rem 0 3rem;
+      text-align: center;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(163, 129, 78, 0.15);
+      border: 1px solid rgba(163, 129, 78, 0.4);
+      color: var(--gold-light);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.5rem;
+    }
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #10B981;
+    }
+    h1 {
+      font-size: clamp(2rem, 4.2vw, 3.25rem);
+      font-weight: 800;
+      line-height: 1.16;
+      letter-spacing: -0.025em;
+      max-width: 900px;
+      margin: 0 auto 1.25rem;
+    }
+    h1 span {
+      background: linear-gradient(135deg, #F5E6CC 0%, #C5A26D 50%, #A3814E 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .subhead {
+      font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+      color: var(--text-sub);
+      max-width: 780px;
+      margin: 0 auto 2.5rem;
+      font-weight: 500;
+    }
+
+    /* Content & Form Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+      margin-bottom: 4rem;
+    }
+
+    /* Left: Book Mockup & Takeaways */
+    .book-display {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-line);
+      border-radius: 1.25rem;
+      padding: 2.25rem;
+      box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.7);
+      position: relative;
+    }
+    .book-display::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--blue) 0%, var(--gold) 100%);
+      border-radius: 1.25rem 1.25rem 0 0;
+    }
+    .takeaway-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+    .takeaway-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+    }
+    .takeaway-icon {
+      flex: none;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: rgba(16, 185, 129, 0.16);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      color: #34D399;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 800;
+      margin-top: 2px;
+    }
+    .takeaway-text b {
+      display: block;
+      color: var(--text-main);
+      font-size: 0.98rem;
+      margin-bottom: 0.2rem;
+    }
+    .takeaway-text p {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+
+    /* Right: Lead Capture Form Card */
+    .form-card {
+      background: #FFFFFF;
+      color: #0F172A;
+      border-radius: 1.25rem;
+      padding: 2.5rem;
+      box-shadow: 0 24px 60px -15px rgba(0,0,0,0.8);
+      position: relative;
+    }
+    .form-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #A3814E 0%, #E7C996 50%, #A3814E 100%);
+      border-radius: 1.25rem 1.25rem 0 0;
+    }
+    .form-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #475569;
+      background: #F1F5F9;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .form-card h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #0F172A;
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+    }
+    .form-card .desc {
+      color: #64748B;
+      font-size: 0.92rem;
+      margin-bottom: 1.5rem;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 1.1rem;
+    }
+    .form-group label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #334155;
+    }
+    .form-group input, .form-group select {
+      width: 100%;
+      height: 46px;
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 8px;
+      padding: 0 14px;
+      font-size: 0.95rem;
+      color: #0F172A;
+      outline: none;
+      font-family: inherit;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus, .form-group select:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(163, 129, 78, 0.2);
+    }
+    .btn-download {
+      width: 100%;
+      height: 52px;
+      background: linear-gradient(135deg, #C5A26D 0%, #A3814E 60%, #846539 100%);
+      color: #FFFFFF;
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+      box-shadow: 0 8px 20px -3px rgba(163, 129, 78, 0.5);
+      transition: all 0.2s;
+    }
+    .btn-download:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.06);
+    }
+    .trust-badges {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid #E2E8F0;
+      font-size: 0.75rem;
+      color: #64748B;
+    }
+
+    /* Social Proof Bar */
+    .proof-bar {
+      border-top: 1px solid var(--border-line);
+      border-bottom: 1px solid var(--border-line);
+      padding: 2.5rem 0;
+      text-align: center;
+      background: rgba(14, 22, 40, 0.4);
+      margin-bottom: 4rem;
+    }
+    .proof-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .stat-num {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--gold-light);
+    }
+    .stat-label {
+      color: var(--text-sub);
+      font-size: 0.88rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-line);
+      padding: 2.5rem 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
+    @media (max-width: 860px) {
+      .grid { grid-template-columns: 1fr; }
+      .proof-stats { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <header class="top-bar">
+    <div class="wrap top-bar-inner">
+      <img src="/assets/brand/logo-white.png" alt="Grosso University" class="logo" />
+      <span style="font-size: 0.78rem; color: var(--gold-light); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;">Direct-Response Ad Asset</span>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main class="wrap">
+    <section class="hero">
+      <div class="badge">
+        <span class="badge-dot"></span> 2026 Home Improvement Contractor Edition
+      </div>
+      <h1>Stop Leaving Margin on the Table. <span>Download the 11-Step Closer's Playbook.</span></h1>
+      <p class="subhead">The exact objection-handling script, value-anchoring process, and one-call closing system used by top contractors generating $10M+ in annual sales.</p>
+    </section>
+
+    <!-- Content & Form Grid -->
+    <div class="grid">
+      <!-- Left: Takeaways -->
+      <div class="book-display">
+        <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold-light);">Inside This Free 24-Page Blueprint:</span>
+        <ul class="takeaway-list">
+          <li class="takeaway-item">
+            <div class="takeaway-icon">✓</div>
+            <div class="takeaway-text">
+              <b>The 11-Step Selling System Breakdown</b>
+              <p>Step-by-step framework from greeting to paperwork that eliminates high pressure and builds ironclad homeowner trust.</p>
+            </div>
+          </li>
+          <li class="takeaway-item">
+            <div class="takeaway-icon">✓</div>
+            <div class="takeaway-text">
+              <b>"I Need to Think About It" Neutralizer</b>
+              <p>How to gracefully isolate the real hesitation without sounding desperate, pushy, or robotic.</p>
+            </div>
+          </li>
+          <li class="takeaway-item">
+            <div class="takeaway-icon">✓</div>
+            <div class="takeaway-text">
+              <b>Protecting 50%+ Gross Profit Margins</b>
+              <p>Why discounting destroys your brand reputation and how to anchor premium pricing with authority.</p>
+            </div>
+          </li>
+          <li class="takeaway-item">
+            <div class="takeaway-icon">✓</div>
+            <div class="takeaway-text">
+              <b>The 4 Critical Qualification Filters</b>
+              <p>How to ensure both decision-makers are present and ready to purchase before setting foot in the home.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="form-card">
+        <div class="form-tag">Instant Digital PDF Download</div>
+        <h3>Get Free Instant Access</h3>
+        <p class="desc">Enter your information below to download the playbook immediately.</p>
+
+        <form id="playbookForm">
+          <div class="form-group">
+            <label for="fullName">Full Name *</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Dominic Caminata" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Work Email *</label>
+            <input type="email" id="email" name="email" placeholder="dominic@contractor.com" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 234-5678" required />
+          </div>
+          <div class="form-group">
+            <label for="company">Company Name *</label>
+            <input type="text" id="company" name="company" placeholder="Apex Roofing & Windows" required />
+          </div>
+          <div class="form-group">
+            <label for="revenue">Annual Company Revenue *</label>
+            <select id="revenue" name="revenue" required>
+              <option value="">Select Revenue Range...</option>
+              <option value="$1M - $3M">$1M - $3M</option>
+              <option value="$3M - $7M">$3M - $7M</option>
+              <option value="$7M - $15M">$7M - $15M</option>
+              <option value="$15M+">$15M+</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-download" id="submitBtn">
+            <span>Download Free Playbook Now &rarr;</span>
+          </button>
+
+          <div class="trust-badges">
+            <span>🔒 256-Bit SSL Encrypted</span>
+            <span>⚡ Instant PDF Link</span>
+            <span>🚫 Zero Spam Guarantee</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Proof Bar -->
+  <section class="proof-bar">
+    <div class="wrap proof-stats">
+      <div>
+        <div class="stat-num">#1</div>
+        <div class="stat-label">Power100 Ranked Sales System</div>
+      </div>
+      <div>
+        <div class="stat-num">5.0 ★</div>
+        <div class="stat-label">500+ Verified Google Reviews</div>
+      </div>
+      <div>
+        <div class="stat-num">42%+</div>
+        <div class="stat-label">Average Client Team Close Rate</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap">
+      <p>&copy; 2026 Grosso University. All rights reserved. • <a href="https://grossouniversity.com" target="_blank" style="color: inherit;">grossouniversity.com</a></p>
+    </div>
+  </footer>
+
+  <script src="/config.js"></script>
+  <script>
+    (function() {
+      const form = document.getElementById('playbookForm');
+      const KAOS_WEBHOOK = 'https://kaos-gu.com/api/webhooks/lead-ingest';
+      const KAOS_SECRET = window.GU_API_KEY || 'whsec_g_a42ja9qcyk';
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const submitBtn = document.getElementById('submitBtn');
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span>Generating Download Link...</span>';
+
+        const name = document.getElementById('fullName').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const company = document.getElementById('company').value.trim();
+        const revenue = document.getElementById('revenue').value;
+
+        const nameParts = name.split(' ');
+        const firstName = nameParts[0] || '';
+        const lastName = nameParts.slice(1).join(' ') || '';
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const utmSource = urlParams.get('utm_source') || 'meta';
+        const utmCampaign = urlParams.get('utm_campaign') || 'playbook_leadmagnet';
+
+        const payload = {
+          source: 'lp.grosso-university.com/roofing-sales-blueprint',
+          landing_page: 'roofing-sales-blueprint',
+          landing_page_url: 'https://lp.grosso-university.com/roofing-sales-blueprint',
+          landing_page_slug: 'roofing-sales-blueprint',
+          campaign_name: 'The 11-Step Closer Playbook Download',
+          event_name: 'The 11-Step Closer Playbook Download',
+          first_name: firstName,
+          last_name: lastName,
+          full_name: name,
+          email: email,
+          phone: phone,
+          company: company,
+          revenue_tier: revenue,
+          ticket_tier: 'Digital Lead Magnet',
+          page_url: window.location.href,
+          slug: 'roofing-sales-blueprint',
+          utm_source: utmSource,
+          utm_campaign: utmCampaign,
+          notes: `Landing Page: /roofing-sales-blueprint | Lead Magnet: ${name} (${company}) | Revenue: ${revenue} | Ad Source: ${utmSource} | Campaign: ${utmCampaign}`
+        };
+
+        try {
+          await Promise.allSettled([
+            fetch(KAOS_WEBHOOK, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'x-webhook-secret': KAOS_SECRET
+              },
+              body: JSON.stringify(payload)
+            }),
+            fetch('/api/leads', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload)
+            })
+          ]);
+        } catch (_) {}
+
+        if (typeof window.fbq === 'function') {
+          window.fbq('track', 'Lead', { content_name: 'Roofing Sales Blueprint' });
+        }
+
+        const card = form.closest('.form-card');
+        card.innerHTML = `
+          <div style="text-align: center; padding: 1.5rem 0;">
+            <div style="width: 56px; height: 56px; border-radius: 50%; background: #10B981; color: #fff; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem; font-size: 26px;">✓</div>
+            <h3 style="font-size: 1.45rem; font-weight: 800; color: #0F172A; margin-bottom: 0.5rem;">Your Playbook is Ready, ${firstName}!</h3>
+            <p style="color: #64748B; font-size: 0.95rem; margin-bottom: 1.5rem;">We've sent a direct copy to <strong>${email}</strong>. You can also download it right now below:</p>
+            <a href="/strategy-call?lead=1" class="btn-download" style="text-decoration: none; margin-bottom: 1rem;">
+              📥 Click to Download PDF (2.4 MB)
+            </a>
+            <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 1rem; margin-top: 1.5rem; text-align: left;">
+              <span style="display:block; font-size: 12px; font-weight: 700; color: #0F172A; text-transform: uppercase;">Bonus: Want Matt to review your sales deck?</span>
+              <p style="font-size: 13px; color: #64748B; margin: 4px 0 10px;">Book a free 30-min strategy session to identify immediate closing bottlenecks.</p>
+              <a href="/strategy-call" style="color: var(--blue); font-weight: 700; font-size: 13px;">Book Your Free Strategy Call &rarr;</a>
+            </div>
+          </div>
+        `;
+      });
+    })();
+  </script>
+</body>
+</html>

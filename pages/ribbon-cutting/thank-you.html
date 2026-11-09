@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>RSVP Confirmed | Grosso University Grand Opening &amp; Ribbon-Cutting</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=5.6">
+  <style>
+    .ty-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: #F8F9FA;
+      color: #07152B;
+    }
+    .ty-nav {
+      background: #07152B;
+      padding: 16px 20px;
+      border-bottom: 2px solid #A3814E;
+    }
+    .ty-nav-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .ty-nav-logo {
+      height: 38px;
+      width: auto;
+    }
+    .ty-back-btn {
+      color: #FFFFFF;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      transition: background 0.18s ease;
+    }
+    .ty-back-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .ty-main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 20px;
+    }
+    .ty-card {
+      background: #FFFFFF;
+      border: 1px solid #E1E6EE;
+      border-radius: 12px;
+      max-width: 640px;
+      width: 100%;
+      padding: 40px 32px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(7, 21, 43, 0.08);
+    }
+    .ty-badge {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #2E7D32;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      margin: 0 auto 20px;
+    }
+    .ty-card h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(24px, 3.5vw, 32px);
+      font-weight: 800;
+      color: #07152B;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+    .ty-lead {
+      font-size: 16px;
+      color: #4A5568;
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+    .ty-details-box {
+      background: #F1F4F8;
+      border: 1px solid #D9E1EC;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: left;
+      margin-bottom: 28px;
+    }
+    .ty-detail-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .ty-detail-row:last-child {
+      margin-bottom: 0;
+    }
+    .ty-detail-icon {
+      font-size: 18px;
+      line-height: 1;
+      margin-top: 2px;
+    }
+    .ty-detail-content strong {
+      display: block;
+      color: #07152B;
+      font-size: 14px;
+    }
+    .ty-detail-content span {
+      color: #4A5568;
+      font-size: 13px;
+    }
+    .ty-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    @media (min-width: 480px) {
+      .ty-actions {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+    .btn-ty-primary {
+      background: #A3814E;
+      color: #FFFFFF;
+      padding: 13px 22px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.18s ease;
+    }
+    .btn-ty-primary:hover {
+      background: #8A6B3D;
+    }
+    .btn-ty-sec {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      color: #07152B;
+      padding: 13px 22px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      display: inline-block;
+      transition: background 0.18s ease;
+    }
+    .btn-ty-sec:hover {
+      background: #F8FAFC;
+    }
+  </style>
+</head>
+<body class="ty-page">
+
+  <nav class="ty-nav">
+    <div class="ty-nav-inner">
+      <a href="index.html" aria-label="Grosso University Home">
+        <img src="assets/img/logo-white.png" alt="Grosso University" class="ty-nav-logo">
+      </a>
+      <a href="index.html" class="ty-back-btn">&larr; Back to Event Page</a>
+    </div>
+  </nav>
+
+  <main class="ty-main">
+    <div class="ty-card">
+      <div class="ty-badge">&#10003;</div>
+      <h1>You're on the Guest List!</h1>
+      <p class="ty-lead">
+        Thank you, <strong id="guestName">Guest</strong>! Your reservation for <strong id="guestCountDisplay">1 attendee</strong> has been confirmed.
+      </p>
+
+      <div class="ty-details-box">
+        <div class="ty-detail-row">
+          <div class="ty-detail-icon">&#128197;</div>
+          <div class="ty-detail-content">
+            <strong>Monday, October 26, 2026</strong>
+            <span>2:00 PM – 5:30 PM CST &bull; Ribbon-Cutting at 2:30 PM</span>
+          </div>
+        </div>
+
+        <div class="ty-detail-row">
+          <div class="ty-detail-icon">&#128205;</div>
+          <div class="ty-detail-content">
+            <strong>Grosso University Training Center</strong>
+            <span>4300 Duraform Ln., Suite B, Windsor, WI 53598</span>
+          </div>
+        </div>
+
+        <div class="ty-detail-row">
+          <div class="ty-detail-icon">&#127873;</div>
+          <div class="ty-detail-content">
+            <strong>Highlights &amp; Activities</strong>
+            <span>Catered Food, Live Music, Facility Tours, Raffles &amp; Giveaways, Grosso Swag, and "Tools for Tomorrow" Charity Drive.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ty-actions">
+        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Grosso+University+Grand+Opening+%26+Ribbon-Cutting&dates=20261026T190000Z/20261026T223000Z&details=Grosso+University+Training+Center+Grand+Opening+%26+Ribbon-Cutting+Ceremony.&location=4300+Duraform+Ln+Suite+B,+Windsor,+WI+53598" target="_blank" rel="noopener" class="btn-ty-primary">
+          Add to Google Calendar &rarr;
+        </a>
+        <button type="button" class="btn-ty-sec" id="downloadIcalBtn">
+          Download Calendar Invite (.ics)
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <img src="assets/img/logo-white.png" alt="Grosso University" class="footer-logo">
+      <p><strong>GROSSO UNIVERSITY</strong><br>Building a stronger home improvement industry together.</p>
+      <div class="footer-sub">4300 Duraform Ln., Suite B, Windsor, WI 53598 &bull; <a href="mailto:info@grossouniversity.com">info@grossouniversity.com</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      try {
+        var rawLead = sessionStorage.getItem("grosso_rsvp_lead");
+        if (rawLead) {
+          var lead = JSON.parse(rawLead);
+          var name = lead.firstName || lead.first_name || lead.name || lead.fullName || "Guest";
+          var count = lead.attendeeCount || lead.headcount || 1;
+          
+          var nameEl = document.getElementById("guestName");
+          var countEl = document.getElementById("guestCountDisplay");
+          if (nameEl) nameEl.textContent = name;
+          if (countEl) countEl.textContent = count + " " + (count === 1 ? "attendee" : "attendees");
+        }
+      } catch(e) {}
+
+      var icalBtn = document.getElementById("downloadIcalBtn");
+      if (icalBtn) {
+        icalBtn.addEventListener("click", function() {
+          var icsData = [
+            "BEGIN:VCALENDAR",
+            "VERSION:2.0",
+            "PRODID:-//Grosso University//Grand Opening Ceremony//EN",
+            "CALSCALE:GREGORIAN",
+            "METHOD:PUBLISH",
+            "BEGIN:VEVENT",
+            "UID:grosso-grand-opening-20261026@grossouniversity.com",
+            "DTSTAMP:20261014T000000Z",
+            "DTSTART:20261026T190000Z",
+            "DTEND:20261026T223000Z",
+            "SUMMARY:Grosso University Grand Opening & Ribbon-Cutting Ceremony",
+            "DESCRIPTION:Celebrate the new Grosso University Training Center with ribbon cutting at 2:30 PM, facility tours, catered reception, live music, and Profits for Sanity podcast open mic.",
+            "LOCATION:Grosso University Training Center, 4300 Duraform Ln., Suite B, Windsor, WI 53598",
+            "STATUS:CONFIRMED",
+            "END:VEVENT",
+            "END:VCALENDAR"
+          ].join("\r\n");
+
+          var blob = new Blob([icsData], { type: "text/calendar;charset=utf-8" });
+          var link = document.createElement("a");
+          link.href = window.URL.createObjectURL(blob);
+          link.setAttribute("download", "Grosso-University-Grand-Opening.ics");
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
