@@ -1207,18 +1207,27 @@
       }
     });
 
+    // Configuration for KAOS Lead-Ingest & Campaign Attribution
+    window.KAOS_CONFIG = {
+      endpoint: 'https://kaos-gu.com/api/webhooks/lead-ingest',
+      apiKey: window.GU_API_KEY || 'whsec_112d6b17657110a106f829c5e6134bebbd74428cf012b489',
+      source: 'Gated Closers Guide',
+      ghlWebhook: 'https://services.leadconnectorhq.com/hooks/yVTSEVHcSFDQLleBwxzs/webhook-trigger/3302dd18-7e02-4827-9caf-cb627adeb13c',
+      thankYouUrl: '/thank-you-9283-6928-5763'
+    };
+
     (function() {
-      const KAOS_WEBHOOK = 'https://kaos-gu.com/api/webhooks/lead-ingest';
-      const KAOS_SECRET = window.GU_API_KEY || 'whsec_g_a42ja9qcyk';
       const forms = document.querySelectorAll('.closers-guide-form');
 
       forms.forEach(function(form) {
         form.addEventListener('submit', async function(e) {
           e.preventDefault();
+          if (!form.reportValidity()) return;
+
           const submitBtn = form.querySelector('button[type="submit"]');
           if (submitBtn) {
             submitBtn.disabled = true;
-            submitBtn.textContent = 'Submitting...';
+            submitBtn.textContent = 'Sending Your Guide...';
           }
 
           const formData = new FormData(form);
@@ -1228,24 +1237,36 @@
           const company = (formData.get('company') || '').trim();
           const role = (formData.get('role') || 'Sales Rep').trim() || 'Sales Rep';
 
-          const nameParts = fullName.split(' ');
+          const nameParts = fullName.split(/\s+/).filter(Boolean);
           const firstName = nameParts[0] || '';
           const lastName = nameParts.slice(1).join(' ') || '';
 
+          // Extract campaign URL tracking parameters (UTMs)
           const urlParams = new URLSearchParams(window.location.search);
-          const utmSource = urlParams.get('utm_source') || 'meta';
-          const utmMedium = urlParams.get('utm_medium') || 'paid_social';
-          const utmCampaign = urlParams.get('utm_campaign') || 'gated_closers_guide';
+          const trackingParams = {};
+          ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'fbclid'].forEach(function(p) {
+            if (urlParams.get(p)) trackingParams[p] = urlParams.get(p);
+          });
 
           const pathSlug = window.location.pathname.replace(/^\/+|\/+$/g, '').split('/')[0] || 'gated-closers-guide';
+          const rawNotes = 'Requested eBook: A Guide to Closing & Overcoming Objections (Dominic Caminata)';
+          const compositeNotes = [
+            'Campaign: Gated Closers Guide (/' + pathSlug + ')',
+            role ? 'Role: ' + role : null,
+            company ? 'Company: ' + company : null,
+            rawNotes,
+            Object.keys(trackingParams).length ? 'Tracking: ' + JSON.stringify(trackingParams) : null
+          ].filter(Boolean).join(' | ');
 
+          // Payload strictly matching KAOS /api/webhooks/lead-ingest specifications
           const payload = {
-            source: 'lp.grosso-university.com/' + pathSlug,
+            source: window.KAOS_CONFIG.source,
+            event: 'Gated Closers Guide',
+            event_name: 'Gated Closers Guide - A Guide to Closing & Overcoming Objections',
+            campaign_name: 'Gated Closers Guide - A Guide to Closing & Overcoming Objections',
             landing_page: pathSlug,
             landing_page_slug: pathSlug,
             landing_page_url: window.location.href,
-            campaign_name: 'Gated Closers Guide - A Guide to Closing & Overcoming Objections',
-            event_name: 'Gated Closers Guide Download',
             first_name: firstName,
             last_name: lastName,
             full_name: fullName || email.split('@')[0],
@@ -1255,41 +1276,80 @@
             position: role,
             role: role,
             ticket_tier: 'Digital eBook Lead Magnet',
+            message: rawNotes,
+            goals: rawNotes,
+            raw_notes: rawNotes,
+            notes: compositeNotes,
             page_url: window.location.href,
             slug: pathSlug,
-            utm_source: utmSource,
-            utm_medium: utmMedium,
-            utm_campaign: utmCampaign,
-            notes: 'Landing Page: /' + pathSlug + ' (Gated Closers Guide) | Contact: ' + (fullName || 'N/A') + ' (' + company + ') | Role: ' + role
+            utm_source: trackingParams.utm_source || 'direct',
+            utm_medium: trackingParams.utm_medium || 'landing_page',
+            utm_campaign: trackingParams.utm_campaign || 'gated_closers_guide',
+            ...trackingParams
           };
 
           try {
             sessionStorage.setItem('grosso_closers_guide_lead', JSON.stringify(payload));
           } catch (_) {}
 
-          try {
-            await Promise.allSettled([
-              fetch(KAOS_WEBHOOK, {
+          const dispatches = [];
+
+          // 1. KAOS Lead Ingest
+          dispatches.push(
+            fetch(window.KAOS_CONFIG.endpoint, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'x-webhook-secret': window.KAOS_CONFIG.apiKey
+              },
+              body: JSON.stringify(payload)
+            }).catch(function(err) { console.warn('KAOS dispatch:', err); })
+          );
+
+          // 2. Direct GHL Inbound Webhook Trigger
+          if (window.KAOS_CONFIG.ghlWebhook) {
+            dispatches.push(
+              fetch(window.KAOS_CONFIG.ghlWebhook, {
                 method: 'POST',
                 headers: {
-                  'Content-Type': 'application/json',
-                  'x-webhook-secret': KAOS_SECRET
+                  'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(payload)
-              }),
-              fetch('/api/leads', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-              })
-            ]);
-          } catch (_) {}
+              }).catch(function(err) { console.warn('GHL dispatch:', err); })
+            );
+          }
+
+          // 3. Command Center Lead Log
+          dispatches.push(
+            fetch('/api/leads', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload)
+            }).catch(function() {})
+          );
+
+          try {
+            await Promise.all(dispatches);
+          } catch (err) {
+            console.warn('Dispatches finished with status:', err);
+          }
 
           if (typeof window.fbq === 'function') {
             window.fbq('track', 'Lead', { content_name: 'Gated Closers Guide' });
           }
 
-          window.location.href = '/' + pathSlug + '/thank-you.html';
+          // Redirect to Thank You page (/thank-you-9283-6928-5763) with prefill params for the popup calendar
+          const tyUrl = new URL(window.KAOS_CONFIG.thankYouUrl, window.location.origin);
+          if (fullName) tyUrl.searchParams.set('name', fullName);
+          if (firstName) tyUrl.searchParams.set('first_name', firstName);
+          if (lastName) tyUrl.searchParams.set('last_name', lastName);
+          if (email) tyUrl.searchParams.set('email', email);
+          if (phone) tyUrl.searchParams.set('phone', phone);
+          if (company) tyUrl.searchParams.set('company_name', company);
+          Object.keys(trackingParams).forEach(function(k) {
+            tyUrl.searchParams.set(k, trackingParams[k]);
+          });
+          window.location.href = tyUrl.pathname + tyUrl.search;
         });
       });
     })();

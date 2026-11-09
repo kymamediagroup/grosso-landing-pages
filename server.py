@@ -16,7 +16,7 @@ from urllib.parse import urlparse, parse_qs
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 
 PORT = int(os.environ.get('PORT', 8080))
-GU_API_KEY = os.environ.get('GU_API_KEY', 'whsec_g_a42ja9qcyk')
+GU_API_KEY = os.environ.get('GU_API_KEY', 'whsec_112d6b17657110a106f829c5e6134bebbd74428cf012b489')
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 REGISTRY_FILE = os.path.join(BASE_DIR, 'data', 'registry.json')
 PAGES_DIR = os.path.join(BASE_DIR, 'pages')
