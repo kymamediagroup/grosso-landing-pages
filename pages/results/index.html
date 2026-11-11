@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#060911" />
+  <title>The Revenue Mastery Formula — Custom Diagnostic Report | Grosso University</title>
+  <!-- Simpli.fi Pixel Tag -->
+  <script async src='https://tag.simpli.fi/sifitag/4a187475-8ae5-41b0-a1e0-5bc3606437ee'></script>
+  <meta name="description" content="Your Custom Diagnostic Report & Scaling Roadmap from Grosso University. Review your Monthly & Annual Revenue Leak and book your Complimentary Revenue Audit." />
+  <link rel="icon" type="image/png" href="/assets/brand/logo-mark.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Montserrat:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/brand/grosso-brand.css" />
+  <style>
+    :root {
+      --navy-deep: #040812;
+      --navy-canvas: #071022;
+      --navy-card: #0D1830;
+      --navy-elevated: #132244;
+      --gold: #A3814E;
+      --gold-bright: #C5A26D;
+      --gold-light: #E6C994;
+      --blue: #4D6FA2;
+      --blue-bright: #688EC7;
+      --red: #EF4444;
+      --red-soft: rgba(239, 68, 68, 0.14);
+      --emerald: #10B981;
+      --emerald-soft: rgba(16, 185, 129, 0.14);
+      --text-white: #F8FAFC;
+      --text-light: #CBD5E1;
+      --text-muted: #94A3B8;
+      --ink: #0F172A;
+      --ink-sub: #334155;
+      --border-dark: rgba(148, 163, 184, 0.15);
+      --border-gold: rgba(197, 162, 109, 0.42);
+      --radius-xl: 22px;
+      --radius-lg: 16px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--navy-deep);
+      color: var(--text-white);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      background-image:
+        radial-gradient(circle at 18% 8%, rgba(77, 111, 162, 0.25) 0%, transparent 42%),
+        radial-gradient(circle at 82% 10%, rgba(163, 129, 78, 0.20) 0%, transparent 40%),
+        linear-gradient(to right, rgba(77, 111, 162, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(77, 111, 162, 0.05) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 56px 56px, 56px 56px;
+    }
+
+    .wrap {
+      width: min(1140px, calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    /* =========================================================================
+       TOP TELEMETRY BAR & STICKY HEADER WITH OFFICIAL GROSSO LOGO
+       ========================================================================= */
+    .topbar {
+      background: rgba(2, 5, 12, 0.94);
+      border-bottom: 1px solid rgba(197, 162, 109, 0.22);
+      padding: 9px 0;
+      font-size: 0.78rem;
+      color: var(--text-light);
+    }
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .topbar-left {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--emerald);
+      box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+      70% { box-shadow: 0 0 0 7px rgba(16, 185, 129, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+    .topbar-left strong {
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .topbar-contact {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .topbar-contact a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.15s ease;
+    }
+    .topbar-contact a:hover {
+      color: var(--gold-light);
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(5, 10, 22, 0.90);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .navbar-inner {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+    .brand-logo {
+      height: 50px;
+      width: auto;
+      object-fit: contain;
+    }
+    .brand-divider {
+      width: 1px;
+      height: 32px;
+      background: rgba(255, 255, 255, 0.16);
+    }
+    .brand-meta {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+    .brand-meta-top {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--gold-bright);
+    }
+    .brand-meta-sub {
+      font-size: 0.83rem;
+      font-weight: 600;
+      color: var(--text-light);
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn-retake {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 16px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: var(--text-light);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.18s ease;
+    }
+    .btn-retake:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #FFFFFF;
+    }
+    .btn-gold-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 12px 22px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-bright) 50%, var(--gold) 100%);
+      color: #050914;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.86rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(163, 129, 78, 0.38);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+    }
+    .btn-gold-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(163, 129, 78, 0.55);
+      filter: brightness(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .brand-divider, .brand-meta, .btn-retake, .topbar-contact {
+        display: none;
+      }
+      .navbar-inner {
+        height: 70px;
+      }
+      .brand-logo {
+        height: 42px;
+      }
+    }
+
+    /* =========================================================================
+       REPORT HERO BANNER (THE REVENUE MASTERY FORMULA)
+       ========================================================================= */
+    .report-hero {
+      padding: 44px 0 32px;
+    }
+    .report-hero-card {
+      background: linear-gradient(135deg, #061436 0%, #091E4E 55%, #06122E 100%);
+      border: 1px solid rgba(197, 162, 109, 0.42);
+      border-radius: var(--radius-xl);
+      padding: 40px 44px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.6);
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 36px;
+      align-items: center;
+    }
+    .report-hero-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 50%, var(--blue-bright) 100%);
+    }
+    .report-hero-logo {
+      height: 52px;
+      width: auto;
+      margin-bottom: 20px;
+    }
+    .prepared-for-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(16, 185, 129, 0.16);
+      border: 1px solid rgba(16, 185, 129, 0.45);
+      color: #6EE7B7;
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 14px;
+    }
+    .report-hero-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.85rem, 3.6vw, 2.85rem);
+      font-weight: 900;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #F5E6CC 0%, #D4B075 50%, #A3814E 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.12;
+      margin-bottom: 10px;
+    }
+    .report-hero-subtitle {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(1.1rem, 2vw, 1.42rem);
+      font-weight: 500;
+      color: #FFFFFF;
+      margin-bottom: 24px;
+    }
+    .report-hero-contacts {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      font-size: 0.88rem;
+      color: #E2E8F0;
+    }
+    .report-hero-contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      text-decoration: none;
+      color: #E2E8F0;
+      font-weight: 600;
+    }
+    .report-hero-contact-item span.icon-ring {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1.5px solid var(--gold-bright);
+      color: var(--gold-light);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+    }
+    .report-hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .report-hero-visual img {
+      width: 260px;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid rgba(104, 142, 199, 0.55);
+      box-shadow: 0 0 50px rgba(37, 99, 235, 0.45);
+    }
+
+    @media (max-width: 860px) {
+      .report-hero-card {
+        grid-template-columns: 1fr;
+        padding: 30px 24px;
+        text-align: left;
+      }
+      .report-hero-visual {
+        justify-content: flex-start;
+      }
+      .report-hero-visual img {
+        width: 190px;
+        height: 190px;
+      }
+    }
+
+    /* =========================================================================
+       SECTION 1: THE HARD TRUTH + LIVE CALCULATED REVENUE LEAK SCORECARD
+       ========================================================================= */
+    .report-body {
+      padding: 8px 0 88px;
+    }
+    .report-paper {
+      background: #FFFFFF;
+      color: var(--ink);
+      border-radius: var(--radius-xl);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+      border: 1px solid #E2E8F0;
+      padding: 48px 52px;
+      margin-bottom: 36px;
+    }
+    @media (max-width: 720px) {
+      .report-paper {
+        padding: 28px 22px;
+      }
+    }
+
+    .section-title-dark {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.45rem, 2.5vw, 1.85rem);
+      font-weight: 900;
+      color: #091329;
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
+    }
+    .lead-paragraph {
+      font-size: 1.05rem;
+      color: #1E293B;
+      line-height: 1.72;
+      margin-bottom: 22px;
+    }
+    .diagnostic-notice-box {
+      background: linear-gradient(135deg, #F0F7FF 0%, #F8FAFC 100%);
+      border: 1px solid #BFDBFE;
+      border-left: 5px solid #1E40AF;
+      border-radius: 14px;
+      padding: 22px 26px;
+      font-size: 1.02rem;
+      color: #0F2952;
+      line-height: 1.68;
+      margin-bottom: 32px;
+    }
+    .diagnostic-notice-box strong {
+      color: #091E46;
+      font-weight: 800;
+    }
+
+    /* Dynamic Calculated Revenue Leak Dashboard (#paragraph-OgGeg5_qB0) */
+    .scorecard-dashboard {
+      background: linear-gradient(135deg, #071022 0%, #0E1D3A 100%);
+      color: #FFFFFF;
+      border-radius: 20px;
+      padding: 34px 36px;
+      border: 1.5px solid rgba(197, 162, 109, 0.48);
+      box-shadow: 0 22px 50px rgba(9, 19, 41, 0.25);
+      margin-bottom: 42px;
+      position: relative;
+      overflow: hidden;
+    }
+    .scorecard-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .scorecard-header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .scorecard-badge {
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: rgba(197, 162, 109, 0.2);
+      border: 1px solid rgba(197, 162, 109, 0.5);
+      color: var(--gold-light);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .scorecard-header h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #FFFFFF;
+    }
+    .baseline-pills {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .baseline-pill {
+      padding: 6px 13px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      font-size: 0.8rem;
+      color: #CBD5E1;
+    }
+    .baseline-pill strong {
+      color: #FFFFFF;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .leak-metrics-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+    @media (max-width: 720px) {
+      .scorecard-dashboard {
+        padding: 24px 20px;
+      }
+      .leak-metrics-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .leak-metric-box {
+      background: rgba(4, 8, 18, 0.68);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      border-radius: 16px;
+      padding: 24px 26px;
+      position: relative;
+    }
+    .leak-metric-box.annual-highlight {
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.14) 0%, rgba(4, 8, 18, 0.82) 100%);
+      border-color: rgba(239, 68, 68, 0.48);
+    }
+    .leak-metric-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #CBD5E1;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .leak-metric-value {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2rem, 3.8vw, 2.85rem);
+      font-weight: 900;
+      line-height: 1.1;
+      color: #F8FAFC;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+    .leak-metric-value.red-value {
+      color: #F87171;
+    }
+    .leak-metric-sub {
+      font-size: 0.82rem;
+      color: #94A3B8;
+    }
+
+    /* Interactive Recalculator Drawer inside Scorecard */
+    .recalc-bar {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .recalc-inputs {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .recalc-field {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: #CBD5E1;
+      font-weight: 600;
+    }
+    .recalc-field input {
+      width: 135px;
+      height: 36px;
+      background: rgba(4, 8, 18, 0.85);
+      border: 1px solid rgba(197, 162, 109, 0.45);
+      border-radius: 8px;
+      padding: 0 10px;
+      color: #FFFFFF;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.88rem;
+      font-weight: 700;
+      outline: none;
+    }
+    .recalc-field input.small-input {
+      width: 80px;
+    }
+    .recalc-field input:focus {
+      border-color: var(--gold-light);
+      box-shadow: 0 0 0 2px rgba(197, 162, 109, 0.25);
+    }
+    .recalc-formula-note {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--gold-light);
+    }
+
+    /* =========================================================================
+       THREE FOUNDATIONAL PILLARS
+       ========================================================================= */
+    .pillars-intro {
+      font-size: 1.08rem;
+      color: #1E293B;
+      margin-bottom: 26px;
+    }
+    .pillars-intro strong {
+      color: #091329;
+      font-weight: 800;
+    }
+
+    .pillars-stack {
+      display: grid;
+      gap: 24px;
+      margin-bottom: 44px;
+    }
+    .pillar-card {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-left: 6px solid #091329;
+      border-radius: 16px;
+      padding: 28px 30px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .pillar-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
+      border-left-color: var(--gold);
+    }
+    .pillar-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    .pillar-num-badge {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: #091329;
+      color: var(--gold-light);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 900;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .pillar-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #091329;
+      line-height: 1.3;
+    }
+
+    .pillar-points {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+    .pillar-point {
+      padding: 15px 18px;
+      border-radius: 12px;
+      font-size: 0.98rem;
+      line-height: 1.65;
+    }
+    .pillar-point.leak-point {
+      background: #FEF2F2;
+      border: 1px solid #FECACA;
+      color: #450A0A;
+    }
+    .pillar-point.leak-point strong.point-tag {
+      color: #DC2626;
+      font-weight: 800;
+    }
+    .pillar-point.strategy-point {
+      background: #EFF6FF;
+      border: 1px solid #BFDBFE;
+      color: #0F2952;
+    }
+    .pillar-point.strategy-point strong.point-tag {
+      color: #1D4ED8;
+      font-weight: 800;
+    }
+
+    /* =========================================================================
+       READY TO STOP THE LEAK & BOOK COMPLIMENTARY REVENUE AUDIT CTA BOX
+       ========================================================================= */
+    .audit-cta-card {
+      background: linear-gradient(135deg, #091329 0%, #13254B 60%, #091329 100%);
+      color: #FFFFFF;
+      border-radius: 20px;
+      padding: 42px 44px;
+      border: 2px solid rgba(197, 162, 109, 0.55);
+      box-shadow: 0 24px 60px rgba(9, 19, 41, 0.35);
+      position: relative;
+      overflow: hidden;
+    }
+    .audit-cta-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+    }
+    .audit-cta-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 14px;
+      border-radius: 999px;
+      background: rgba(197, 162, 109, 0.2);
+      border: 1px solid rgba(197, 162, 109, 0.45);
+      color: var(--gold-light);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 14px;
+    }
+    .audit-cta-card h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.65rem, 3vw, 2.25rem);
+      font-weight: 900;
+      color: #FFFFFF;
+      margin-bottom: 14px;
+      line-height: 1.2;
+    }
+    .audit-cta-card p.cta-desc {
+      font-size: 1.05rem;
+      color: #DBEAFE;
+      max-width: 780px;
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+    .btn-book-audit-large {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 18px 34px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #F5E6CC 0%, #C5A26D 45%, #A3814E 100%);
+      color: #060911;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      text-decoration: none;
+      box-shadow: 0 14px 36px rgba(163, 129, 78, 0.5);
+      transition: all 0.2s ease;
+    }
+    .btn-book-audit-large:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 44px rgba(163, 129, 78, 0.68);
+      filter: brightness(1.05);
+    }
+    .audit-cta-subnote {
+      margin-top: 18px;
+      font-size: 0.96rem;
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    @media (max-width: 680px) {
+      .audit-cta-card {
+        padding: 30px 22px;
+      }
+      .btn-book-audit-large {
+        width: 100%;
+        padding: 16px 20px;
+        font-size: 0.92rem;
+        text-align: center;
+      }
+    }
+
+    /* =========================================================================
+       FOOTER
+       ========================================================================= */
+    .site-footer {
+      border-top: 1px solid var(--border-dark);
+      background: #03060E;
+      padding: 36px 0;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .footer-logo {
+      height: 38px;
+      width: auto;
+    }
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    .footer-links a:hover {
+      color: var(--gold-light);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Telemetry Bar -->
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="topbar-left">
+        <span class="status-dot"></span>
+        <span><strong>Grosso University</strong> &bull; Custom Revenue Mastery Formula Diagnostic Report</span>
+      </div>
+      <div class="topbar-contact">
+        <a href="tel:+18884767768">&#9742; +888-476-7768</a>
+        <span>|</span>
+        <a href="https://www.grossouniversity.com" target="_blank" rel="noopener">www.grossouniversity.com</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Navigation Header with Official Logo -->
+  <header class="navbar">
+    <div class="wrap navbar-inner">
+      <a href="https://www.grossouniversity.com" class="brand-link" aria-label="Grosso University">
+        <img src="/assets/brand/logo-white.png" alt="Grosso University" class="brand-logo" />
+        <span class="brand-divider"></span>
+        <div class="brand-meta">
+          <span class="brand-meta-top">Diagnostic Results</span>
+          <span class="brand-meta-sub">The Revenue Mastery Formula</span>
+        </div>
+      </a>
+      <div class="nav-actions">
+        <a href="/quiz-page-528761" class="btn-retake">&larr; Recalculate Inputs</a>
+        <a href="https://calendly.com/grossou-matt" target="_blank" rel="noopener" class="btn-gold-cta">
+          Book Complimentary Revenue Audit &rarr;
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Report Hero Header Card -->
+  <section class="report-hero" id="section-4ONb4y-aD4">
+    <div class="wrap">
+      <div class="report-hero-card">
+        <div class="report-hero-copy">
+          <img src="/assets/brand/logo-white.png" alt="Grosso University" class="report-hero-logo" />
+          <div class="prepared-for-pill" id="preparedForBanner">
+            <span>&#10003; Diagnostic Scan Complete</span>
+          </div>
+          <h1 class="report-hero-title">THE REVENUE MASTERY FORMULA</h1>
+          <p class="report-hero-subtitle">A Custom Diagnostic Report &amp; Scaling Roadmap</p>
+
+          <div class="report-hero-contacts">
+            <a href="tel:+18884767768" class="report-hero-contact-item">
+              <span class="icon-ring">&#9742;</span>
+              <span>+888-476-7768</span>
+            </a>
+            <a href="https://www.grossouniversity.com" target="_blank" rel="noopener" class="report-hero-contact-item">
+              <span class="icon-ring">&#127760;</span>
+              <span>www.grossouniversity.com</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="report-hero-visual">
+          <img src="/assets/revenue-leak/team-circle.png" alt="Grosso University Leadership & Master Trainers" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Report Document Content -->
+  <main class="report-body">
+    <div class="wrap">
+      <article class="report-paper">
+
+        <!-- Section 1: The Hard Truth About Your Sales Pipeline -->
+        <h2 class="section-title-dark">The Hard Truth About Your Sales Pipeline</h2>
+        <p class="lead-paragraph">
+          Every percentage point missing from your current closing rate isn't just a missed metric, it is direct cash escaping your bottom line. Based on the calculations from your diagnostic scan, your sales team is leaving a significant amount of revenue on the table. This profit leak is rarely a lead quality problem; it is a conversion problem. Grosso University has spent over half a century perfecting the exact systems needed to plug these holes, eliminate sales inconsistency, and reliably scale businesses to a 50%+ closing rate.
+        </p>
+
+        <div class="diagnostic-notice-box">
+          Based on the calculations from your diagnostic scan, your sales pipeline performance has been calculated below. If your metrics show a <strong>positive number</strong>, this represents your <strong>hidden revenue expansion potential</strong> by optimizing your current baseline to a world-class 50%+ standard. If your results show <strong>$0</strong> or a <strong>negative value</strong>, your team is actively performing at or above benchmark standards, and your focus should shift to scaling lead volume to maximize your high-efficiency conversion engine.
+        </div>
+
+        <!-- Live Calculated Revenue Leak Scorecard (#paragraph-OgGeg5_qB0) -->
+        <div class="scorecard-dashboard" id="paragraph-OgGeg5_qB0">
+          <div class="scorecard-header">
+            <div class="scorecard-header-left">
+              <span class="scorecard-badge">Live Pipeline Calculation</span>
+              <h3 id="scorecardHeading">Your Calculated Revenue Leak</h3>
+            </div>
+            <div class="baseline-pills">
+              <span class="baseline-pill">Current Monthly Revenue: <strong id="displayMonthlyRev">$250,000</strong></span>
+              <span class="baseline-pill">Current Close Rate: <strong id="displayCloseRate">20%</strong></span>
+              <span class="baseline-pill">Grosso Benchmark: <strong>50%+</strong></span>
+            </div>
+          </div>
+
+          <div class="leak-metrics-grid">
+            <!-- Monthly Revenue Leak -->
+            <div class="leak-metric-box">
+              <div class="leak-metric-label">
+                <span>Your Monthly Revenue Leak:</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C5A26D" stroke-width="2.2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              </div>
+              <div class="leak-metric-value" id="monthlyLeakValue">$75,000</div>
+              <div class="leak-metric-sub" id="monthlyLeakSub">Unrecovered monthly sales volume below the 50% closing benchmark</div>
+            </div>
+
+            <!-- Annual Revenue Leak -->
+            <div class="leak-metric-box annual-highlight">
+              <div class="leak-metric-label">
+                <span>Your Annual Revenue Leak:</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F87171" stroke-width="2.2"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/></svg>
+              </div>
+              <div class="leak-metric-value red-value" id="annualLeakValue">$900,000</div>
+              <div class="leak-metric-sub" id="annualLeakSub">12-month compounded revenue left on the table by your sales pipeline</div>
+            </div>
+          </div>
+
+          <!-- Interactive Live What-If Adjuster -->
+          <div class="recalc-bar">
+            <div class="recalc-inputs">
+              <label class="recalc-field">
+                <span>Monthly Revenue ($):</span>
+                <input type="number" id="adjustMonthlyRev" min="0" step="1000" value="250000" aria-label="Adjust Monthly Revenue" />
+              </label>
+              <label class="recalc-field">
+                <span>Current Close Rate (%):</span>
+                <input type="number" id="adjustCloseRate" class="small-input" min="0" max="100" step="1" value="20" aria-label="Adjust Current Close Rate" />
+              </label>
+            </div>
+            <div class="recalc-formula-note">
+              Formula: Monthly Revenue &times; (50 &minus; Current Closing Rate) &divide; 100
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2: Three Foundational Pillars -->
+        <p class="pillars-intro">
+          Here are the <strong>three foundational pillars</strong> you must implement immediately to stop the bleed and reclaim your market share:
+        </p>
+
+        <div class="pillars-stack">
+          <!-- Pillar 1 -->
+          <div class="pillar-card">
+            <div class="pillar-header">
+              <span class="pillar-num-badge">1</span>
+              <h3>1. Shift from Self-Taught to a &ldquo;Paint-by-Numbers&rdquo; 11-Step Sales System</h3>
+            </div>
+            <ul class="pillar-points">
+              <li class="pillar-point leak-point">
+                <strong class="point-tag">&bull; The Revenue Leak:</strong> Relying on sales reps to use their &ldquo;natural talent&rdquo; or ad-lib presentations creates massive inconsistencies, causing warm leads to slip through the cracks.
+              </li>
+              <li class="pillar-point strategy-point">
+                <strong class="point-tag">&bull; The Grosso Strategy:</strong> Implement a strict, replicable <strong>11-Step Sales Process</strong>. When sales reps follow a structured, predictable roadmap, they do not have to think about what to say next. This allows them to focus 100% on the customer, making the close feel like a natural conclusion.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="pillar-card">
+            <div class="pillar-header">
+              <span class="pillar-num-badge">2</span>
+              <h3>2. Master the &ldquo;A.I.M.&rdquo; Method for Objection Handling</h3>
+            </div>
+            <ul class="pillar-points">
+              <li class="pillar-point leak-point">
+                <strong class="point-tag">&bull; The Revenue Leak:</strong> Sales reps often try to counter or argue with a prospect's initial reflex objections (e.g., <em>&ldquo;The price is too high&rdquo;</em> or <em>&ldquo;I need three estimates&rdquo;</em>), which immediately triggers defensive behavior.
+              </li>
+              <li class="pillar-point strategy-point">
+                <strong class="point-tag">&bull; The Grosso Strategy:</strong> Train your team to use the <strong>A.I.M. Methodology</strong> (Acknowledge, Ignore, and Move on). By acknowledging the objection without pushing back, you lower the prospect's defenses. This shifts the focus back to building value before formal price delivery.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="pillar-card">
+            <div class="pillar-header">
+              <span class="pillar-num-badge">3</span>
+              <h3>3. Elevate Sales Managers into Active Sales Coaches</h3>
+            </div>
+            <ul class="pillar-points">
+              <li class="pillar-point leak-point">
+                <strong class="point-tag">&bull; The Revenue Leak:</strong> Many companies treat sales managers like administrative supervisors who simply track KPIs rather than actively developing the team.
+              </li>
+              <li class="pillar-point strategy-point">
+                <strong class="point-tag">&bull; The Grosso Strategy:</strong> True sales growth requires building a <strong>Culture of Accountability</strong>. Sales leaders must lead by example by participating in sales calls, leading role-play sessions, and actively coaching reps on specific pipeline bottlenecks to maintain consistent team performance.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Section 3: Ready to Stop the Leak & Book Complimentary Revenue Audit (#section-XmmYxpFMmz) -->
+        <div class="audit-cta-card" id="section-XmmYxpFMmz">
+          <div class="audit-cta-eyebrow">Next Step: Custom Execution Plan</div>
+          <h2>Ready to Stop the Leak and Scale to 50%+?</h2>
+          <p class="cta-desc">
+            Knowing your number is only the first step; fixing it requires a battle-tested execution plan. Do not let another month of predictable revenue slip away to your competitors. Let our master trainers look under the hood of your business and build a customized execution roadmap for your team.
+          </p>
+
+          <a href="https://calendly.com/grossou-matt" target="_blank" rel="noopener" class="btn-book-audit-large" id="button-CaegU3z9kS">
+            <span>&#128073; CLICK HERE TO BOOK YOUR COMPLIMENTARY REVENUE AUDIT</span>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+
+          <p class="audit-cta-subnote">
+            Let’s deploy the Grosso system to turn your sales team into an elite, revenue-generating machine.
+          </p>
+        </div>
+
+      </article>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <img src="/assets/brand/logo-white.png" alt="Grosso University" class="footer-logo" />
+      <div>&copy; 2026 Grosso University. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="https://www.grossouniversity.com" target="_blank" rel="noopener">GrossoUniversity.com</a>
+        <a href="https://calendly.com/grossou-matt" target="_blank" rel="noopener">Book Revenue Audit</a>
+        <a href="/quiz-page-528761">Revenue Leak Quiz</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      let stored = {};
+      try {
+        const raw = sessionStorage.getItem('grosso_revenue_leak_data') || localStorage.getItem('grosso_revenue_leak_data');
+        if (raw) stored = JSON.parse(raw) || {};
+      } catch (_) {}
+
+      function getNum(keys, fallback) {
+        for (let i = 0; i < keys.length; i++) {
+          const k = keys[i];
+          const fromUrl = urlParams.get(k);
+          if (fromUrl !== null && fromUrl !== '') {
+            const parsed = parseFloat(String(fromUrl).replace(/[^0-9.-]/g, ''));
+            if (!isNaN(parsed)) return parsed;
+          }
+          if (stored[k] !== undefined && stored[k] !== null && stored[k] !== '') {
+            const parsed = parseFloat(String(stored[k]).replace(/[^0-9.-]/g, ''));
+            if (!isNaN(parsed)) return parsed;
+          }
+        }
+        return fallback;
+      }
+
+      const firstName = urlParams.get('first_name') || stored.first_name || '';
+      const lastName = urlParams.get('last_name') || stored.last_name || '';
+      const company = urlParams.get('company') || stored.company || '';
+
+      if (firstName || company) {
+        const banner = document.getElementById('preparedForBanner');
+        const who = [firstName, lastName].filter(Boolean).join(' ');
+        const labelParts = ['Prepared for'];
+        if (who) labelParts.push(who);
+        if (company) labelParts.push('(' + company + ')');
+        banner.innerHTML = '<span>&#10003; ' + labelParts.join(' ') + '</span>';
+      }
+
+      const initialMonthlyRev = getNum(['monthly_revenue', 'contact.monthly_revenue'], 250000);
+      const initialCloseRate = getNum(['current_closing_rate', 'contact.current_closing_rate'], 20);
+
+      const displayMonthlyRev = document.getElementById('displayMonthlyRev');
+      const displayCloseRate = document.getElementById('displayCloseRate');
+      const monthlyLeakEl = document.getElementById('monthlyLeakValue');
+      const annualLeakEl = document.getElementById('annualLeakValue');
+      const adjustRevInput = document.getElementById('adjustMonthlyRev');
+      const adjustRateInput = document.getElementById('adjustCloseRate');
+
+      function formatCurrency(num) {
+        const rounded = Math.round(num);
+        if (rounded < 0) {
+          return '-$' + Math.abs(rounded).toLocaleString('en-US');
+        }
+        return '$' + rounded.toLocaleString('en-US');
+      }
+
+      function renderCalculations(monthlyRev, closeRate) {
+        // Exact GHL Formula:
+        // score_calculated_revenue_leak = monthly_revenue * (50 - current_closing_rate) / 100
+        // score_calculated_annual_leak = score_calculated_revenue_leak * 12
+        const monthlyLeak = Math.round(monthlyRev * (50 - closeRate) / 100);
+        const annualLeak = Math.round(monthlyLeak * 12);
+
+        displayMonthlyRev.textContent = '$' + Math.round(monthlyRev).toLocaleString('en-US');
+        displayCloseRate.textContent = closeRate + '%';
+
+        monthlyLeakEl.textContent = formatCurrency(monthlyLeak);
+        annualLeakEl.textContent = formatCurrency(annualLeak);
+      }
+
+      // Check if explicit pre-calculated scores were passed in query string
+      const explicitMonthlyLeak = getNum(['score_calculated_revenue_leak', 'monthly_leak', 'score_1dk9'], NaN);
+      const explicitAnnualLeak = getNum(['score_calculated_annual_leak', 'annual_leak', 'score_3yva'], NaN);
+
+      adjustRevInput.value = String(initialMonthlyRev);
+      adjustRateInput.value = String(initialCloseRate);
+
+      if (!isNaN(explicitMonthlyLeak) && !isNaN(explicitAnnualLeak)) {
+        displayMonthlyRev.textContent = '$' + Math.round(initialMonthlyRev).toLocaleString('en-US');
+        displayCloseRate.textContent = initialCloseRate + '%';
+        monthlyLeakEl.textContent = formatCurrency(explicitMonthlyLeak);
+        annualLeakEl.textContent = formatCurrency(explicitAnnualLeak);
+      } else {
+        renderCalculations(initialMonthlyRev, initialCloseRate);
+      }
+
+      function onAdjust() {
+        const rev = parseFloat(adjustRevInput.value) || 0;
+        const rate = parseFloat(adjustRateInput.value) || 0;
+        renderCalculations(rev, rate);
+      }
+
+      adjustRevInput.addEventListener('input', onAdjust);
+      adjustRateInput.addEventListener('input', onAdjust);
+    })();
+  </script>
+</body>
+</html>

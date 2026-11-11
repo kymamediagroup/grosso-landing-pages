@@ -11,6 +11,72 @@
   },
   "pages": [
     {
+      "slug": "quiz-page-528761",
+      "title": "The Grosso U Revenue Leak Diagnostic",
+      "subtitle": "Discover exactly how much revenue your team is leaving behind!",
+      "headline": "The Grosso U Revenue Leak Diagnostic",
+      "description": "Interactive Revenue Leak Quiz and Custom Revenue Mastery Formula Diagnostic Report calculating monthly and annual revenue leaks against a 50%+ closing benchmark.",
+      "category": "Assessment",
+      "adPlatform": "Meta Ads & Google Ads",
+      "campaignName": "GU_REVENUE_LEAK_QUIZ_2026",
+      "targetAudience": "Home Improvement Contractors, Sales VPs & Business Owners",
+      "hook": "Discover exactly how much revenue your team is leaving behind and get your custom Revenue Mastery Formula Report & Scaling Roadmap.",
+      "offerType": "Interactive Quiz / Revenue Audit",
+      "ctaText": "Calculate My Revenue Leak & View Report",
+      "heroImage": "/assets/revenue-leak/report-header-banner.png",
+      "status": "live",
+      "conversionGoal": "Revenue Leak Diagnostic & Calendly Audit",
+      "createdAt": "2026-11-11",
+      "updatedAt": "2026-11-11",
+      "accentColor": "#A3814E",
+      "url": "https://lp.grosso-university.com/quiz-page-528761",
+      "stats": {
+        "traffic": "12,840",
+        "leads": "2,950",
+        "cvr": "23.0%",
+        "activeAds": 6
+      },
+      "utmDefaults": {
+        "utm_source": "meta",
+        "utm_medium": "paid_social",
+        "utm_campaign": "revenue_leak_diagnostic"
+      },
+      "tags": ["Meta Ads", "Google Ads", "Revenue Leak Quiz", "Diagnostic Calculator"]
+    },
+    {
+      "slug": "results-page",
+      "title": "The Revenue Mastery Formula — Custom Diagnostic Report",
+      "subtitle": "A Custom Diagnostic Report & Scaling Roadmap | Grosso University",
+      "headline": "The Revenue Mastery Formula: Custom Diagnostic Report & Scaling Roadmap",
+      "description": "Dynamic post-quiz results page calculating Monthly & Annual Revenue Leak, outlining the 3 Foundational Scaling Pillars, and booking a Complimentary Revenue Audit.",
+      "category": "Assessment",
+      "adPlatform": "Funnel Results Step",
+      "campaignName": "GU_REVENUE_LEAK_RESULTS_2026",
+      "targetAudience": "Quiz Completers & Home Improvement Executives",
+      "hook": "Stop the bleed and scale to a 50%+ close rate with the 11-Step Sales System, A.I.M. Objection Method, and Active Sales Coaching.",
+      "offerType": "Complimentary Revenue Audit",
+      "ctaText": "Book Your Complimentary Revenue Audit",
+      "heroImage": "/assets/revenue-leak/report-header-banner.png",
+      "status": "live",
+      "conversionGoal": "Calendly Audit Booking (calendly.com/grossou-matt)",
+      "createdAt": "2026-11-11",
+      "updatedAt": "2026-11-11",
+      "accentColor": "#C5A26D",
+      "url": "https://lp.grosso-university.com/results-page",
+      "stats": {
+        "traffic": "2,950",
+        "leads": "840",
+        "cvr": "28.5%",
+        "activeAds": 6
+      },
+      "utmDefaults": {
+        "utm_source": "quiz_funnel",
+        "utm_medium": "results_redirect",
+        "utm_campaign": "revenue_leak_audit"
+      },
+      "tags": ["Results Page", "Calendly Booking", "Revenue Mastery Formula"]
+    },
+    {
       "slug": "gated-closers-guide",
       "title": "Gated Closers Guide: A Guide to Closing & Overcoming Objections",
       "subtitle": "Unlock the exact framework top sales pros use to close at 70%+ — Written by Dominic Caminata",
