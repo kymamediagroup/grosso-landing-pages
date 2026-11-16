@@ -349,8 +349,15 @@ class GrossoRouterHandler(SimpleHTTPRequestHandler):
             self.wfile.write(body)
             return
 
-        # 6. Root Dashboard
+        # 6. Root Dashboard (or Quiz root when accessed via quiz.grosso-university.com)
         if path == '/' or path == '/index.html':
+            host_header = (self.headers.get('Host') or '').lower()
+            default_slug = os.environ.get('DEFAULT_SLUG', '').strip()
+            if host_header.startswith('quiz.') or default_slug == 'quiz-page-528761':
+                quiz_file = os.path.join(PAGES_DIR, 'quiz-page-528761', 'index.html')
+                if os.path.isfile(quiz_file):
+                    self.serve_file(quiz_file, 'text/html; charset=utf-8')
+                    return
             dashboard_file = os.path.join(BASE_DIR, 'index.html')
             if os.path.isfile(dashboard_file):
                 self.serve_file(dashboard_file, 'text/html; charset=utf-8')
