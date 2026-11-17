@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#060911" />
+  <title>The Grosso U Revenue Leak Diagnostic | Grosso University</title>
+  <!-- Simpli.fi Pixel Tag -->
+  <script async src='https://tag.simpli.fi/sifitag/4a187475-8ae5-41b0-a1e0-5bc3606437ee'></script>
+  <meta name="description" content="Discover exactly how much revenue your team is leaving behind! Take The Grosso U Revenue Leak Diagnostic and get your custom Revenue Mastery Formula Report." />
+  <link rel="icon" type="image/png" href="/assets/brand/logo-mark.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Montserrat:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/brand/grosso-brand.css" />
+  <style>
+    :root {
+      --navy-deep: #050914;
+      --navy-canvas: #081022;
+      --gold: #A3814E;
+      --gold-bright: #C5A26D;
+      --gold-light: #E5C896;
+      --blue: #4D6FA2;
+      --blue-electric: #155EEF;
+      --emerald: #10B981;
+      --text-white: #F8FAFC;
+      --text-light: #CBD5E1;
+      --text-muted: #94A3B8;
+      --ink: #0F172A;
+      --border-dark: rgba(148, 163, 184, 0.14);
+      --border-gold: rgba(197, 162, 109, 0.42);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--navy-deep);
+      color: var(--text-white);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-image:
+        radial-gradient(circle at 50% 0%, rgba(77, 111, 162, 0.28) 0%, transparent 55%),
+        radial-gradient(circle at 80% 20%, rgba(163, 129, 78, 0.14) 0%, transparent 40%);
+    }
+
+    .wrap {
+      width: min(760px, calc(100% - 32px));
+      margin-inline: auto;
+    }
+
+    /* =========================================================================
+       CLEAN CENTERED BRAND HEADER
+       ========================================================================= */
+    .header-bar {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border-dark);
+      background: rgba(5, 9, 20, 0.85);
+      backdrop-filter: blur(14px);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .brand-logo {
+      height: 48px;
+      width: auto;
+      display: block;
+    }
+
+    /* =========================================================================
+       FOCUSED SINGLE-COLUMN HERO + FORM CARD
+       ========================================================================= */
+    .quiz-section {
+      flex: 1;
+      padding: 36px 0 64px;
+    }
+
+    .quiz-intro {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    #heading-dA4Ds0x3C2 h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.85rem, 4vw, 2.75rem);
+      font-weight: 900;
+      line-height: 1.14;
+      letter-spacing: -0.025em;
+      color: var(--text-white);
+      margin-bottom: 10px;
+    }
+    #heading-dA4Ds0x3C2 h1 span {
+      background: linear-gradient(135deg, #FFF3DB 0%, #DFC293 50%, #A3814E 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    #sub-heading-l9Q3Xw9Wv3 h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(1.02rem, 2vw, 1.25rem);
+      font-weight: 500;
+      font-style: italic;
+      color: var(--text-light);
+    }
+
+    /* =========================================================================
+       MAIN FORM CARD (#form-Ez3EmIcrLP)
+       ========================================================================= */
+    .quiz-card {
+      background: #FFFFFF;
+      color: var(--ink);
+      border-radius: 20px;
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(197, 162, 109, 0.35);
+      overflow: hidden;
+    }
+    .quiz-card-top-line {
+      height: 5px;
+      background: linear-gradient(90deg, var(--blue) 0%, var(--gold-bright) 50%, var(--blue) 100%);
+    }
+
+    .quiz-card-body {
+      padding: 36px 38px 32px;
+    }
+    @media (max-width: 600px) {
+      .quiz-card-body {
+        padding: 24px 20px;
+      }
+    }
+
+    .field-group {
+      margin-bottom: 18px;
+    }
+
+    .field-label {
+      display: block;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #1E293B;
+      margin-bottom: 6px;
+    }
+    .field-label .req {
+      color: #DC2626;
+      margin-left: 2px;
+    }
+
+    .field-short-label {
+      display: block;
+      font-size: 0.78rem;
+      color: #475569;
+      margin-top: 6px;
+      line-height: 1.45;
+    }
+
+    .form-control {
+      width: 100%;
+      height: 48px;
+      background-color: #FFFFFF;
+      color: #101828;
+      border: 1.5px solid #D0D5DD;
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-family: inherit;
+      font-size: 0.98rem;
+      font-weight: 500;
+      outline: none;
+      box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+      transition: border-color 0.18s ease, box-shadow 0.18s ease;
+    }
+    .form-control::placeholder {
+      color: #667085;
+      font-weight: 400;
+    }
+    .form-control:focus {
+      border-color: var(--blue-electric);
+      box-shadow: 0 0 0 3.5px rgba(21, 94, 239, 0.15);
+    }
+
+    /* Notice Banner (#header_2 in original form) */
+    .report-notice-banner {
+      background: #EFF6FF;
+      border: 1px solid #BFDBFE;
+      border-left: 4px solid #243CA3;
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin: 22px 0;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #243CA3;
+      line-height: 1.5;
+    }
+
+    /* Terms & Conditions (#terms_and_conditions in original form) */
+    .tc-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      margin: 18px 0 22px;
+      padding: 13px 15px;
+      background: #F8FAFC;
+      border-radius: 10px;
+      border: 1px solid #E2E8F0;
+    }
+    .tc-group input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 3px;
+      accent-color: var(--blue-electric);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .tc-group label {
+      font-size: 0.86rem;
+      color: #344054;
+      line-height: 1.5;
+      cursor: pointer;
+    }
+
+    /* Primary Submit Button (#button in original form) */
+    .btn-primary-action {
+      width: 100%;
+      height: 54px;
+      background: var(--blue-electric);
+      color: #FFFFFF;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 10px 24px -6px rgba(21, 94, 239, 0.5);
+      transition: all 0.2s ease;
+      margin-top: 6px;
+    }
+    .btn-primary-action:hover {
+      background: #1D4ED8;
+      transform: translateY(-1.5px);
+      box-shadow: 0 14px 30px -6px rgba(21, 94, 239, 0.65);
+    }
+    .btn-primary-action:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .form-legal-footer {
+      text-align: center;
+      margin-top: 18px;
+      padding-top: 15px;
+      border-top: 1px solid #E2E8F0;
+      font-size: 0.82rem;
+      color: #64748B;
+    }
+    .form-legal-footer a {
+      color: var(--blue-electric);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .form-legal-footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* =========================================================================
+       GENERATING REPORT MODAL
+       ========================================================================= */
+    .calc-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(5, 9, 20, 0.88);
+      backdrop-filter: blur(10px);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .calc-overlay.active {
+      display: flex;
+    }
+    .calc-modal-box {
+      background: #FFFFFF;
+      color: #101828;
+      max-width: 460px;
+      width: 100%;
+      border-radius: 20px;
+      padding: 38px 30px;
+      text-align: center;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.65);
+      border-top: 6px solid var(--gold);
+    }
+    .calc-modal-logo {
+      width: 165px;
+      height: auto;
+      margin: 0 auto 18px;
+      display: block;
+    }
+    .calc-spinner {
+      width: 42px;
+      height: 42px;
+      border: 4px solid #E2E8F0;
+      border-top-color: var(--blue-electric);
+      border-radius: 50%;
+      margin: 0 auto 16px;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    .calc-modal-box h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #0F172A;
+      margin-bottom: 6px;
+    }
+    .calc-modal-box p {
+      font-size: 0.9rem;
+      color: #475569;
+    }
+
+    /* =========================================================================
+       MINIMAL FOOTER
+       ========================================================================= */
+    .site-footer {
+      border-top: 1px solid var(--border-dark);
+      padding: 24px 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Clean Centered Logo Header -->
+  <header class="header-bar">
+    <div class="wrap header-inner">
+      <a href="https://www.grossouniversity.com" aria-label="Grosso University">
+        <img src="/assets/brand/logo-white.png" alt="Grosso University" class="brand-logo" />
+      </a>
+    </div>
+  </header>
+
+  <!-- Focused Single-Column Quiz Flow -->
+  <main class="quiz-section" id="section-SylmME6CSv">
+    <div class="wrap">
+
+      <!-- Clear Top-Down Eye Flow: Title -> Subtitle -> Form Card -->
+      <div class="quiz-intro">
+        <div id="heading-dA4Ds0x3C2">
+          <h1>The Grosso U <span>Revenue Leak Diagnostic</span></h1>
+        </div>
+        <div id="sub-heading-l9Q3Xw9Wv3">
+          <h2><em>Discover exactly how much revenue your team is leaving behind!</em></h2>
+        </div>
+      </div>
+
+      <!-- Original Fields in Clean Single-Column Card (#form-Ez3EmIcrLP) -->
+      <div class="quiz-card" id="form-Ez3EmIcrLP">
+        <div class="quiz-card-top-line"></div>
+
+        <div class="quiz-card-body">
+          <form id="revenueLeakForm" novalidate>
+
+            <!-- 1. First Name * -->
+            <div class="field-group">
+              <label class="field-label" for="first_name">First Name <span class="req">*</span></label>
+              <input type="text" id="first_name" name="first_name" class="form-control" placeholder="Enter your first name" required />
+            </div>
+
+            <!-- 2. Last Name * -->
+            <div class="field-group">
+              <label class="field-label" for="last_name">Last Name <span class="req">*</span></label>
+              <input type="text" id="last_name" name="last_name" class="form-control" placeholder="Enter your last name" required />
+            </div>
+
+            <!-- 3. Company * -->
+            <div class="field-group">
+              <label class="field-label" for="company">Company <span class="req">*</span></label>
+              <input type="text" id="company" name="company" class="form-control" placeholder="Enter your company name" required />
+            </div>
+
+            <!-- 4. Job Title -->
+            <div class="field-group">
+              <label class="field-label" for="job_title">Job Title</label>
+              <input type="text" id="job_title" name="job_title" class="form-control" placeholder="Enter your job title " />
+            </div>
+
+            <!-- 5. Phone * -->
+            <div class="field-group">
+              <label class="field-label" for="phone">Phone <span class="req">*</span></label>
+              <input type="tel" id="phone" name="phone" class="form-control" placeholder="+1 (555) 000-0000" required />
+            </div>
+
+            <!-- 6. Email * -->
+            <div class="field-group">
+              <label class="field-label" for="email">Email <span class="req">*</span></label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="your@email.com" required />
+            </div>
+
+            <!-- 7. Header Notice (header_2) -->
+            <div class="report-notice-banner">
+              *Enter your details below to calculate your live scores. A copy of your personalized Revenue Mastery Formula Report &amp; results will also be emailed straight to your inbox!
+            </div>
+
+            <!-- 8. Terms & Conditions (terms_and_conditions) -->
+            <div class="tc-group">
+              <input type="checkbox" id="terms_and_conditions" name="terms_and_conditions" />
+              <label for="terms_and_conditions">
+                By checking this box, I consent to receive non-marketing text messages from <strong>Grosso University</strong> regarding <strong>my Revenue Leak Quiz and custom report</strong>. Message frequency varies, message &amp; data rates may apply. Text HELP for assistance, reply STOP to opt out.
+              </label>
+            </div>
+
+            <!-- 9. Monthly Revenue -->
+            <div class="field-group">
+              <label class="field-label" for="monthly_revenue">Monthly Revenue</label>
+              <input type="number" id="monthly_revenue" name="monthly_revenue" class="form-control" placeholder="e.g. 10000 (Enter net monthly sales volume)" min="0" step="any" required />
+              <span class="field-short-label">Please input your average monthly sales revenue minus cancellations and credit declines.</span>
+            </div>
+
+            <!-- 10. Current Closing Rate -->
+            <div class="field-group">
+              <label class="field-label" for="current_closing_rate">Current Closing Rate</label>
+              <input type="number" id="current_closing_rate" name="current_closing_rate" class="form-control" placeholder="e.g. 20 (Enter percentage as a whole number)" min="0" max="100" step="any" required />
+              <span class="field-short-label">Input your team’s average closing percentage from issued lead to signed deal.</span>
+            </div>
+
+            <!-- 11 & 12. Hidden Score Fields (score_1dk9 & score_3yva) -->
+            <input type="hidden" id="score_calculated_revenue_leak" name="score_calculated_revenue_leak" value="0" />
+            <input type="hidden" id="score_calculated_annual_leak" name="score_calculated_annual_leak" value="0" />
+
+            <!-- 13. Submit Button -->
+            <button type="submit" class="btn-primary-action" id="submitQuizBtn">
+              <span>Submit</span>
+            </button>
+
+            <!-- 14. Privacy Policy | Terms of Service (header_1) -->
+            <div class="form-legal-footer">
+              <a href="https://www.grossouniversity.com/privacy-policy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+              &nbsp;|&nbsp;
+              <a href="https://www.grossouniversity.com/terms-conditions/" target="_blank" rel="noopener noreferrer">Terms of Service</a>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Generating Report Modal -->
+  <div class="calc-overlay" id="calcOverlay" role="dialog" aria-modal="true" aria-labelledby="calcModalTitle">
+    <div class="calc-modal-box">
+      <img src="/assets/brand/logo-dark.png" alt="Grosso University Logo" class="calc-modal-logo" />
+      <div class="calc-spinner"></div>
+      <h3 id="calcModalTitle">Generating Your Custom Report&hellip;</h3>
+      <p>Please hold tight for 2-3 seconds while we calculate your sales pipeline data and load your dynamic dashboard.</p>
+    </div>
+  </div>
+
+  <!-- Minimal Footer -->
+  <footer class="site-footer">
+    <div class="wrap">
+      &copy; 2026 Grosso University. All rights reserved. &bull; www.grossouniversity.com
+    </div>
+  </footer>
+
+  <script src="/config.js"></script>
+  <script>
+    (function() {
+      const form = document.getElementById('revenueLeakForm');
+      const revInput = document.getElementById('monthly_revenue');
+      const rateInput = document.getElementById('current_closing_rate');
+      const monthlyLeakField = document.getElementById('score_calculated_revenue_leak');
+      const annualLeakField = document.getElementById('score_calculated_annual_leak');
+
+      function parseNumeric(val) {
+        if (val === null || val === undefined || val === '') return NaN;
+        const cleaned = String(val).replace(/[^0-9.-]/g, '');
+        return parseFloat(cleaned);
+      }
+
+      function computeLeaks() {
+        const monthlyRev = parseNumeric(revInput.value);
+        const closeRate = parseNumeric(rateInput.value);
+        if (isNaN(monthlyRev) || isNaN(closeRate)) return null;
+
+        // Exact GHL Formula:
+        // score_1dk9 = monthly_revenue * (50 - current_closing_rate) / 100
+        // score_3yva = score_1dk9 * 12
+        const monthlyLeak = Math.round(monthlyRev * (50 - closeRate) / 100);
+        const annualLeak = Math.round(monthlyLeak * 12);
+
+        monthlyLeakField.value = String(monthlyLeak);
+        annualLeakField.value = String(annualLeak);
+
+        return {
+          monthlyRevenue: monthlyRev,
+          currentClosingRate: closeRate,
+          monthlyLeak: monthlyLeak,
+          annualLeak: annualLeak
+        };
+      }
+
+      revInput.addEventListener('input', computeLeaks);
+      rateInput.addEventListener('input', computeLeaks);
+
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        if (!form.reportValidity()) return;
+
+        const firstName = (document.getElementById('first_name').value || '').trim();
+        const lastName = (document.getElementById('last_name').value || '').trim();
+        const fullName = [firstName, lastName].filter(Boolean).join(' ');
+        const company = (document.getElementById('company').value || '').trim();
+        const jobTitle = (document.getElementById('job_title').value || '').trim();
+        const phone = (document.getElementById('phone').value || '').trim();
+        const email = (document.getElementById('email').value || '').trim();
+
+        const calc = computeLeaks() || {
+          monthlyRevenue: parseNumeric(revInput.value) || 0,
+          currentClosingRate: parseNumeric(rateInput.value) || 0,
+          monthlyLeak: 0,
+          annualLeak: 0
+        };
+
+        const submitBtn = document.getElementById('submitQuizBtn');
+        submitBtn.disabled = true;
+        document.getElementById('calcOverlay').classList.add('active');
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const utmSource = urlParams.get('utm_source') || 'direct';
+        const utmMedium = urlParams.get('utm_medium') || 'diagnostic_quiz';
+        const utmCampaign = urlParams.get('utm_campaign') || 'revenue_leak_diagnostic';
+
+        const pathSlug = window.location.pathname.replace(/^\/+|\/+$/g, '').split('/')[0] || 'revenue-leak-quiz';
+
+        const payload = {
+          source: 'lp.grosso-university.com/' + pathSlug,
+          landing_page: pathSlug,
+          landing_page_slug: pathSlug,
+          landing_page_url: window.location.href,
+          event_name: 'The Grosso U Revenue Leak Diagnostic',
+          campaign_name: 'Revenue Leak Quiz Funnel',
+          first_name: firstName,
+          last_name: lastName,
+          full_name: fullName,
+          email: email,
+          phone: phone,
+          company: company,
+          position: jobTitle || 'Owner / Executive',
+          role: jobTitle || 'Owner / Executive',
+          monthly_revenue: calc.monthlyRevenue,
+          current_closing_rate: calc.currentClosingRate,
+          score_calculated_revenue_leak: calc.monthlyLeak,
+          score_calculated_annual_leak: calc.annualLeak,
+          revenue_tier: '$' + Number(calc.monthlyRevenue).toLocaleString() + '/mo',
+          notes: 'Revenue Leak Diagnostic | Monthly Rev: $' + Number(calc.monthlyRevenue).toLocaleString() +
+                 ' | Close Rate: ' + calc.currentClosingRate + '%' +
+                 ' | Monthly Leak: $' + Number(calc.monthlyLeak).toLocaleString() +
+                 ' | Annual Leak: $' + Number(calc.annualLeak).toLocaleString(),
+          page_url: window.location.href,
+          slug: pathSlug,
+          utm_source: utmSource,
+          utm_medium: utmMedium,
+          utm_campaign: utmCampaign
+        };
+
+        try {
+          sessionStorage.setItem('grosso_revenue_leak_data', JSON.stringify(payload));
+          localStorage.setItem('grosso_revenue_leak_data', JSON.stringify(payload));
+        } catch (_) {}
+
+        try {
+          await Promise.allSettled([
+            fetch('https://kaos-gu.com/api/webhooks/lead-ingest', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'x-webhook-secret': window.GU_API_KEY || 'whsec_112d6b17657110a106f829c5e6134bebbd74428cf012b489'
+              },
+              body: JSON.stringify(payload)
+            }),
+            fetch('/api/leads', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload)
+            })
+          ]);
+        } catch (_) {}
+
+        if (typeof window.fbq === 'function') {
+          window.fbq('track', 'Lead', { content_name: 'Revenue Leak Diagnostic' });
+        }
+
+        const resultsUrl = new URL('/results-page', window.location.origin);
+        resultsUrl.searchParams.set('monthly_revenue', String(calc.monthlyRevenue));
+        resultsUrl.searchParams.set('current_closing_rate', String(calc.currentClosingRate));
+        resultsUrl.searchParams.set('monthly_leak', String(calc.monthlyLeak));
+        resultsUrl.searchParams.set('annual_leak', String(calc.annualLeak));
+        if (firstName) resultsUrl.searchParams.set('first_name', firstName);
+        if (lastName) resultsUrl.searchParams.set('last_name', lastName);
+        if (company) resultsUrl.searchParams.set('company', company);
+        if (email) resultsUrl.searchParams.set('email', email);
+        if (phone) resultsUrl.searchParams.set('phone', phone);
+
+        setTimeout(function() {
+          window.location.href = resultsUrl.pathname + resultsUrl.search;
+        }, 1000);
+      });
+    })();
+  </script>
+</body>
+</html>

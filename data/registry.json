@@ -11,7 +11,7 @@
   },
   "pages": [
     {
-      "slug": "quiz-page-528761",
+      "slug": "revenue-leak-quiz",
       "title": "The Grosso U Revenue Leak Diagnostic",
       "subtitle": "Discover exactly how much revenue your team is leaving behind!",
       "headline": "The Grosso U Revenue Leak Diagnostic",
@@ -27,9 +27,9 @@
       "status": "live",
       "conversionGoal": "Revenue Leak Diagnostic & Calendly Audit",
       "createdAt": "2026-11-11",
-      "updatedAt": "2026-11-11",
+      "updatedAt": "2026-11-17",
       "accentColor": "#A3814E",
-      "url": "https://lp.grosso-university.com/quiz-page-528761",
+      "url": "https://lp.grosso-university.com/revenue-leak-quiz",
       "stats": {
         "traffic": "12,840",
         "leads": "2,950",

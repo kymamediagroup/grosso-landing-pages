@@ -353,8 +353,10 @@ class GrossoRouterHandler(SimpleHTTPRequestHandler):
         if path == '/' or path == '/index.html':
             host_header = (self.headers.get('Host') or '').lower()
             default_slug = os.environ.get('DEFAULT_SLUG', '').strip()
-            if host_header.startswith('quiz.') or default_slug == 'quiz-page-528761':
-                quiz_file = os.path.join(PAGES_DIR, 'quiz-page-528761', 'index.html')
+            if host_header.startswith('quiz.') or default_slug in ['quiz-page-528761', 'revenue-leak-quiz']:
+                quiz_file = os.path.join(PAGES_DIR, 'revenue-leak-quiz', 'index.html')
+                if not os.path.isfile(quiz_file):
+                    quiz_file = os.path.join(PAGES_DIR, 'quiz-page-528761', 'index.html')
                 if os.path.isfile(quiz_file):
                     self.serve_file(quiz_file, 'text/html; charset=utf-8')
                     return
