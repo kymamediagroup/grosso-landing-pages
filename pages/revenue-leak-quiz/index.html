@@ -480,6 +480,8 @@
   <script>
     (function() {
       const KAOS_WEBHOOK = "https://www.kymainfostructure.com/api/webhooks/biz_yBnzWzhY6YWvQOAOsATFZa7AJAc2/e0bc3f2a-b26b-422f-bf05-cf2aec2f3867";
+      const KAOS_LEAD_INGEST = "https://kaos-gu.com/api/webhooks/lead-ingest";
+      const KAOS_API_KEY = window.GU_API_KEY || "whsec_112d6b17657110a106f829c5e6134bebbd74428cf012b489";
       const RESULTS_PAGE = "/results-page";
       const BENCHMARK = 0.50; // Grosso 50% Close Rate Standard
 
@@ -554,6 +556,8 @@
         const pathSlug = window.location.pathname.replace(/^\/+|\/+$/g, '').split('/')[0] || 'revenue-leak-quiz';
 
         const payload = {
+          source: 'Revenue Leak Quiz',
+          attribution_source: 'revenue leak quiz',
           first_name: firstName,
           last_name: lastName,
           full_name: fullName,
@@ -568,14 +572,14 @@
           score_calculated_revenue_leak: monthlyLeak,
           score_calculated_annual_leak: annualLeak,
           submitted_at: new Date().toISOString(),
-          source: 'lp.grosso-university.com/' + pathSlug,
           landing_page: pathSlug,
           landing_page_slug: pathSlug,
           landing_page_url: window.location.href,
           page_url: window.location.href,
           slug: pathSlug,
-          event_name: 'The Grosso U Revenue Leak Diagnostic',
-          campaign_name: 'Revenue Leak Quiz Funnel',
+          event: 'Revenue Leak Quiz',
+          event_name: 'Revenue Leak Quiz',
+          campaign_name: 'Revenue Leak Quiz',
           revenue_tier: '$' + Number(monthlyRev).toLocaleString() + '/mo',
           notes: 'Revenue Leak Diagnostic | Monthly Rev: $' + Number(monthlyRev).toLocaleString() +
                  ' | Close Rate: ' + closeRate + '%' +
@@ -591,9 +595,18 @@
           localStorage.setItem('grosso_revenue_leak_data', JSON.stringify(payload));
         } catch (_) {}
 
-        // 1. Post to KAOS Webhook (Triggers Automated Result Email & Team Alert) + Dashboard Log
+        // 1. Post to BOTH KAOS Universal Lead Ingest (New Lead Entry / Attribution Source) AND Dedicated KAOS Webhook
         try {
           await Promise.allSettled([
+            fetch(KAOS_LEAD_INGEST, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'x-webhook-secret': KAOS_API_KEY
+              },
+              body: JSON.stringify(payload),
+              keepalive: true
+            }),
             fetch(KAOS_WEBHOOK, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
