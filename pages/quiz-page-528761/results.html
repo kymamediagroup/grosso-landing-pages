@@ -880,8 +880,8 @@
         banner.innerHTML = '<span>&#10003; ' + labelParts.join(' ') + '</span>';
       }
 
-      const initialMonthlyRev = getNum(['monthly_revenue', 'contact.monthly_revenue'], 250000);
-      const initialCloseRate = getNum(['current_closing_rate', 'contact.current_closing_rate'], 20);
+      const initialMonthlyRev = getNum(['revenue', 'monthly_revenue', 'contact.monthly_revenue'], 250000);
+      const initialCloseRate = getNum(['closeRate', 'current_closing_rate', 'contact.current_closing_rate'], 20);
 
       const displayMonthlyRev = document.getElementById('displayMonthlyRev');
       const displayCloseRate = document.getElementById('displayCloseRate');
@@ -899,8 +899,9 @@
       }
 
       function renderCalculations(monthlyRev, closeRate) {
-        const monthlyLeak = Math.round(monthlyRev * (50 - closeRate) / 100);
-        const annualLeak = Math.round(monthlyLeak * 12);
+        const rateDec = Math.max(0.01, closeRate / 100);
+        const monthlyLeak = closeRate >= 50 ? 0 : Math.round(monthlyRev * (0.50 - rateDec));
+        const annualLeak = monthlyLeak * 12;
 
         displayMonthlyRev.textContent = '$' + Math.round(monthlyRev).toLocaleString('en-US');
         displayCloseRate.textContent = closeRate + '%';
@@ -909,8 +910,8 @@
         annualLeakEl.textContent = formatCurrency(annualLeak);
       }
 
-      const explicitMonthlyLeak = getNum(['score_calculated_revenue_leak', 'monthly_leak', 'score_1dk9'], NaN);
-      const explicitAnnualLeak = getNum(['score_calculated_annual_leak', 'annual_leak', 'score_3yva'], NaN);
+      const explicitMonthlyLeak = getNum(['monthlyLeak', 'score_calculated_revenue_leak', 'monthly_leak', 'score_1dk9'], NaN);
+      const explicitAnnualLeak = getNum(['annualLeak', 'score_calculated_annual_leak', 'annual_leak', 'score_3yva'], NaN);
 
       adjustRevInput.value = String(initialMonthlyRev);
       adjustRateInput.value = String(initialCloseRate);

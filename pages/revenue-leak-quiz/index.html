@@ -479,31 +479,36 @@
   <script src="/config.js"></script>
   <script>
     (function() {
-      const form = document.getElementById('revenueLeakForm');
+      const KAOS_WEBHOOK = "https://www.kymainfostructure.com/api/webhooks/biz_yBnzWzhY6YWvQOAOsATFZa7AJAc2/e0bc3f2a-b26b-422f-bf05-cf2aec2f3867";
+      const RESULTS_PAGE = "/results-page";
+      const BENCHMARK = 0.50; // Grosso 50% Close Rate Standard
+
+      const form = document.getElementById('revenueLeakForm') || document.querySelector('form');
       const revInput = document.getElementById('monthly_revenue');
       const rateInput = document.getElementById('current_closing_rate');
       const monthlyLeakField = document.getElementById('score_calculated_revenue_leak');
       const annualLeakField = document.getElementById('score_calculated_annual_leak');
 
-      function parseNumeric(val) {
-        if (val === null || val === undefined || val === '') return NaN;
+      if (!form) return;
+
+      function parseNumeric(val, fallback) {
+        if (val === null || val === undefined || val === '') return fallback;
         const cleaned = String(val).replace(/[^0-9.-]/g, '');
-        return parseFloat(cleaned);
+        const parsed = parseFloat(cleaned);
+        return isNaN(parsed) ? fallback : parsed;
       }
 
       function computeLeaks() {
-        const monthlyRev = parseNumeric(revInput.value);
-        const closeRate = parseNumeric(rateInput.value);
-        if (isNaN(monthlyRev) || isNaN(closeRate)) return null;
+        const monthlyRev = parseNumeric(revInput.value, 250000);
+        const closeRate = parseNumeric(rateInput.value, 20);
 
-        // Exact GHL Formula:
-        // score_1dk9 = monthly_revenue * (50 - current_closing_rate) / 100
-        // score_3yva = score_1dk9 * 12
-        const monthlyLeak = Math.round(monthlyRev * (50 - closeRate) / 100);
-        const annualLeak = Math.round(monthlyLeak * 12);
+        // Exact Grosso Benchmark Math
+        const rateDec = Math.max(0.01, closeRate / 100);
+        const monthlyLeak = closeRate >= 50 ? 0 : Math.round(monthlyRev * (BENCHMARK - rateDec));
+        const annualLeak = monthlyLeak * 12;
 
-        monthlyLeakField.value = String(monthlyLeak);
-        annualLeakField.value = String(annualLeak);
+        if (monthlyLeakField) monthlyLeakField.value = String(monthlyLeak);
+        if (annualLeakField) annualLeakField.value = String(annualLeak);
 
         return {
           monthlyRevenue: monthlyRev,
@@ -513,65 +518,69 @@
         };
       }
 
-      revInput.addEventListener('input', computeLeaks);
-      rateInput.addEventListener('input', computeLeaks);
+      if (revInput) revInput.addEventListener('input', computeLeaks);
+      if (rateInput) rateInput.addEventListener('input', computeLeaks);
 
       form.addEventListener('submit', async function(e) {
         e.preventDefault();
         if (!form.reportValidity()) return;
 
-        const firstName = (document.getElementById('first_name').value || '').trim();
-        const lastName = (document.getElementById('last_name').value || '').trim();
+        const fd = new FormData(form);
+        const firstName = (fd.get('first_name') || '').trim();
+        const lastName = (fd.get('last_name') || '').trim();
         const fullName = [firstName, lastName].filter(Boolean).join(' ');
-        const company = (document.getElementById('company').value || '').trim();
-        const jobTitle = (document.getElementById('job_title').value || '').trim();
-        const phone = (document.getElementById('phone').value || '').trim();
-        const email = (document.getElementById('email').value || '').trim();
+        const company = (fd.get('company') || '').trim();
+        const jobTitle = (fd.get('job_title') || '').trim();
+        const phone = (fd.get('phone') || '').trim();
+        const email = (fd.get('email') || '').trim();
 
-        const calc = computeLeaks() || {
-          monthlyRevenue: parseNumeric(revInput.value) || 0,
-          currentClosingRate: parseNumeric(rateInput.value) || 0,
-          monthlyLeak: 0,
-          annualLeak: 0
-        };
+        const monthlyRev = parseNumeric(fd.get('monthly_revenue'), 250000);
+        const closeRate = parseNumeric(fd.get('current_closing_rate'), 20);
+
+        // Exact Grosso Benchmark Math
+        const rateDec = Math.max(0.01, closeRate / 100);
+        const monthlyLeak = closeRate >= 50 ? 0 : Math.round(monthlyRev * (BENCHMARK - rateDec));
+        const annualLeak = monthlyLeak * 12;
 
         const submitBtn = document.getElementById('submitQuizBtn');
-        submitBtn.disabled = true;
-        document.getElementById('calcOverlay').classList.add('active');
+        if (submitBtn) submitBtn.disabled = true;
+        const overlay = document.getElementById('calcOverlay');
+        if (overlay) overlay.classList.add('active');
 
         const urlParams = new URLSearchParams(window.location.search);
         const utmSource = urlParams.get('utm_source') || 'direct';
         const utmMedium = urlParams.get('utm_medium') || 'diagnostic_quiz';
-        const utmCampaign = urlParams.get('utm_campaign') || 'revenue_leak_diagnostic';
-
+        const utmCampaign = urlParams.get('utm_campaign') || 'revenue_leak_quiz';
         const pathSlug = window.location.pathname.replace(/^\/+|\/+$/g, '').split('/')[0] || 'revenue-leak-quiz';
 
         const payload = {
+          first_name: firstName,
+          last_name: lastName,
+          full_name: fullName,
+          company: company,
+          job_title: jobTitle,
+          position: jobTitle || 'Owner / Executive',
+          role: jobTitle || 'Owner / Executive',
+          phone: phone,
+          email: email,
+          monthly_revenue: monthlyRev,
+          current_closing_rate: closeRate,
+          score_calculated_revenue_leak: monthlyLeak,
+          score_calculated_annual_leak: annualLeak,
+          submitted_at: new Date().toISOString(),
           source: 'lp.grosso-university.com/' + pathSlug,
           landing_page: pathSlug,
           landing_page_slug: pathSlug,
           landing_page_url: window.location.href,
-          event_name: 'The Grosso U Revenue Leak Diagnostic',
-          campaign_name: 'Revenue Leak Quiz Funnel',
-          first_name: firstName,
-          last_name: lastName,
-          full_name: fullName,
-          email: email,
-          phone: phone,
-          company: company,
-          position: jobTitle || 'Owner / Executive',
-          role: jobTitle || 'Owner / Executive',
-          monthly_revenue: calc.monthlyRevenue,
-          current_closing_rate: calc.currentClosingRate,
-          score_calculated_revenue_leak: calc.monthlyLeak,
-          score_calculated_annual_leak: calc.annualLeak,
-          revenue_tier: '$' + Number(calc.monthlyRevenue).toLocaleString() + '/mo',
-          notes: 'Revenue Leak Diagnostic | Monthly Rev: $' + Number(calc.monthlyRevenue).toLocaleString() +
-                 ' | Close Rate: ' + calc.currentClosingRate + '%' +
-                 ' | Monthly Leak: $' + Number(calc.monthlyLeak).toLocaleString() +
-                 ' | Annual Leak: $' + Number(calc.annualLeak).toLocaleString(),
           page_url: window.location.href,
           slug: pathSlug,
+          event_name: 'The Grosso U Revenue Leak Diagnostic',
+          campaign_name: 'Revenue Leak Quiz Funnel',
+          revenue_tier: '$' + Number(monthlyRev).toLocaleString() + '/mo',
+          notes: 'Revenue Leak Diagnostic | Monthly Rev: $' + Number(monthlyRev).toLocaleString() +
+                 ' | Close Rate: ' + closeRate + '%' +
+                 ' | Monthly Leak: $' + Number(monthlyLeak).toLocaleString() +
+                 ' | Annual Leak: $' + Number(annualLeak).toLocaleString(),
           utm_source: utmSource,
           utm_medium: utmMedium,
           utm_campaign: utmCampaign
@@ -582,42 +591,46 @@
           localStorage.setItem('grosso_revenue_leak_data', JSON.stringify(payload));
         } catch (_) {}
 
+        // 1. Post to KAOS Webhook (Triggers Automated Result Email & Team Alert) + Dashboard Log
         try {
           await Promise.allSettled([
-            fetch('https://kaos-gu.com/api/webhooks/lead-ingest', {
+            fetch(KAOS_WEBHOOK, {
               method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-                'x-webhook-secret': window.GU_API_KEY || 'whsec_112d6b17657110a106f829c5e6134bebbd74428cf012b489'
-              },
-              body: JSON.stringify(payload)
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload),
+              keepalive: true
             }),
             fetch('/api/leads', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(payload)
+              body: JSON.stringify(payload),
+              keepalive: true
             })
           ]);
-        } catch (_) {}
+        } catch (err) {
+          console.warn('KAOS dispatch notice:', err);
+        }
 
         if (typeof window.fbq === 'function') {
           window.fbq('track', 'Lead', { content_name: 'Revenue Leak Diagnostic' });
         }
 
-        const resultsUrl = new URL('/results-page', window.location.origin);
-        resultsUrl.searchParams.set('monthly_revenue', String(calc.monthlyRevenue));
-        resultsUrl.searchParams.set('current_closing_rate', String(calc.currentClosingRate));
-        resultsUrl.searchParams.set('monthly_leak', String(calc.monthlyLeak));
-        resultsUrl.searchParams.set('annual_leak', String(calc.annualLeak));
-        if (firstName) resultsUrl.searchParams.set('first_name', firstName);
-        if (lastName) resultsUrl.searchParams.set('last_name', lastName);
-        if (company) resultsUrl.searchParams.set('company', company);
-        if (email) resultsUrl.searchParams.set('email', email);
-        if (phone) resultsUrl.searchParams.set('phone', phone);
+        // 2. Redirect to Results Page with Exact Matching URL Parameters
+        const params = new URLSearchParams({
+          company: company,
+          first_name: firstName,
+          last_name: lastName,
+          revenue: String(monthlyRev),
+          closeRate: String(closeRate),
+          monthlyLeak: String(monthlyLeak),
+          annualLeak: String(annualLeak),
+          monthly_revenue: String(monthlyRev),
+          current_closing_rate: String(closeRate),
+          monthly_leak: String(monthlyLeak),
+          annual_leak: String(annualLeak)
+        });
 
-        setTimeout(function() {
-          window.location.href = resultsUrl.pathname + resultsUrl.search;
-        }, 1000);
+        window.location.href = RESULTS_PAGE + '?' + params.toString();
       });
     })();
   </script>
